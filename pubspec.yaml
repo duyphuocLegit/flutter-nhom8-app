@@ -1,0 +1,44 @@
+# @format
+
+name: nhom10
+description: 'A new Flutter project.'
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dotted_border: ^2.0.0+3
+  table_calendar: ^3.2.0
+
+  # Firebase dependencies
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.3
+  firebase_storage: ^12.3.2
+  shimmer: ^3.0.0 # For skeleton loading
+  lottie: ^3.1.2 # For animations
+  fluttertoast: ^8.2.6 # For better toast messages
+  flutter_staggered_animations: ^1.1.1 # For list animations
+  shared_preferences: ^2.5.3 # For local storage
+  provider: ^6.1.2 # For state management
+
+  # Notification dependencies
+  flutter_local_notifications: ^17.2.2 # For local notifications
+  timezone: ^0.9.4 # For timezone handling in notifications
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
