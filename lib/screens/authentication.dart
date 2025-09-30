@@ -4,6 +4,8 @@ import '../services/saved_accounts_service.dart';
 import '../models/user_model.dart';
 import '../utils/responsive_utils.dart';
 import 'home.dart';
+import '../services/email_verification_service.dart';
+import 'verify_email.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -754,11 +756,21 @@ class _AuthScreenState extends State<AuthScreen> {
             }
           }
 
-          if (mounted && context.mounted) {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const MyHomePage()),
-            );
-          }
+          // if (mounted && context.mounted) {
+          //   Navigator.of(context).pushReplacement(
+          //     MaterialPageRoute(builder: (context) => const MyHomePage()),
+          //   );
+          // }
+          // Gửi email xác thực qua Firebase (flow chuẩn)
+          await EmailVerificationService.sendVerificationEmail();
+
+          // Điều hướng sang màn hình chờ xác thực
+          if (!mounted) return;
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (_) => VerifyEmailScreen(email: _emailController.text.trim()),
+            ),
+          );
         }
       }
     } catch (e) {
