@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/user_model.dart';
 import '../widgets/constant.dart';
+import '../l10n/app_localizations.dart';
 
 class ProfileHeader extends StatelessWidget {
   final UserModel? userProfile;
@@ -37,7 +38,7 @@ class ProfileHeader extends StatelessWidget {
 
           // User Name
           Text(
-            userProfile?.displayName ?? 'User Name',
+            userProfile?.displayName ?? AppLocalizations.of(context)!.userName,
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -48,11 +49,14 @@ class ProfileHeader extends StatelessWidget {
 
           // Email
           Text(
-            userProfile?.email ?? 'user@example.com',
+            userProfile?.email ?? AppLocalizations.of(context)!.defaultEmail,
             style: TextStyle(fontSize: 16, color: Colors.grey.shade600),
           ),
 
-          if (showStats) ...[const SizedBox(height: 20), _buildStatsRow()],
+          if (showStats) ...[
+            const SizedBox(height: 20),
+            _buildStatsRow(context),
+          ],
         ],
       ),
     );
@@ -125,15 +129,27 @@ class ProfileHeader extends StatelessWidget {
     return profileImage;
   }
 
-  Widget _buildStatsRow() {
+  Widget _buildStatsRow(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _buildStatItem('12', 'Tasks\nCompleted', Colors.green.shade600),
+        _buildStatItem(
+          '12',
+          AppLocalizations.of(context)!.tasksCompleted,
+          Colors.green.shade600,
+        ),
         _buildDivider(),
-        _buildStatItem('3', 'Active\nTasks', Colors.blue.shade600),
+        _buildStatItem(
+          '3',
+          AppLocalizations.of(context)!.activeTasks,
+          Colors.blue.shade600,
+        ),
         _buildDivider(),
-        _buildStatItem('25', 'Days\nStreak', Colors.orange.shade600),
+        _buildStatItem(
+          '25',
+          AppLocalizations.of(context)!.daysStreak,
+          Colors.orange.shade600,
+        ),
       ],
     );
   }

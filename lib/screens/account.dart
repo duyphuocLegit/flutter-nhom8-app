@@ -3,6 +3,7 @@ import '../models/user_model.dart';
 import '../models/task_model.dart';
 import '../services/firebase_service.dart';
 import '../widgets/constant.dart';
+import '../l10n/app_localizations.dart';
 import 'authentication.dart';
 import 'edit_profile.dart';
 import 'password.dart';
@@ -90,7 +91,7 @@ class _AccountScreenState extends State<AccountScreen> {
         appBar: AppBar(
           backgroundColor: const Color(0xFFF8FAFC),
           elevation: 0,
-          title: const Text('Account'),
+          title: Text(AppLocalizations.of(context)!.account),
           centerTitle: true,
         ),
         body: Center(
@@ -107,7 +108,7 @@ class _AccountScreenState extends State<AccountScreen> {
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _loadAccountData,
-                child: const Text('Retry'),
+                child: Text(AppLocalizations.of(context)!.retry),
               ),
             ],
           ),
@@ -120,9 +121,9 @@ class _AccountScreenState extends State<AccountScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFF8FAFC),
         elevation: 0,
-        title: const Text(
-          'Account',
-          style: TextStyle(
+        title: Text(
+          AppLocalizations.of(context)!.account,
+          style: const TextStyle(
             color: Color(0xFF1E293B),
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -259,9 +260,9 @@ class _AccountScreenState extends State<AccountScreen> {
                     color: Colors.green.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Text(
-                    'Active',
-                    style: TextStyle(
+                  child: Text(
+                    AppLocalizations.of(context)!.active,
+                    style: const TextStyle(
                       fontSize: 12,
                       color: Colors.green,
                       fontWeight: FontWeight.w500,
@@ -280,7 +281,7 @@ class _AccountScreenState extends State<AccountScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildSectionHeader('Account Management'),
+        _buildSectionHeader(AppLocalizations.of(context)!.accountManagement),
         const SizedBox(height: 12),
         Container(
           decoration: BoxDecoration(
@@ -297,8 +298,8 @@ class _AccountScreenState extends State<AccountScreen> {
           child: Column(
             children: [
               _buildAccountOption(
-                title: 'Edit Profile',
-                subtitle: 'Update name, photo, and personal details',
+                title: AppLocalizations.of(context)!.editProfile,
+                subtitle: AppLocalizations.of(context)!.updateProfileDetails,
                 icon: Icons.edit_outlined,
                 iconColor: Colors.blue.shade600,
                 onTap: () async {
@@ -319,8 +320,10 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
               _buildOptionDivider(),
               _buildAccountOption(
-                title: 'Change Password',
-                subtitle: 'Update your account password for security',
+                title: AppLocalizations.of(context)!.changePassword,
+                subtitle: AppLocalizations.of(
+                  context,
+                )!.updatePasswordForSecurity,
                 icon: Icons.lock_outline,
                 iconColor: Colors.orange.shade600,
                 onTap: () {
@@ -334,8 +337,8 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
               _buildOptionDivider(),
               _buildAccountOption(
-                title: 'Account Data',
-                subtitle: 'View your account storage and data usage',
+                title: AppLocalizations.of(context)!.accountData,
+                subtitle: AppLocalizations.of(context)!.viewAccountStorage,
                 icon: Icons.storage_outlined,
                 iconColor: Colors.teal.shade600,
                 onTap: () {
@@ -344,8 +347,8 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
               _buildOptionDivider(),
               _buildAccountOption(
-                title: 'Logout',
-                subtitle: 'Sign out of your account on this device',
+                title: AppLocalizations.of(context)!.logout,
+                subtitle: AppLocalizations.of(context)!.signOutOfAccount,
                 icon: Icons.logout_outlined,
                 iconColor: Colors.red.shade600,
                 onTap: () {
@@ -354,8 +357,10 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
               _buildOptionDivider(),
               _buildAccountOption(
-                title: 'Delete Account',
-                subtitle: 'Permanently delete your account and all data',
+                title: AppLocalizations.of(context)!.deleteAccount,
+                subtitle: AppLocalizations.of(
+                  context,
+                )!.permanentlyDeleteAccount,
                 icon: Icons.delete_forever_outlined,
                 iconColor: Colors.red.shade600,
                 onTap: () {
@@ -451,33 +456,51 @@ class _AccountScreenState extends State<AccountScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Account Data Usage'),
+        title: Text(AppLocalizations.of(context)!.accountDataUsage),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildDataRow('Storage Used:', '$estimatedStorage MB / 100 MB'),
-            const SizedBox(height: 8),
-            _buildDataRow('Total Tasks:', '${taskStats['total']}'),
-            const SizedBox(height: 8),
-            _buildDataRow('Completed Tasks:', '${taskStats['completed']}'),
-            const SizedBox(height: 8),
-            _buildDataRow('Pending Tasks:', '${taskStats['pending']}'),
+            _buildDataRow(
+              AppLocalizations.of(context)!.storageUsed,
+              '$estimatedStorage MB / 100 MB',
+            ),
             const SizedBox(height: 8),
             _buildDataRow(
-              'Profile Images:',
+              AppLocalizations.of(context)!.totalTasks,
+              '${taskStats['total']}',
+            ),
+            const SizedBox(height: 8),
+            _buildDataRow(
+              AppLocalizations.of(context)!.completedTasks,
+              '${taskStats['completed']}',
+            ),
+            const SizedBox(height: 8),
+            _buildDataRow(
+              AppLocalizations.of(context)!.pendingTasks,
+              '${taskStats['pending']}',
+            ),
+            const SizedBox(height: 8),
+            _buildDataRow(
+              AppLocalizations.of(context)!.profileImages,
               userProfile?.photoUrl != null ? '1' : '0',
             ),
             const SizedBox(height: 8),
-            _buildDataRow('Account Created:', accountCreatedDate),
+            _buildDataRow(
+              AppLocalizations.of(context)!.accountCreated,
+              accountCreatedDate,
+            ),
             const SizedBox(height: 8),
-            _buildDataRow('Last Active:', 'Today'),
+            _buildDataRow(
+              AppLocalizations.of(context)!.lastActive,
+              AppLocalizations.of(context)!.today,
+            ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
+            child: Text(AppLocalizations.of(context)!.close),
           ),
         ],
       ),
@@ -486,10 +509,22 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Widget _buildDataRow(String label, String value) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.w500)),
-        Text(value, style: TextStyle(color: Colors.grey.shade700)),
+        Expanded(
+          flex: 2,
+          child: Text(
+            label,
+            style: const TextStyle(fontWeight: FontWeight.w500),
+          ),
+        ),
+        Expanded(
+          flex: 3,
+          child: Text(
+            value,
+            style: TextStyle(color: Colors.grey.shade700),
+            textAlign: TextAlign.right,
+          ),
+        ),
       ],
     );
   }
@@ -514,18 +549,18 @@ class _AccountScreenState extends State<AccountScreen> {
 
   String _formatDate(DateTime date) {
     final months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
+      AppLocalizations.of(context)!.january,
+      AppLocalizations.of(context)!.february,
+      AppLocalizations.of(context)!.march,
+      AppLocalizations.of(context)!.april,
+      AppLocalizations.of(context)!.may,
+      AppLocalizations.of(context)!.june,
+      AppLocalizations.of(context)!.july,
+      AppLocalizations.of(context)!.august,
+      AppLocalizations.of(context)!.september,
+      AppLocalizations.of(context)!.october,
+      AppLocalizations.of(context)!.november,
+      AppLocalizations.of(context)!.december,
     ];
     return '${months[date.month - 1]} ${date.year}';
   }
@@ -534,14 +569,12 @@ class _AccountScreenState extends State<AccountScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Logout'),
-        content: const Text(
-          'Are you sure you want to logout from this device?',
-        ),
+        title: Text(AppLocalizations.of(context)!.logout),
+        content: Text(AppLocalizations.of(context)!.confirmLogout),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -552,12 +585,12 @@ class _AccountScreenState extends State<AccountScreen> {
                 showDialog(
                   context: context,
                   barrierDismissible: false,
-                  builder: (context) => const AlertDialog(
+                  builder: (context) => AlertDialog(
                     content: Row(
                       children: [
-                        CircularProgressIndicator(),
-                        SizedBox(width: 16),
-                        Text('Signing out...'),
+                        const CircularProgressIndicator(),
+                        const SizedBox(width: 16),
+                        Text(AppLocalizations.of(context)!.signingOut),
                       ],
                     ),
                   ),
@@ -578,14 +611,18 @@ class _AccountScreenState extends State<AccountScreen> {
                   Navigator.pop(context); // Close loading dialog
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Error signing out: ${e.toString()}'),
+                      content: Text(
+                        AppLocalizations.of(
+                          context,
+                        )!.errorSigningOut(e.toString()),
+                      ),
                       backgroundColor: Colors.red,
                     ),
                   );
                 }
               }
             },
-            child: const Text('Logout'),
+            child: Text(AppLocalizations.of(context)!.logout),
           ),
         ],
       ),
@@ -600,8 +637,8 @@ class _AccountScreenState extends State<AccountScreen> {
           children: [
             Icon(Icons.warning_amber_rounded, color: Colors.red.shade600),
             const SizedBox(width: 8),
-            const Text(
-              'Delete Account',
+            Text(
+              AppLocalizations.of(context)!.deleteAccount,
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             ),
           ],
@@ -610,8 +647,8 @@ class _AccountScreenState extends State<AccountScreen> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'This action will permanently remove:',
+            Text(
+              AppLocalizations.of(context)!.deleteAccountWarning,
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 8),
@@ -626,19 +663,21 @@ class _AccountScreenState extends State<AccountScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '• Your profile and personal settings',
+                    AppLocalizations.of(context)!.deleteProfileSettings,
                     style: TextStyle(color: Colors.red.shade700),
                   ),
                   Text(
-                    '• All ${taskStats['total']} tasks and their data',
+                    AppLocalizations.of(
+                      context,
+                    )!.deleteAllTasks(taskStats['total'].toString()),
                     style: TextStyle(color: Colors.red.shade700),
                   ),
                   Text(
-                    '• Account access and login credentials',
+                    AppLocalizations.of(context)!.deleteAccountAccess,
                     style: TextStyle(color: Colors.red.shade700),
                   ),
                   Text(
-                    '• All stored preferences and history',
+                    AppLocalizations.of(context)!.deletePreferencesHistory,
                     style: TextStyle(color: Colors.red.shade700),
                   ),
                 ],
@@ -660,9 +699,9 @@ class _AccountScreenState extends State<AccountScreen> {
                     size: 16,
                   ),
                   const SizedBox(width: 8),
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'This action cannot be undone',
+                      AppLocalizations.of(context)!.actionCannotBeUndone,
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 12,
@@ -677,7 +716,7 @@ class _AccountScreenState extends State<AccountScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           ElevatedButton(
             onPressed: () {
@@ -688,7 +727,7 @@ class _AccountScreenState extends State<AccountScreen> {
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
             ),
-            child: const Text('Continue to Delete'),
+            child: Text(AppLocalizations.of(context)!.continueToDelete),
           ),
         ],
       ),
@@ -702,33 +741,33 @@ class _AccountScreenState extends State<AccountScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Final Confirmation'),
+        title: Text(AppLocalizations.of(context)!.finalConfirmation),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'For security, please enter your password and type "DELETE" to confirm:',
+            Text(
+              AppLocalizations.of(context)!.finalDeleteInstruction,
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 12),
             TextField(
               controller: passwordController,
               obscureText: true,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Current Password',
-                hintText: 'Enter your password',
+                labelText: AppLocalizations.of(context)!.password,
+                hintText: AppLocalizations.of(context)!.enterPassword,
                 prefixIcon: Icon(Icons.lock_outline),
               ),
             ),
             const SizedBox(height: 12),
             TextField(
               controller: confirmController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Confirmation',
-                hintText: 'Type DELETE here',
+                labelText: AppLocalizations.of(context)!.confirmation,
+                hintText: AppLocalizations.of(context)!.typeDeleteHere,
                 prefixIcon: Icon(Icons.warning_outlined),
               ),
             ),
@@ -740,8 +779,8 @@ class _AccountScreenState extends State<AccountScreen> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.red.shade200),
               ),
-              child: const Text(
-                '⚠️ This will permanently delete:\n• Your profile and settings\n• All tasks and data\n• Account access',
+              child: Text(
+                AppLocalizations.of(context)!.deleteWarningDetails,
                 style: TextStyle(fontSize: 12, color: Colors.red),
               ),
             ),
@@ -750,14 +789,16 @@ class _AccountScreenState extends State<AccountScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           ElevatedButton(
             onPressed: () {
               if (passwordController.text.isEmpty) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Please enter your password'),
+                  SnackBar(
+                    content: Text(
+                      AppLocalizations.of(context)!.pleaseEnterPassword,
+                    ),
                     backgroundColor: Colors.red,
                   ),
                 );
@@ -766,8 +807,10 @@ class _AccountScreenState extends State<AccountScreen> {
 
               if (confirmController.text != 'DELETE') {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Please type "DELETE" to confirm'),
+                  SnackBar(
+                    content: Text(
+                      AppLocalizations.of(context)!.pleaseTypeDelete,
+                    ),
                     backgroundColor: Colors.red,
                   ),
                 );
@@ -778,8 +821,8 @@ class _AccountScreenState extends State<AccountScreen> {
               _performAccountDeletion(passwordController.text);
             },
             style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-            child: const Text(
-              'Delete Forever',
+            child: Text(
+              AppLocalizations.of(context)!.deleteForever,
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -792,16 +835,16 @@ class _AccountScreenState extends State<AccountScreen> {
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => const AlertDialog(
+      builder: (context) => AlertDialog(
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             CircularProgressIndicator(color: Colors.red),
             SizedBox(height: 16),
-            Text('Deleting your account...'),
+            Text(AppLocalizations.of(context)!.deletingAccount),
             SizedBox(height: 8),
             Text(
-              'This may take a few moments',
+              AppLocalizations.of(context)!.mayTakeFewMoments,
               style: TextStyle(fontSize: 12, color: Colors.grey),
             ),
           ],
@@ -831,8 +874,12 @@ class _AccountScreenState extends State<AccountScreen> {
           final currentContext = Navigator.of(context).context;
           if (currentContext.mounted) {
             ScaffoldMessenger.of(currentContext).showSnackBar(
-              const SnackBar(
-                content: Text('Account deleted successfully'),
+              SnackBar(
+                content: Text(
+                  AppLocalizations.of(
+                    currentContext,
+                  )!.accountDeletedSuccessfully,
+                ),
                 backgroundColor: Colors.green,
                 duration: Duration(seconds: 3),
               ),
@@ -846,15 +893,17 @@ class _AccountScreenState extends State<AccountScreen> {
 
         String errorMessage;
         if (e.toString().contains('wrong-password')) {
-          errorMessage = 'Incorrect password. Please try again.';
+          errorMessage = AppLocalizations.of(context)!.incorrectPassword;
         } else if (e.toString().contains('too-many-requests')) {
-          errorMessage = 'Too many attempts. Please try again later.';
+          errorMessage = AppLocalizations.of(context)!.tooManyAttempts;
         } else if (e.toString().contains('requires-recent-login')) {
-          errorMessage = 'Please sign out and back in, then try again.';
+          errorMessage = AppLocalizations.of(context)!.signOutAndBackIn;
         } else if (e.toString().contains('network-request-failed')) {
-          errorMessage = 'Network error. Please check your connection.';
+          errorMessage = AppLocalizations.of(context)!.networkError;
         } else {
-          errorMessage = 'Failed to delete account: ${e.toString()}';
+          errorMessage = AppLocalizations.of(
+            context,
+          )!.failedToDeleteAccount(e.toString());
         }
 
         ScaffoldMessenger.of(context).showSnackBar(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/contact_message.dart';
 import '../services/contact_service.dart';
+import '../l10n/app_localizations.dart';
 
 class AdminContactMessagesScreen extends StatefulWidget {
   const AdminContactMessagesScreen({super.key});
@@ -16,7 +17,7 @@ class _AdminContactMessagesScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Contact Messages'),
+        title: Text(AppLocalizations.of(context)!.contactMessages),
         backgroundColor: Colors.blue.shade600,
         foregroundColor: Colors.white,
         actions: [
@@ -34,7 +35,7 @@ class _AdminContactMessagesScreenState
                       padding: const EdgeInsets.only(right: 16.0),
                       child: Chip(
                         label: Text(
-                          '$unreadCount new',
+                          '$unreadCount ${AppLocalizations.of(context)!.newMessages}',
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 12,
@@ -62,11 +63,13 @@ class _AdminContactMessagesScreenState
                 children: [
                   const Icon(Icons.error, size: 64, color: Colors.red),
                   const SizedBox(height: 16),
-                  Text('Error: ${snapshot.error}'),
+                  Text(
+                    '${AppLocalizations.of(context)!.errorLoadingMessages}: ${snapshot.error}',
+                  ),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () => setState(() {}),
-                    child: const Text('Retry'),
+                    child: Text(AppLocalizations.of(context)!.retry),
                   ),
                 ],
               ),
@@ -76,15 +79,19 @@ class _AdminContactMessagesScreenState
           final messages = snapshot.data ?? [];
 
           if (messages.isEmpty) {
-            return const Center(
+            return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.message_outlined, size: 64, color: Colors.grey),
-                  SizedBox(height: 16),
+                  const Icon(
+                    Icons.message_outlined,
+                    size: 64,
+                    color: Colors.grey,
+                  ),
+                  const SizedBox(height: 16),
                   Text(
-                    'No contact messages yet',
-                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                    AppLocalizations.of(context)!.noContactMessages,
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
                   ),
                 ],
               ),
@@ -139,8 +146,8 @@ class _AdminContactMessagesScreenState
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Text(
-                  'NEW',
+                child: Text(
+                  AppLocalizations.of(context)!.newLabel,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 10,
@@ -173,8 +180,8 @@ class _AdminContactMessagesScreenState
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Message:',
+                Text(
+                  AppLocalizations.of(context)!.messageLabel,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
@@ -201,7 +208,9 @@ class _AdminContactMessagesScreenState
                               : Icons.mark_email_unread,
                         ),
                         label: Text(
-                          isUnread ? 'Mark as Read' : 'Mark as Unread',
+                          isUnread
+                              ? AppLocalizations.of(context)!.markAsRead
+                              : AppLocalizations.of(context)!.markAsUnread,
                         ),
                       ),
                     ),
@@ -210,7 +219,7 @@ class _AdminContactMessagesScreenState
                       child: ElevatedButton.icon(
                         onPressed: () => _showReplyDialog(message),
                         icon: const Icon(Icons.reply),
-                        label: const Text('Reply'),
+                        label: Text(AppLocalizations.of(context)!.reply),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue.shade600,
                           foregroundColor: Colors.white,
@@ -225,8 +234,8 @@ class _AdminContactMessagesScreenState
                   child: OutlinedButton.icon(
                     onPressed: () => _deleteMessage(message.id),
                     icon: const Icon(Icons.delete, color: Colors.red),
-                    label: const Text(
-                      'Delete Message',
+                    label: Text(
+                      AppLocalizations.of(context)!.deleteMessage,
                       style: TextStyle(color: Colors.red),
                     ),
                     style: OutlinedButton.styleFrom(

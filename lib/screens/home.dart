@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nhom10/widgets/tasks.dart';
 import 'package:nhom10/widgets/filter_bottom_sheet.dart';
+import 'package:nhom10/l10n/app_localizations.dart';
 import 'profile.dart';
 import 'menu.dart';
 import 'add_task.dart';
@@ -142,7 +143,7 @@ PreferredSizeWidget _buildAppBar(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hello! 👋',
+                '${AppLocalizations.of(context)!.hello}! 👋',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.w700,
                   color: colorScheme.onSurface,
@@ -150,7 +151,7 @@ PreferredSizeWidget _buildAppBar(BuildContext context) {
                 ),
               ),
               Text(
-                'Let\'s be productive today',
+                AppLocalizations.of(context)!.letsBeProductive,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: colorScheme.onSurface.withValues(alpha: 0.7),
                   fontSize: 12,
@@ -343,7 +344,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Your Progress',
+                              AppLocalizations.of(context)!.yourProgress,
                               style: Theme.of(context).textTheme.titleMedium
                                   ?.copyWith(
                                     fontWeight: FontWeight.w700,
@@ -355,14 +356,14 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 _buildStatsChip(
                                   '${widget.taskStats['completed'] ?? 0}',
-                                  'Done',
+                                  AppLocalizations.of(context)!.done,
                                   Icons.check_circle_rounded,
                                   colorScheme.onPrimary,
                                 ),
                                 const SizedBox(width: 8),
                                 _buildStatsChip(
                                   '${widget.taskStats['pending'] ?? 0}',
-                                  'Left',
+                                  AppLocalizations.of(context)!.left,
                                   Icons.access_time_rounded,
                                   colorScheme.onPrimary.withValues(alpha: 0.8),
                                 ),
@@ -404,7 +405,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Find Tasks',
+                  AppLocalizations.of(context)!.findTasks,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: colorScheme.onSurface,
@@ -438,7 +439,7 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 14,
                           ),
                           decoration: InputDecoration(
-                            hintText: 'Search tasks...',
+                            hintText: AppLocalizations.of(context)!.searchTasks,
                             hintStyle: TextStyle(
                               color: colorScheme.onSurface.withValues(
                                 alpha: 0.5,
@@ -589,7 +590,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Your Tasks',
+                      AppLocalizations.of(context)!.yourTasks,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w700,
                         color: colorScheme.onSurface,
@@ -623,7 +624,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               const SizedBox(width: 4),
                               Text(
-                                'Clear',
+                                AppLocalizations.of(context)!.clear,
                                 style: TextStyle(
                                   color: colorScheme.onErrorContainer,
                                   fontSize: 11,

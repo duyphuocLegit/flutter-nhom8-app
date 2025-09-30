@@ -1,0 +1,1575 @@
+{
+    "@@locale": "vi",
+    "appTitle": "Ứng Dụng Nhiệm Vụ",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "hello": "Xin chào",
+    "@hello": {
+        "description": "A greeting"
+    },
+    "welcome": "Chào mừng",
+    "@welcome": {
+        "description": "Welcome message"
+    },
+    "letsBeProductive": "Hãy làm việc hiệu quả hôm nay",
+    "@letsBeProductive": {
+        "description": "Motivational message for home screen"
+    },
+    "login": "Đăng nhập",
+    "@login": {
+        "description": "Login button text"
+    },
+    "logout": "Đăng xuất",
+    "@logout": {
+        "description": "Logout button text"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email field label"
+    },
+    "password": "Mật khẩu",
+    "@password": {
+        "description": "Password field label"
+    },
+    "confirmPassword": "Xác nhận mật khẩu",
+    "@confirmPassword": {
+        "description": "Confirm password field label"
+    },
+    "signUp": "Đăng ký",
+    "@signUp": {
+        "description": "Sign up button text"
+    },
+    "forgotPassword": "Quên mật khẩu?",
+    "@forgotPassword": {
+        "description": "Forgot password link text"
+    },
+    "createAccount": "Tạo tài khoản",
+    "@createAccount": {
+        "description": "Create account text"
+    },
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "@alreadyHaveAccount": {
+        "description": "Already have account text"
+    },
+    "dontHaveAccount": "Chưa có tài khoản?",
+    "@dontHaveAccount": {
+        "description": "Don't have account text"
+    },
+    "home": "Trang chủ",
+    "@home": {
+        "description": "Home tab label"
+    },
+    "tasks": "Nhiệm vụ",
+    "@tasks": {
+        "description": "Tasks tab label"
+    },
+    "calendar": "Lịch",
+    "@calendar": {
+        "description": "Calendar tab label"
+    },
+    "settings": "Cài đặt",
+    "@settings": {
+        "description": "Settings tab label"
+    },
+    "profile": "Hồ sơ",
+    "@profile": {
+        "description": "Profile tab label"
+    },
+    "addTask": "Thêm nhiệm vụ",
+    "@addTask": {
+        "description": "Add task button text"
+    },
+    "taskTitle": "Tiêu đề nhiệm vụ",
+    "@taskTitle": {
+        "description": "Task title field label"
+    },
+    "taskDescription": "Mô tả nhiệm vụ",
+    "@taskDescription": {
+        "description": "Task description field label"
+    },
+    "dueDate": "Ngày đến hạn",
+    "@dueDate": {
+        "description": "Due date field label"
+    },
+    "priority": "Độ ưu tiên",
+    "@priority": {
+        "description": "Priority field label"
+    },
+    "high": "Cao",
+    "@high": {
+        "description": "High priority"
+    },
+    "medium": "Trung bình",
+    "@medium": {
+        "description": "Medium priority"
+    },
+    "low": "Thấp",
+    "@low": {
+        "description": "Low priority"
+    },
+    "save": "Lưu",
+    "@save": {
+        "description": "Save button text"
+    },
+    "cancel": "Hủy",
+    "@cancel": {
+        "description": "Cancel button text"
+    },
+    "delete": "Xóa",
+    "@delete": {
+        "description": "Delete button text"
+    },
+    "edit": "Chỉnh sửa",
+    "@edit": {
+        "description": "Edit button text"
+    },
+    "language": "Ngôn ngữ",
+    "@language": {
+        "description": "Language setting label"
+    },
+    "theme": "Chủ đề",
+    "@theme": {
+        "description": "Theme setting label"
+    },
+    "notifications": "Thông báo",
+    "@notifications": {
+        "description": "Notifications setting label"
+    },
+    "aboutApp": "Về ứng dụng",
+    "@aboutApp": {
+        "description": "About app setting label"
+    },
+    "version": "Phiên bản",
+    "@version": {
+        "description": "Version label"
+    },
+    "darkMode": "Chế độ tối",
+    "@darkMode": {
+        "description": "Dark mode setting label"
+    },
+    "lightMode": "Chế độ sáng",
+    "@lightMode": {
+        "description": "Light mode setting label"
+    },
+    "systemMode": "Chế độ hệ thống",
+    "@systemMode": {
+        "description": "System mode setting label"
+    },
+    "completed": "Hoàn thành",
+    "@completed": {
+        "description": "Completed status"
+    },
+    "pending": "Đang chờ",
+    "@pending": {
+        "description": "Pending status"
+    },
+    "overdue": "Quá hạn",
+    "@overdue": {
+        "description": "Overdue status"
+    },
+    "noTasksFound": "Không tìm thấy nhiệm vụ nào",
+    "@noTasksFound": {
+        "description": "Message when no tasks are found"
+    },
+    "searchTasks": "Tìm kiếm nhiệm vụ...",
+    "@searchTasks": {
+        "description": "Search tasks placeholder"
+    },
+    "yourProgress": "Tiến Độ Của Bạn",
+    "@yourProgress": {
+        "description": "Progress section title"
+    },
+    "done": "Hoàn thành",
+    "@done": {
+        "description": "Completed tasks label"
+    },
+    "left": "Còn lại",
+    "@left": {
+        "description": "Remaining tasks label"
+    },
+    "findTasks": "Tìm Nhiệm Vụ",
+    "@findTasks": {
+        "description": "Find tasks section title"
+    },
+    "yourTasks": "Nhiệm Vụ Của Bạn",
+    "@yourTasks": {
+        "description": "Your tasks section title"
+    },
+    "clear": "Xóa",
+    "@clear": {
+        "description": "Clear filters button text"
+    },
+    "showingTasks": "Hiển thị {count} nhiệm vụ{count, plural, =1{} other{}}",
+    "@showingTasks": {
+        "description": "Task count display text",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "allCompleted": "Tất cả đã hoàn thành! 🎉",
+    "@allCompleted": {
+        "description": "Message when all tasks are completed"
+    },
+    "clearAllFilters": "Xóa Tất Cả Bộ Lọc",
+    "@clearAllFilters": {
+        "description": "Clear all filters button text"
+    },
+    "filterByPriority": "Lọc theo độ ưu tiên",
+    "@filterByPriority": {
+        "description": "Filter by priority option"
+    },
+    "filterByStatus": "Lọc theo trạng thái",
+    "@filterByStatus": {
+        "description": "Filter by status option"
+    },
+    "all": "Tất cả",
+    "@all": {
+        "description": "All filter option"
+    },
+    "today": "Hôm nay",
+    "@today": {
+        "description": "Today filter option"
+    },
+    "thisWeek": "Tuần này",
+    "@thisWeek": {
+        "description": "This week filter option"
+    },
+    "thisMonth": "Tháng này",
+    "@thisMonth": {
+        "description": "This month filter option"
+    },
+    "error": "Lỗi",
+    "@error": {
+        "description": "Generic error message"
+    },
+    "success": "Thành công",
+    "@success": {
+        "description": "Generic success message"
+    },
+    "loading": "Đang tải...",
+    "@loading": {
+        "description": "Loading message"
+    },
+    "retry": "Thử lại",
+    "@retry": {
+        "description": "Retry button text"
+    },
+    "noInternetConnection": "Không có kết nối internet",
+    "@noInternetConnection": {
+        "description": "No internet connection message"
+    },
+    "pleaseEnterValidEmail": "Vui lòng nhập email hợp lệ",
+    "@pleaseEnterValidEmail": {
+        "description": "Invalid email validation message"
+    },
+    "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
+    "@passwordTooShort": {
+        "description": "Password too short validation message"
+    },
+    "passwordsDoNotMatch": "Mật khẩu không khớp",
+    "@passwordsDoNotMatch": {
+        "description": "Passwords don't match validation message"
+    },
+    "fieldRequired": "Trường này là bắt buộc",
+    "@fieldRequired": {
+        "description": "Required field validation message"
+    },
+    "clearCache": "Xóa bộ nhớ đệm",
+    "@clearCache": {
+        "description": "Clear cache button/option text"
+    },
+    "resetSettings": "Đặt lại cài đặt",
+    "@resetSettings": {
+        "description": "Reset settings button/option text"
+    },
+    "clearCacheMessage": "Điều này sẽ xóa tất cả các tệp tạm thời và dữ liệu được lưu trong bộ nhớ đệm. Ứng dụng có thể cần tải lại nội dung.",
+    "@clearCacheMessage": {
+        "description": "Clear cache dialog message"
+    },
+    "resetSettingsMessage": "Điều này sẽ đặt lại tất cả cài đặt về giá trị mặc định. Hành động này không thể hoàn tác.",
+    "@resetSettingsMessage": {
+        "description": "Reset settings dialog message"
+    },
+    "cacheCleared": "Đã xóa bộ nhớ đệm thành công",
+    "@cacheCleared": {
+        "description": "Cache cleared success message"
+    },
+    "reset": "Đặt lại",
+    "@reset": {
+        "description": "Reset button text"
+    },
+    "removeAccount": "Xóa tài khoản",
+    "@removeAccount": {
+        "description": "Remove account dialog title"
+    },
+    "removeAccountMessage": "Xóa {email} khỏi danh sách tài khoản đã lưu?",
+    "@removeAccountMessage": {
+        "description": "Remove account confirmation message",
+        "placeholders": {
+            "email": {
+                "type": "String",
+                "description": "The email address to remove"
+            }
+        }
+    },
+    "remove": "Xóa",
+    "@remove": {
+        "description": "Remove button text"
+    },
+    "accountRemoved": "Đã xóa tài khoản",
+    "@accountRemoved": {
+        "description": "Account removed success message"
+    },
+    "errorRemovingAccount": "Lỗi khi xóa tài khoản: {error}",
+    "@errorRemovingAccount": {
+        "description": "Error removing account message",
+        "placeholders": {
+            "error": {
+                "type": "String",
+                "description": "The error message"
+            }
+        }
+    },
+    "accountSaved": "Tài khoản đã được lưu và đồng bộ với Firebase",
+    "@accountSaved": {
+        "description": "Account saved success message"
+    },
+    "mostRecent": "Gần đây nhất",
+    "@mostRecent": {
+        "description": "Most recent sort option"
+    },
+    "alphabetical": "Theo bảng chữ cái",
+    "@alphabetical": {
+        "description": "Alphabetical sort option"
+    },
+    "editTask": "Chỉnh sửa nhiệm vụ",
+    "@editTask": {
+        "description": "Edit task screen title"
+    },
+    "addNewTask": "Thêm nhiệm vụ mới",
+    "@addNewTask": {
+        "description": "Add new task screen title"
+    },
+    "menu": "Menu",
+    "@menu": {
+        "description": "Menu screen title"
+    },
+    "account": "Tài khoản",
+    "@account": {
+        "description": "Account menu item"
+    },
+    "contactUs": "Liên hệ",
+    "@contactUs": {
+        "description": "Contact Us menu item"
+    },
+    "aboutUs": "Giới thiệu",
+    "@aboutUs": {
+        "description": "About Us menu item"
+    },
+    "help": "Trợ giúp",
+    "@help": {
+        "description": "Help menu item"
+    },
+    "sendMessage": "Gửi tin nhắn",
+    "@sendMessage": {
+        "description": "Send message button text"
+    },
+    "send": "Gửi",
+    "@send": {
+        "description": "Send button text"
+    },
+    "name": "Tên",
+    "@name": {
+        "description": "Name field label"
+    },
+    "message": "Tin nhắn",
+    "@message": {
+        "description": "Message field label"
+    },
+    "writeYourMessage": "Viết tin nhắn của bạn tại đây...",
+    "@writeYourMessage": {
+        "description": "Message field placeholder"
+    },
+    "messageSent": "Tin nhắn đã được gửi thành công!",
+    "@messageSent": {
+        "description": "Message sent success text"
+    },
+    "viewAll": "Xem tất cả",
+    "@viewAll": {
+        "description": "View all button text"
+    },
+    "editProfile": "Chỉnh sửa hồ sơ",
+    "@editProfile": {
+        "description": "Edit profile button text"
+    },
+    "changePassword": "Đổi mật khẩu",
+    "@changePassword": {
+        "description": "Change password button text"
+    },
+    "accountDataUsage": "Sử dụng dữ liệu tài khoản",
+    "@accountDataUsage": {
+        "description": "Account data usage section title"
+    },
+    "totalTasks": "Tổng số nhiệm vụ",
+    "@totalTasks": {
+        "description": "Total tasks label"
+    },
+    "activeProjects": "Dự án đang hoạt động",
+    "@activeProjects": {
+        "description": "Active projects label"
+    },
+    "dataSync": "Đồng bộ dữ liệu",
+    "privacyPolicy": "Chính sách bảo mật",
+    "lastUpdated": "Cập nhật lần cuối: 27 tháng 9, 2025",
+    "privacyDescription": "Quyền riêng tư của bạn rất quan trọng đối với chúng tôi. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn.",
+    "informationWeCollect": "Thông tin chúng tôi thu thập",
+    "howWeUseYourInformation": "Cách chúng tôi sử dụng thông tin của bạn",
+    "dataStorageSecurity": "Lưu trữ dữ liệu & Bảo mật",
+    "dataSharing": "Chia sẻ dữ liệu",
+    "yourRights": "Quyền của bạn",
+    "thirdPartyServices": "Dịch vụ bên thứ ba",
+    "questionsOrConcerns": "Câu hỏi hoặc quan tâm?",
+    "privacyContactDescription": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách bảo mật này hoặc cách chúng tôi xử lý dữ liệu của bạn, vui lòng liên hệ với chúng tôi:",
+    "privacyResponseTime": "Chúng tôi sẽ phản hồi tất cả các câu hỏi liên quan đến quyền riêng tư trong vòng 48 giờ.",
+    "accountInfoCollection": "Thông tin tài khoản: Địa chỉ email, tên và ảnh đại diện khi bạn đăng ký",
+    "taskDataCollection": "Dữ liệu nhiệm vụ: Các nhiệm vụ, danh mục, ngày đến hạn và trạng thái hoàn thành của bạn",
+    "usageDataCollection": "Dữ liệu sử dụng: Cách bạn tương tác với ứng dụng để cải thiện trải nghiệm người dùng",
+    "deviceInfoCollection": "Thông tin thiết bị: Loại thiết bị và hệ điều hành để đảm bảo tương thích",
+    "provideService": "Cung cấp và duy trì dịch vụ quản lý nhiệm vụ",
+    "syncData": "Đồng bộ dữ liệu của bạn trên các thiết bị một cách an toàn",
+    "sendNotifications": "Gửi thông báo về nhiệm vụ và thời hạn của bạn",
+    "improveApp": "Cải thiện hiệu suất ứng dụng và thêm các tính năng mới",
+    "customerSupport": "Cung cấp hỗ trợ khách hàng khi cần thiết",
+    "secureStorage": "Dữ liệu của bạn được lưu trữ an toàn bằng Firebase với mã hóa tiêu chuẩn ngành",
+    "httpsConnections": "Chúng tôi sử dụng kết nối HTTPS an toàn cho tất cả việc truyền dữ liệu",
+    "privateTasks": "Nhiệm vụ của bạn là riêng tư và chỉ bạn mới có thể truy cập",
+    "securityUpdates": "Chúng tôi thực hiện cập nhật bảo mật và giám sát thường xuyên",
+    "encryptedBackups": "Dữ liệu sao lưu được mã hóa và lưu trữ an toàn",
+    "noSellData": "Chúng tôi không bán thông tin cá nhân của bạn cho bên thứ ba",
+    "noShareTasks": "Chúng tôi không chia sẻ dữ liệu nhiệm vụ của bạn với người dùng khác",
+    "anonymousStats": "Thống kê sử dụng ẩn danh có thể được sử dụng để cải thiện ứng dụng",
+    "legalRequirements": "Chúng tôi chỉ có thể chia sẻ dữ liệu nếu được yêu cầu bởi pháp luật hoặc để bảo vệ quyền lợi của chúng tôi",
+    "accessRight": "Truy cập: Bạn có thể xem tất cả dữ liệu của mình trong ứng dụng",
+    "updateRight": "Cập nhật: Bạn có thể sửa đổi hồ sơ và thông tin nhiệm vụ bất cứ lúc nào",
+    "deleteRight": "Xóa: Bạn có thể xóa tài khoản và tất cả dữ liệu liên quan",
+    "exportRight": "Xuất: Bạn có thể yêu cầu một bản sao dữ liệu của mình",
+    "controlRight": "Kiểm soát: Bạn có thể quản lý cài đặt thông báo và quyền riêng tư",
+    "firebaseService": "Firebase: Được sử dụng để xác thực, lưu trữ dữ liệu và các chức năng đám mây",
+    "googlePlayServices": "Dịch vụ Google Play: Để phân phối ứng dụng và báo cáo sự cố",
+    "noAdvertising": "Không sử dụng mạng quảng cáo hoặc dịch vụ theo dõi",
+    "thirdPartyCompliance": "Tất cả các dịch vụ bên thứ ba tuân thủ chính sách bảo mật riêng của họ",
+    "profileUpdatedSuccess": "Cập nhật hồ sơ thành công!",
+    "errorUpdatingProfile": "Lỗi cập nhật hồ sơ",
+    "photoUploadComingSoon": "Tính năng tải ảnh lên sẽ có sớm!",
+    "tapCameraToChangePhoto": "Nhấn vào biểu tượng máy ảnh để thay đổi ảnh",
+    "personalInformation": "Thông tin cá nhân",
+    "displayName": "Tên hiển thị",
+    "enterDisplayName": "Nhập tên hiển thị của bạn",
+    "pleaseEnterDisplayName": "Vui lòng nhập tên hiển thị",
+    "displayNameMinLength": "Tên hiển thị phải có ít nhất 2 ký tự",
+    "emailAddress": "Địa chỉ email",
+    "emailCannotBeChanged": "Email không thể thay đổi từ màn hình này vì lý do bảo mật",
+    "updateProfile": "Cập nhật hồ sơ",
+    "@updateProfile": {
+        "description": "Update profile button text"
+    },
+    "passwordChangedSuccess": "Thay đổi mật khẩu thành công!",
+    "currentPasswordIncorrect": "Mật khẩu hiện tại không đúng",
+    "newPasswordTooWeak": "Mật khẩu mới quá yếu",
+    "requiresRecentLogin": "Vui lòng đăng xuất và đăng nhập lại trước khi thay đổi mật khẩu",
+    "errorChangingPassword": "Lỗi thay đổi mật khẩu",
+    "currentPassword": "Mật khẩu hiện tại",
+    "newPassword": "Mật khẩu mới",
+    "confirmNewPassword": "Xác nhận mật khẩu mới",
+    "pleaseEnterCurrentPassword": "Vui lòng nhập mật khẩu hiện tại",
+    "pleaseEnterNewPassword": "Vui lòng nhập mật khẩu mới",
+    "passwordMinLength": "Mật khẩu phải có ít nhất 6 ký tự",
+    "pleaseConfirmNewPassword": "Vui lòng xác nhận mật khẩu mới",
+    "contactMessages": "Tin nhắn liên hệ",
+    "newMessages": "mới",
+    "errorLoadingMessages": "Lỗi",
+    "noContactMessages": "Chưa có tin nhắn liên hệ nào",
+    "newLabel": "MỚI",
+    "messageLabel": "Tin nhắn:",
+    "markAsRead": "Đánh dấu đã đọc",
+    "markAsUnread": "Đánh dấu chưa đọc",
+    "reply": "Trả lời",
+    "deleteMessage": "Xóa tin nhắn",
+    "dayAgo": "ngày trước",
+    "daysAgo": "ngày trước",
+    "hourAgo": "giờ trước",
+    "hoursAgo": "giờ trước",
+    "minuteAgo": "phút trước",
+    "minutesAgo": "phút trước",
+    "justNow": "Vừa xong",
+    "failedToUpdateStatus": "Không thể cập nhật trạng thái tin nhắn",
+    "confirmDeleteMessage": "Bạn có chắc chắn muốn xóa tin nhắn này không? Hành động này không thể hoàn tác.",
+    "messageDeletedSuccess": "Xóa tin nhắn thành công",
+    "failedToDeleteMessage": "Không thể xóa tin nhắn",
+    "replyTo": "Trả lời cho",
+    "emailLabel": "Email:",
+    "emailAppDescription": "Điều này sẽ mở ứng dụng email mặc định của bạn để soạn thảo trả lời.",
+    "openEmailApp": "Mở ứng dụng Email",
+    "emailFunctionalityPlaceholder": "Chức năng email sẽ được triển khai ở đây",
+    "userName": "Tên người dùng",
+    "defaultEmail": "user@example.com",
+    "tasksCompleted": "Nhiệm vụ\nHoàn thành",
+    "activeTasks": "Nhiệm vụ\nĐang thực hiện",
+    "daysStreak": "Ngày\nLiên tiếp",
+    "userNotAuthenticated": "Người dùng chưa xác thực",
+    "failedToLoadAccountData": "Không thể tải dữ liệu tài khoản: {error}",
+    "accountManagement": "Quản lý tài khoản",
+    "updateProfileDetails": "Cập nhật tên, ảnh và thông tin cá nhân",
+    "updatePasswordForSecurity": "Cập nhật mật khẩu để bảo mật",
+    "accountData": "Dữ liệu tài khoản",
+    "viewAccountStorage": "Xem dung lượng lưu trữ và dữ liệu tài khoản",
+    "signOutOfAccount": "Đăng xuất khỏi tài khoản trên thiết bị này",
+    "deleteAccount": "Xóa tài khoản",
+    "permanentlyDeleteAccount": "Xóa vĩnh viễn tài khoản và toàn bộ dữ liệu",
+    "storageUsed": "Dung lượng đã sử dụng:",
+    "completedTasks": "Công việc đã hoàn thành:",
+    "pendingTasks": "Công việc đang chờ:",
+    "profileImages": "Ảnh hồ sơ:",
+    "accountCreated": "Ngày tạo tài khoản:",
+    "lastActive": "Hoạt động gần nhất:",
+    "close": "Đóng",
+    "active": "Đang hoạt động",
+    "@active": {
+        "description": "User status indicator"
+    },
+    "logoutConfirm": "Bạn có chắc muốn đăng xuất khỏi thiết bị này?",
+    "confirmLogout": "Bạn có chắc chắn muốn đăng xuất khỏi thiết bị này không?",
+    "@confirmLogout": {
+        "description": "Thông báo xác nhận cho hộp thoại đăng xuất"
+    },
+    "signingOut": "Đang đăng xuất...",
+    "errorSigningOut": "Lỗi khi đăng xuất: {error}",
+    "deleteAccountWarning": "Thao tác này sẽ xóa vĩnh viễn:",
+    "deleteProfileSettings": "• Hồ sơ và cài đặt cá nhân",
+    "deleteAllTasks": "• Tất cả {taskCount} công việc và dữ liệu",
+    "deleteAccountAccess": "• Quyền truy cập và thông tin đăng nhập",
+    "deletePreferencesHistory": "• Tất cả tùy chọn và lịch sử đã lưu",
+    "actionCannotBeUndone": "Thao tác này không thể hoàn tác",
+    "continueToDelete": "Tiếp tục xóa",
+    "finalConfirmation": "Xác nhận cuối cùng",
+    "finalDeleteInstruction": "Vui lòng nhập mật khẩu và gõ \"DELETE\" để xác nhận:",
+    "enterPassword": "Nhập mật khẩu",
+    "confirmation": "Xác nhận",
+    "typeDeleteHere": "Gõ DELETE tại đây",
+    "deleteWarningDetails": "⚠️ Thao tác này sẽ xóa vĩnh viễn:\n• Hồ sơ và cài đặt\n• Tất cả công việc và dữ liệu\n• Quyền truy cập tài khoản",
+    "pleaseEnterPassword": "Vui lòng nhập mật khẩu",
+    "pleaseTypeDelete": "Vui lòng gõ \"DELETE\" để xác nhận",
+    "deleteForever": "Xóa vĩnh viễn",
+    "deletingAccount": "Đang xóa tài khoản...",
+    "mayTakeFewMoments": "Quá trình này có thể mất vài phút",
+    "accountDeletedSuccessfully": "Xóa tài khoản thành công",
+    "incorrectPassword": "Mật khẩu không đúng. Vui lòng thử lại.",
+    "tooManyAttempts": "Quá nhiều lần thử. Vui lòng thử lại sau.",
+    "networkError": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
+    "failedToDeleteAccount": "Không thể xóa tài khoản: {error}",
+    "appearance": "Giao diện",
+    "appSettings": "Cài đặt ứng dụng",
+    "getRemindersForTasks": "Nhận nhắc nhở cho nhiệm vụ của bạn",
+    "taskManager": "Quản Lý Nhiệm Vụ",
+    "@taskManager": {
+        "description": "Tên ứng dụng trong màn hình giới thiệu"
+    },
+    "versionNumber": "Phiên bản 1.0.0",
+    "@versionNumber": {
+        "description": "Số phiên bản ứng dụng"
+    },
+    "ourMission": "Sứ Mệnh Của Chúng Tôi",
+    "@ourMission": {
+        "description": "Tiêu đề phần sứ mệnh"
+    },
+    "missionDescription": "Chúng tôi tin rằng việc quản lý nhiệm vụ nên đơn giản và hiệu quả. Ứng dụng của chúng tôi được thiết kế để giúp bạn tổ chức các nhiệm vụ hàng ngày, đặt ưu tiên và đạt được mục tiêu một cách dễ dàng.",
+    "@missionDescription": {
+        "description": "Mô tả sứ mệnh"
+    },
+    "keyFeatures": "Tính Năng Chính",
+    "@keyFeatures": {
+        "description": "Tiêu đề phần tính năng chính"
+    },
+    "taskCreationManagement": "Tạo & Quản Lý Nhiệm Vụ",
+    "@taskCreationManagement": {
+        "description": "Tính năng tạo nhiệm vụ"
+    },
+    "prioritySetting": "Thiết Lập Ưu Tiên",
+    "@prioritySetting": {
+        "description": "Tính năng thiết lập ưu tiên"
+    },
+    "userProfileManagement": "Quản Lý Hồ Sơ Người Dùng",
+    "@userProfileManagement": {
+        "description": "Tính năng quản lý hồ sơ"
+    },
+    "secureAuthentication": "Xác Thực Bảo Mật",
+    "@secureAuthentication": {
+        "description": "Tính năng xác thực"
+    },
+    "cloudSynchronization": "Đồng Bộ Đám Mây",
+    "@cloudSynchronization": {
+        "description": "Tính năng đồng bộ đám mây"
+    },
+    "ourTeam": "Đội Ngũ Của Chúng Tôi",
+    "@ourTeam": {
+        "description": "Tiêu đề phần đội ngũ"
+    },
+    "teamDescription": "Được phát triển bởi Nhóm 10 - Một đội ngũ các nhà phát triển tận tâm, đam mê tạo ra các công cụ năng suất trực quan và mạnh mẽ.",
+    "@teamDescription": {
+        "description": "Mô tả đội ngũ"
+    },
+    "messageSavedSuccessfully": "Lưu tin nhắn thành công!",
+    "@messageSavedSuccessfully": {
+        "description": "Thông báo lưu tin nhắn thành công"
+    },
+    "messageSavedDescription": "Tin nhắn của bạn đã được lưu vào cơ sở dữ liệu. Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+    "@messageSavedDescription": {
+        "description": "Mô tả tin nhắn đã lưu"
+    },
+    "thankYou": "Cảm Ơn!",
+    "@thankYou": {
+        "description": "Tiêu đề hộp thoại cảm ơn"
+    },
+    "thankYouDescription": "Tin nhắn của bạn đã được lưu vào cơ sở dữ liệu. Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+    "@thankYouDescription": {
+        "description": "Mô tả hộp thoại cảm ơn"
+    },
+    "failedToSendMessage": "Không thể gửi tin nhắn",
+    "@failedToSendMessage": {
+        "description": "Tiêu đề lỗi gửi tin nhắn"
+    },
+    "checkConnectionTryAgain": "Vui lòng kiểm tra kết nối và thử lại.",
+    "@checkConnectionTryAgain": {
+        "description": "Thông báo lỗi kết nối"
+    },
+    "pleaseEnterMessage": "Vui lòng nhập tin nhắn của bạn",
+    "@pleaseEnterMessage": {
+        "description": "Lỗi xác thực tin nhắn"
+    },
+    "messageMinLength": "Tin nhắn phải có ít nhất 10 ký tự (hiện tại {currentLength})",
+    "@messageMinLength": {
+        "description": "Xác thực độ dài tối thiểu tin nhắn",
+        "placeholders": {
+            "currentLength": {
+                "type": "int",
+                "description": "Độ dài tin nhắn hiện tại"
+            }
+        }
+    },
+    "messageTooLong": "Tin nhắn quá dài (tối đa 500 ký tự)",
+    "@messageTooLong": {
+        "description": "Xác thực độ dài tối đa tin nhắn"
+    },
+    "meaningfulMessage": "Vui lòng nhập tin nhắn có ý nghĩa (tránh lặp lại ký tự)",
+    "@meaningfulMessage": {
+        "description": "Xác thực tin nhắn có ý nghĩa"
+    },
+    "messageMustContainLetters": "Tin nhắn phải chứa chữ cái hoặc số",
+    "@messageMustContainLetters": {
+        "description": "Xác thực nội dung tin nhắn"
+    },
+    "invalidMessageFormat": "Định dạng tin nhắn không hợp lệ. Vui lòng thử lại.",
+    "@invalidMessageFormat": {
+        "description": "Lỗi định dạng tin nhắn không hợp lệ"
+    },
+    "howCanWeHelp": "Chúng tôi có thể giúp gì cho bạn?",
+    "@howCanWeHelp": {
+        "description": "Tiêu đề màn hình trợ giúp"
+    },
+    "helpDescription": "Tìm câu trả lời cho các câu hỏi thường gặp và học cách sử dụng ứng dụng hiệu quả.",
+    "@helpDescription": {
+        "description": "Mô tả màn hình trợ giúp"
+    },
+    "frequentlyAskedQuestions": "Câu Hỏi Thường Gặp",
+    "@frequentlyAskedQuestions": {
+        "description": "Tiêu đề phần FAQ"
+    },
+    "howToCreateTask": "Làm thế nào để tạo nhiệm vụ mới?",
+    "@howToCreateTask": {
+        "description": "Câu hỏi FAQ"
+    },
+    "createTaskAnswer": "Nhấn nút \"+\" trên màn hình chính và điền thông tin chi tiết nhiệm vụ bao gồm tiêu đề, mô tả và mức độ ưu tiên.",
+    "@createTaskAnswer": {
+        "description": "Câu trả lời FAQ"
+    },
+    "howToEditProfile": "Làm thế nào để chỉnh sửa hồ sơ?",
+    "@howToEditProfile": {
+        "description": "Câu hỏi FAQ"
+    },
+    "editProfileAnswer": "Vào Menu > Tài Khoản > Chỉnh Sửa Hồ Sơ để cập nhật thông tin cá nhân và ảnh hồ sơ.",
+    "@editProfileAnswer": {
+        "description": "Câu trả lời FAQ"
+    },
+    "howToChangePassword": "Làm thế nào để đổi mật khẩu?",
+    "@howToChangePassword": {
+        "description": "Câu hỏi FAQ"
+    },
+    "changePasswordAnswer": "Điều hướng đến Menu > Tài Khoản > Đổi Mật Khẩu và làm theo hướng dẫn để cập nhật mật khẩu.",
+    "@changePasswordAnswer": {
+        "description": "Câu trả lời FAQ"
+    },
+    "howToDeleteTasks": "Tôi có thể xóa nhiệm vụ đã hoàn thành không?",
+    "@howToDeleteTasks": {
+        "description": "Câu hỏi FAQ"
+    },
+    "deleteTasksAnswer": "Có, bạn có thể xóa nhiệm vụ bằng cách vuốt sang trái trên bất kỳ nhiệm vụ nào trong danh sách nhiệm vụ và nhấn nút xóa.",
+    "@deleteTasksAnswer": {
+        "description": "Câu trả lời FAQ"
+    },
+    "howToSetPriorities": "Làm thế nào để đặt ưu tiên nhiệm vụ?",
+    "@howToSetPriorities": {
+        "description": "Câu hỏi FAQ"
+    },
+    "setPrioritiesAnswer": "Khi tạo hoặc chỉnh sửa nhiệm vụ, bạn có thể chọn từ ba mức độ ưu tiên: Cao, Trung bình hoặc Thấp.",
+    "@setPrioritiesAnswer": {
+        "description": "Câu trả lời FAQ"
+    },
+    "quickActions": "Hành Động Nhanh",
+    "@quickActions": {
+        "description": "Tiêu đề phần hành động nhanh"
+    },
+    "contactSupport": "Liên Hệ Hỗ Trợ",
+    "@contactSupport": {
+        "description": "Hành động liên hệ hỗ trợ"
+    },
+    "getHelpFromSupport": "Nhận trợ giúp từ đội ngũ hỗ trợ của chúng tôi",
+    "@getHelpFromSupport": {
+        "description": "Mô tả liên hệ hỗ trợ"
+    },
+    "reportBug": "Báo Lỗi",
+    "@reportBug": {
+        "description": "Hành động báo lỗi"
+    },
+    "letUsKnowAboutIssues": "Cho chúng tôi biết về bất kỳ vấn đề nào",
+    "@letUsKnowAboutIssues": {
+        "description": "Mô tả báo lỗi"
+    },
+    "sendFeedback": "Gửi Phản Hồi",
+    "@sendFeedback": {
+        "description": "Hành động gửi phản hồi"
+    },
+    "shareThoughtsSuggestions": "Chia sẻ suy nghĩ và đề xuất của bạn",
+    "@shareThoughtsSuggestions": {
+        "description": "Mô tả gửi phản hồi"
+    },
+    "describeBugEncountered": "Vui lòng mô tả lỗi bạn gặp phải:",
+    "@describeBugEncountered": {
+        "description": "Văn bản hộp thoại báo lỗi"
+    },
+    "describeBugPlaceholder": "Mô tả lỗi...",
+    "@describeBugPlaceholder": {
+        "description": "Trình giữ chỗ mô tả lỗi"
+    },
+    "bugReportSubmitted": "Báo cáo lỗi đã được gửi thành công!",
+    "@bugReportSubmitted": {
+        "description": "Thông báo thành công báo cáo lỗi"
+    },
+    "wedLoveHearThoughts": "Chúng tôi rất muốn nghe suy nghĩ của bạn:",
+    "@wedLoveHearThoughts": {
+        "description": "Văn bản hộp thoại phản hồi"
+    },
+    "yourFeedbackPlaceholder": "Phản hồi của bạn...",
+    "@yourFeedbackPlaceholder": {
+        "description": "Trình giữ chỗ phản hồi"
+    },
+    "feedbackSentSuccessfully": "Phản hồi đã được gửi thành công!",
+    "@feedbackSentSuccessfully": {
+        "description": "Thông báo thành công gửi phản hồi"
+    },
+    "getInTouch": "Liên Hệ Với Chúng Tôi",
+    "@getInTouch": {
+        "description": "Tiêu đề header liên hệ"
+    },
+    "getInTouchDescription": "Chúng tôi rất muốn nghe ý kiến của bạn. Gửi tin nhắn cho chúng tôi và chúng tôi sẽ phản hồi sớm nhất có thể.",
+    "@getInTouchDescription": {
+        "description": "Mô tả header liên hệ"
+    },
+    "emailContact": "Email",
+    "@emailContact": {
+        "description": "Tùy chọn liên hệ email"
+    },
+    "phoneContact": "Điện Thoại",
+    "@phoneContact": {
+        "description": "Tùy chọn liên hệ điện thoại"
+    },
+    "addressContact": "Địa Chỉ",
+    "@addressContact": {
+        "description": "Tùy chọn liên hệ địa chỉ"
+    },
+    "supportEmail": "support@taskapp.com",
+    "@supportEmail": {
+        "description": "Địa chỉ email hỗ trợ"
+    },
+    "supportPhone": "+1 (555) 123-4567",
+    "@supportPhone": {
+        "description": "Số điện thoại hỗ trợ"
+    },
+    "supportAddress": "123 Main St, Thành Phố, Tiểu Bang 12345",
+    "@supportAddress": {
+        "description": "Địa chỉ hỗ trợ"
+    },
+    "sendMessageButton": "Gửi Tin Nhắn",
+    "@sendMessageButton": {
+        "description": "Văn bản nút gửi tin nhắn"
+    },
+    "nameAndEmailLocked": "Tên và email được khóa với tài khoản hiện tại của bạn vì lý do bảo mật.",
+    "@nameAndEmailLocked": {
+        "description": "Thông báo khóa tài khoản"
+    },
+    "nameFieldLabel": "Tên *",
+    "@nameFieldLabel": {
+        "description": "Nhãn trường tên"
+    },
+    "emailFieldLabel": "Email *",
+    "@emailFieldLabel": {
+        "description": "Nhãn trường email"
+    },
+    "messageFieldLabel": "Tin Nhắn *",
+    "@messageFieldLabel": {
+        "description": "Nhãn trường tin nhắn"
+    },
+    "loadingText": "Đang tải...",
+    "@loadingText": {
+        "description": "Văn bản đang tải"
+    },
+    "lockedToCurrentUser": "Đã khóa với người dùng hiện tại",
+    "@lockedToCurrentUser": {
+        "description": "Gợi ý trường đã khóa"
+    },
+    "enterYourName": "Nhập tên của bạn",
+    "@enterYourName": {
+        "description": "Trình giữ chỗ trường tên"
+    },
+    "enterYourEmail": "Nhập email của bạn",
+    "@enterYourEmail": {
+        "description": "Trình giữ chỗ trường email"
+    },
+    "typeYourMessageHere": "Nhập tin nhắn của bạn tại đây...",
+    "@typeYourMessageHere": {
+        "description": "Trình giữ chỗ trường tin nhắn"
+    },
+    "accountNameNotFound": "Không tìm thấy tên tài khoản. Vui lòng cập nhật hồ sơ của bạn.",
+    "@accountNameNotFound": {
+        "description": "Lỗi xác thực tên cho người dùng đã xác thực"
+    },
+    "nameMinLength": "Tên phải có ít nhất 2 ký tự",
+    "@nameMinLength": {
+        "description": "Xác thực độ dài tối thiểu tên"
+    },
+    "accountEmailNotFound": "Không tìm thấy email tài khoản. Vui lòng cập nhật hồ sơ của bạn.",
+    "@accountEmailNotFound": {
+        "description": "Lỗi xác thực email cho người dùng đã xác thực"
+    },
+    "pleaseEnterValidEmailContact": "Vui lòng nhập địa chỉ email hợp lệ",
+    "@pleaseEnterValidEmailContact": {
+        "description": "Thông báo xác thực email không hợp lệ cho liên hệ"
+    },
+    "great": "Tuyệt vời!",
+    "@great": {
+        "description": "Văn bản nút hộp thoại thành công"
+    },
+    "errorGettingUserProfile": "Lỗi khi lấy hồ sơ người dùng từ Firestore: {error}",
+    "@errorGettingUserProfile": {
+        "description": "Thông báo gỡ lỗi cho lỗi hồ sơ người dùng Firestore",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "loadedUserData": "Đã tải dữ liệu người dùng - Tên: {name}, Email: {email}",
+    "@loadedUserData": {
+        "description": "Thông báo gỡ lỗi cho việc tải dữ liệu người dùng thành công",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            },
+            "email": {
+                "type": "String"
+            }
+        }
+    },
+    "errorLoadingUserData": "Lỗi khi tải dữ liệu người dùng: {error}",
+    "@errorLoadingUserData": {
+        "description": "Thông báo gỡ lỗi cho lỗi tải dữ liệu người dùng",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "messageValidationFailed": "Xác thực tin nhắn thất bại: {validationError}",
+    "@messageValidationFailed": {
+        "description": "Thông báo lỗi cho việc xác thực tin nhắn thất bại",
+        "placeholders": {
+            "validationError": {
+                "type": "String"
+            }
+        }
+    },
+    "messageTooShort": "Tin nhắn phải có ít nhất 10 ký tự",
+    "@messageTooShort": {
+        "description": "Thông báo lỗi cho việc xác thực độ dài tin nhắn"
+    },
+    "failedToSendMessageConnection": "Không thể gửi tin nhắn. Vui lòng kiểm tra kết nối của bạn và thử lại.",
+    "@failedToSendMessageConnection": {
+        "description": "Thông báo lỗi cho việc gửi tin nhắn thất bại do vấn đề kết nối"
+    },
+    "signOutAndBackIn": "Vui lòng đăng xuất và đăng nhập lại, sau đó thử lại.",
+    "@signOutAndBackIn": {
+        "description": "Thông báo khi cần đăng nhập gần đây để xóa tài khoản"
+    },
+    "january": "Tháng 1",
+    "@january": {
+        "description": "Tên tháng"
+    },
+    "february": "Tháng 2",
+    "@february": {
+        "description": "Tên tháng"
+    },
+    "march": "Tháng 3",
+    "@march": {
+        "description": "Tên tháng"
+    },
+    "april": "Tháng 4",
+    "@april": {
+        "description": "Tên tháng"
+    },
+    "may": "Tháng 5",
+    "@may": {
+        "description": "Tên tháng"
+    },
+    "june": "Tháng 6",
+    "@june": {
+        "description": "Tên tháng"
+    },
+    "july": "Tháng 7",
+    "@july": {
+        "description": "Tên tháng"
+    },
+    "august": "Tháng 8",
+    "@august": {
+        "description": "Tên tháng"
+    },
+    "september": "Tháng 9",
+    "@september": {
+        "description": "Tên tháng"
+    },
+    "october": "Tháng 10",
+    "@october": {
+        "description": "Tên tháng"
+    },
+    "november": "Tháng 11",
+    "@november": {
+        "description": "Tên tháng"
+    },
+    "december": "Tháng 12",
+    "@december": {
+        "description": "Tên tháng"
+    },
+    "filterTasksTitle": "Lọc & Tìm Kiếm Nhiệm Vụ",
+    "@filterTasksTitle": {
+        "description": "Tiêu đề bảng lọc dưới"
+    },
+    "clearAll": "Xóa Tất Cả",
+    "@clearAll": {
+        "description": "Nút xóa tất cả bộ lọc"
+    },
+    "status": "Trạng Thái",
+    "@status": {
+        "description": "Tiêu đề phần lọc trạng thái"
+    },
+    "allTasks": "Tất Cả Nhiệm Vụ",
+    "@allTasks": {
+        "description": "Tùy chọn lọc tất cả nhiệm vụ"
+    },
+    "allPriorities": "Tất Cả Độ Ưu Tiên",
+    "@allPriorities": {
+        "description": "Tùy chọn lọc tất cả độ ưu tiên"
+    },
+    "highPriority": "Ưu Tiên Cao",
+    "@highPriority": {
+        "description": "Tùy chọn lọc ưu tiên cao"
+    },
+    "mediumPriority": "Ưu Tiên Trung Bình",
+    "@mediumPriority": {
+        "description": "Tùy chọn lọc ưu tiên trung bình"
+    },
+    "lowPriority": "Ưu Tiên Thấp",
+    "@lowPriority": {
+        "description": "Tùy chọn lọc ưu tiên thấp"
+    },
+    "allDates": "Tất Cả Ngày",
+    "@allDates": {
+        "description": "Tùy chọn lọc tất cả ngày"
+    },
+    "dueToday": "Đến Hạn Hôm Nay",
+    "@dueToday": {
+        "description": "Tùy chọn lọc đến hạn hôm nay"
+    },
+    "customRange": "Khoảng Tùy Chỉnh",
+    "@customRange": {
+        "description": "Tùy chọn lọc khoảng tùy chỉnh"
+    },
+    "customDateRange": "Khoảng Ngày Tùy Chỉnh",
+    "@customDateRange": {
+        "description": "Tiêu đề phần khoảng ngày tùy chỉnh"
+    },
+    "clearCustomRange": "Xóa khoảng tùy chỉnh",
+    "@clearCustomRange": {
+        "description": "Tooltip xóa khoảng tùy chỉnh"
+    },
+    "selectDateRange": "Chọn Khoảng Ngày",
+    "@selectDateRange": {
+        "description": "Nút chọn khoảng ngày"
+    },
+    "category": "Danh Mục",
+    "@category": {
+        "description": "Tiêu đề phần lọc danh mục"
+    },
+    "allCategories": "Tất Cả Danh Mục",
+    "@allCategories": {
+        "description": "Tùy chọn lọc tất cả danh mục"
+    },
+    "work": "Công Việc",
+    "@work": {
+        "description": "Tùy chọn lọc danh mục công việc"
+    },
+    "personal": "Cá Nhân",
+    "@personal": {
+        "description": "Tùy chọn lọc danh mục cá nhân"
+    },
+    "shopping": "Mua Sắm",
+    "@shopping": {
+        "description": "Tùy chọn lọc danh mục mua sắm"
+    },
+    "health": "Sức Khỏe",
+    "@health": {
+        "description": "Tùy chọn lọc danh mục sức khỏe"
+    },
+    "education": "Giáo Dục",
+    "@education": {
+        "description": "Tùy chọn lọc danh mục giáo dục"
+    },
+    "saveCurrentFilters": "Lưu Bộ Lọc Hiện Tại",
+    "@saveCurrentFilters": {
+        "description": "Tiêu đề phần lưu bộ lọc hiện tại"
+    },
+    "applyFilters": "Áp Dụng Bộ Lọc",
+    "@applyFilters": {
+        "description": "Nút áp dụng bộ lọc"
+    },
+    "searchTasksTitle": "Tìm Kiếm Nhiệm Vụ",
+    "@searchTasksTitle": {
+        "description": "Tiêu đề phần tìm kiếm nhiệm vụ"
+    },
+    "searchByTaskNameOrDescription": "Tìm kiếm theo tên nhiệm vụ hoặc mô tả...",
+    "@searchByTaskNameOrDescription": {
+        "description": "Văn bản gợi ý tìm kiếm"
+    },
+    "savedPresets": "Bộ Lọc Đã Lưu",
+    "@savedPresets": {
+        "description": "Tiêu đề phần bộ lọc đã lưu"
+    },
+    "deletePreset": "Xóa Bộ Lọc",
+    "@deletePreset": {
+        "description": "Tiêu đề hộp thoại xóa bộ lọc"
+    },
+    "deletePresetConfirmation": "Bạn có chắc chắn muốn xóa bộ lọc \"{presetName}\"?",
+    "@deletePresetConfirmation": {
+        "description": "Nội dung hộp thoại xác nhận xóa bộ lọc",
+        "placeholders": {
+            "presetName": {
+                "type": "String"
+            }
+        }
+    },
+    "pleaseEnterPresetName": "Vui lòng nhập tên bộ lọc",
+    "@pleaseEnterPresetName": {
+        "description": "Thông báo lỗi khi tên bộ lọc trống"
+    },
+    "presetSavedSuccessfully": "Đã lưu bộ lọc \"{name}\" thành công!",
+    "@presetSavedSuccessfully": {
+        "description": "Thông báo thành công khi lưu bộ lọc",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "appliedPreset": "Đã áp dụng bộ lọc \"{presetName}\"",
+    "@appliedPreset": {
+        "description": "Thông báo khi áp dụng bộ lọc",
+        "placeholders": {
+            "presetName": {
+                "type": "String"
+            }
+        }
+    },
+    "presetRemoved": "Đã xóa bộ lọc \"{name}\"",
+    "@presetRemoved": {
+        "description": "Thông báo khi xóa bộ lọc",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "noTasksYet": "Chưa Có Nhiệm Vụ Nào",
+    "@noTasksYet": {
+        "description": "Tiêu đề trạng thái trống khi chưa có nhiệm vụ nào"
+    },
+    "createFirstTask": "Tạo nhiệm vụ đầu tiên của bạn để bắt đầu với năng suất!",
+    "@createFirstTask": {
+        "description": "Phụ đề trạng thái trống khi chưa có nhiệm vụ nào"
+    },
+    "noSearchResults": "Không Có Kết Quả Tìm Kiếm",
+    "@noSearchResults": {
+        "description": "Tiêu đề trạng thái trống khi tìm kiếm không có kết quả"
+    },
+    "noTasksMatchSearch": "Không có nhiệm vụ nào khớp với truy vấn tìm kiếm của bạn. Hãy thử các từ khóa khác.",
+    "@noTasksMatchSearch": {
+        "description": "Phụ đề trạng thái trống khi tìm kiếm không có kết quả"
+    },
+    "clearSearch": "Xóa Tìm Kiếm",
+    "@clearSearch": {
+        "description": "Nút hành động xóa tìm kiếm"
+    },
+    "noMatchingTasks": "Không Có Nhiệm Vụ Phù Hợp",
+    "@noMatchingTasks": {
+        "description": "Tiêu đề trạng thái trống khi bộ lọc không có kết quả"
+    },
+    "noTasksMatchCriteria": "Không có nhiệm vụ nào khớp với tiêu chí tìm kiếm và bộ lọc của bạn.",
+    "@noTasksMatchCriteria": {
+        "description": "Phụ đề trạng thái trống khi tìm kiếm và bộ lọc không có kết quả"
+    },
+    "adjustFilters": "Hãy thử điều chỉnh bộ lọc để xem thêm nhiệm vụ.",
+    "@adjustFilters": {
+        "description": "Phụ đề trạng thái trống khi bộ lọc không có kết quả"
+    },
+    "clearFilters": "Xóa Bộ Lọc",
+    "@clearFilters": {
+        "description": "Nút hành động xóa bộ lọc"
+    },
+    "noTasksToDisplay": "Không có nhiệm vụ để hiển thị",
+    "@noTasksToDisplay": {
+        "description": "Thông báo khi không có nhiệm vụ nào để hiển thị"
+    },
+    "addNewTaskToGetStarted": "Thêm nhiệm vụ mới để bắt đầu",
+    "@addNewTaskToGetStarted": {
+        "description": "Thông báo khuyến khích người dùng thêm nhiệm vụ đầu tiên"
+    },
+    "pullDownToRefresh": "Kéo xuống để làm mới hoặc thêm nhiệm vụ mới",
+    "@pullDownToRefresh": {
+        "description": "Văn bản gợi ý cho chức năng làm mới"
+    },
+    "dueLabel": "Đến hạn:",
+    "@dueLabel": {
+        "description": "Nhãn cho ngày đến hạn trong chi tiết nhiệm vụ"
+    },
+    "markAsPending": "Đánh Dấu Chưa Hoàn Thành",
+    "@markAsPending": {
+        "description": "Nút đánh dấu nhiệm vụ chưa hoàn thành"
+    },
+    "markAsCompleted": "Đánh Dấu Đã Hoàn Thành",
+    "@markAsCompleted": {
+        "description": "Nút đánh dấu nhiệm vụ đã hoàn thành"
+    },
+    "enterTaskTitle": "Nhập tiêu đề nhiệm vụ",
+    "@enterTaskTitle": {
+        "description": "Văn bản gợi ý cho trường nhập tiêu đề nhiệm vụ"
+    },
+    "pleaseEnterTitle": "Vui lòng nhập tiêu đề",
+    "@pleaseEnterTitle": {
+        "description": "Thông báo lỗi xác thực cho tiêu đề nhiệm vụ trống"
+    },
+    "taskDescriptionOptional": "Mô Tả Nhiệm Vụ (Tùy Chọn)",
+    "@taskDescriptionOptional": {
+        "description": "Nhãn cho trường mô tả nhiệm vụ"
+    },
+    "enterTaskDescriptionOptional": "Nhập mô tả nhiệm vụ (tùy chọn)",
+    "@enterTaskDescriptionOptional": {
+        "description": "Văn bản gợi ý cho trường nhập mô tả nhiệm vụ"
+    },
+    "dueDateOptional": "Ngày Đến Hạn (Tùy Chọn)",
+    "@dueDateOptional": {
+        "description": "Nhãn cho trường ngày đến hạn"
+    },
+    "selectDueDate": "Chọn ngày đến hạn",
+    "@selectDueDate": {
+        "description": "Văn bản giữ chỗ cho việc chọn ngày đến hạn"
+    },
+    "updateTask": "Cập Nhật Nhiệm Vụ",
+    "@updateTask": {
+        "description": "Nút cập nhật nhiệm vụ hiện có"
+    },
+    "taskUpdatedSuccessfully": "Nhiệm vụ đã được cập nhật thành công!",
+    "@taskUpdatedSuccessfully": {
+        "description": "Thông báo thành công khi nhiệm vụ được cập nhật"
+    },
+    "taskAddedSuccessfully": "Nhiệm vụ đã được thêm thành công!",
+    "@taskAddedSuccessfully": {
+        "description": "Thông báo thành công khi nhiệm vụ được thêm"
+    },
+    "failedToAddTask": "Không thể thêm nhiệm vụ",
+    "@failedToAddTask": {
+        "description": "Thông báo lỗi khi tạo nhiệm vụ thất bại"
+    },
+    "anErrorOccurred": "Đã xảy ra lỗi: {error}",
+    "@anErrorOccurred": {
+        "description": "Thông báo lỗi chung với chi tiết lỗi",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "helloFriend": "Xin chào, {name}! 👋",
+    "@helloFriend": {
+        "description": "Thông điệp chào mừng với tên người dùng",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "helloFriendDefault": "Xin chào, bạn! 👋",
+    "@helloFriendDefault": {
+        "description": "Thông điệp chào mừng mặc định khi không có tên"
+    },
+    "successRate": "Tỷ lệ thành công",
+    "@successRate": {
+        "description": "Nhãn tỷ lệ thành công"
+    },
+    "categories": "Danh mục",
+    "@categories": {
+        "description": "Nhãn danh mục"
+    },
+    "dailyAvg": "Trung bình ngày",
+    "@dailyAvg": {
+        "description": "Nhãn trung bình hàng ngày"
+    },
+    "recentActivity": "Hoạt động gần đây",
+    "@recentActivity": {
+        "description": "Tiêu đề phần hoạt động gần đây"
+    },
+    "noRecentActivity": "Không có hoạt động gần đây",
+    "@noRecentActivity": {
+        "description": "Thông báo trống cho hoạt động gần đây"
+    },
+    "achievements": "Thành tích 🏆",
+    "@achievements": {
+        "description": "Tiêu đề phần thành tích"
+    },
+    "firstTask": "Nhiệm vụ đầu tiên",
+    "@firstTask": {
+        "description": "Tiêu đề thành tích nhiệm vụ đầu tiên"
+    },
+    "firstTaskDesc": "Tạo nhiệm vụ đầu tiên của bạn",
+    "@firstTaskDesc": {
+        "description": "Mô tả thành tích nhiệm vụ đầu tiên"
+    },
+    "finisher": "Người hoàn thành",
+    "@finisher": {
+        "description": "Tiêu đề thành tích người hoàn thành"
+    },
+    "finisherDesc": "Hoàn thành nhiệm vụ đầu tiên",
+    "@finisherDesc": {
+        "description": "Mô tả thành tích người hoàn thành"
+    },
+    "productive": "Năng suất",
+    "@productive": {
+        "description": "Tiêu đề thành tích năng suất"
+    },
+    "productiveDesc": "Hoàn thành 5 nhiệm vụ",
+    "@productiveDesc": {
+        "description": "Mô tả thành tích năng suất"
+    },
+    "taskMaster": "Bậc thầy nhiệm vụ",
+    "@taskMaster": {
+        "description": "Tiêu đề thành tích bậc thầy nhiệm vụ"
+    },
+    "taskMasterDesc": "Hoàn thành 20 nhiệm vụ",
+    "@taskMasterDesc": {
+        "description": "Mô tả thành tích bậc thầy nhiệm vụ"
+    },
+    "lightning": "Tia chớp",
+    "@lightning": {
+        "description": "Tiêu đề thành tích tia chớp"
+    },
+    "lightningDesc": "Hoàn thành 50 nhiệm vụ",
+    "@lightningDesc": {
+        "description": "Mô tả thành tích tia chớp"
+    },
+    "organizer": "Người tổ chức",
+    "@organizer": {
+        "description": "Tiêu đề thành tích người tổ chức"
+    },
+    "organizerDesc": "Sử dụng 3 danh mục khác nhau",
+    "@organizerDesc": {
+        "description": "Mô tả thành tích người tổ chức"
+    },
+    "achiever": "Người đạt được",
+    "@achiever": {
+        "description": "Tiêu đề thành tích người đạt được"
+    },
+    "achieverDesc": "Duy trì tỷ lệ hoàn thành 80%",
+    "@achieverDesc": {
+        "description": "Mô tả thành tích người đạt được"
+    },
+    "streak": "Chuỗi",
+    "@streak": {
+        "description": "Tiêu đề thành tích chuỗi"
+    },
+    "streakDesc": "Hoàn thành nhiệm vụ trong 7 ngày",
+    "@streakDesc": {
+        "description": "Mô tả thành tích chuỗi"
+    },
+    "achievementsProgress": "Tiến độ: {earned}/{total} thành tích đã mở khóa",
+    "@achievementsProgress": {
+        "description": "Văn bản tiến độ thành tích",
+        "placeholders": {
+            "earned": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "completedTask": "Đã hoàn thành \"{title}\"",
+    "@completedTask": {
+        "description": "Thông báo hoạt động cho nhiệm vụ đã hoàn thành",
+        "placeholders": {
+            "title": {
+                "type": "String"
+            }
+        }
+    },
+    "createdTask": "Đã tạo \"{title}\"",
+    "@createdTask": {
+        "description": "Thông báo hoạt động cho nhiệm vụ đã tạo",
+        "placeholders": {
+            "title": {
+                "type": "String"
+            }
+        }
+    },
+    "accountInformation": "Thông tin tài khoản",
+    "@accountInformation": {
+        "description": "Tiêu đề phần thông tin tài khoản"
+    },
+    "memberSince": "Thành viên từ",
+    "@memberSince": {
+        "description": "Nhãn thành viên từ"
+    },
+    "lastUpdatedProfile": "Cập nhật lần cuối",
+    "@lastUpdatedProfile": {
+        "description": "Nhãn cập nhật lần cuối cho hồ sơ"
+    },
+    "notAvailable": "Không có sẵn",
+    "@notAvailable": {
+        "description": "Văn bản không có sẵn"
+    },
+    "unknown": "Không xác định",
+    "@unknown": {
+        "description": "Văn bản giá trị không xác định"
+    },
+    "todayProfile": "Hôm nay",
+    "@todayProfile": {
+        "description": "Văn bản hôm nay cho hồ sơ"
+    },
+    "monthAgo": "{count} tháng trước",
+    "@monthAgo": {
+        "description": "Thời gian trước theo tháng (số ít)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "monthsAgo": "{count} tháng trước",
+    "@monthsAgo": {
+        "description": "Thời gian trước theo tháng (số nhiều)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "yearAgo": "{count} năm trước",
+    "@yearAgo": {
+        "description": "Thời gian trước theo năm (số ít)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "yearsAgo": "{count} năm trước",
+    "@yearsAgo": {
+        "description": "Thời gian trước theo năm (số nhiều)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "productivityInsights": "Thông tin năng suất",
+    "@productivityInsights": {
+        "description": "Tiêu đề phần thông tin năng suất"
+    },
+    "completionRate": "Tỷ lệ hoàn thành",
+    "@completionRate": {
+        "description": "Nhãn tỷ lệ hoàn thành"
+    },
+    "dailyAverage": "Trung bình hàng ngày",
+    "@dailyAverage": {
+        "description": "Nhãn trung bình hàng ngày"
+    },
+    "taskDistribution": "Phân bổ nhiệm vụ",
+    "@taskDistribution": {
+        "description": "Tiêu đề phần phân bổ nhiệm vụ"
+    },
+    "byCategory": "Theo danh mục",
+    "@byCategory": {
+        "description": "Tiêu đề phụ theo danh mục"
+    },
+    "byPriority": "Theo ưu tiên",
+    "@byPriority": {
+        "description": "Tiêu đề phụ theo ưu tiên"
+    },
+    "weeklyProgress": "Tiến độ hàng tuần",
+    "@weeklyProgress": {
+        "description": "Tiêu đề phần tiến độ hàng tuần"
+    },
+    "allActivity": "Tất cả hoạt động",
+    "@allActivity": {
+        "description": "Tiêu đề hộp thoại tất cả hoạt động"
+    },
+    "noActivityToShow": "Không có hoạt động để hiển thị",
+    "@noActivityToShow": {
+        "description": "Thông báo trống cho hộp thoại tất cả hoạt động"
+    },
+    "testNotifications": "Kiểm tra thông báo",
+    "@testNotifications": {
+        "description": "Tiêu đề phần kiểm tra thông báo"
+    },
+    "testNotificationFeatures": "Kiểm tra các tính năng thông báo:",
+    "@testNotificationFeatures": {
+        "description": "Mô tả tính năng kiểm tra thông báo"
+    },
+    "dataAndPrivacy": "Dữ liệu & Bảo mật",
+    "@dataAndPrivacy": {
+        "description": "Tiêu đề phần dữ liệu và bảo mật"
+    },
+    "learnAboutPrivacyPractices": "Tìm hiểu về các thực hành bảo mật của chúng tôi",
+    "@learnAboutPrivacyPractices": {
+        "description": "Phụ đề chính sách bảo mật"
+    },
+    "freeUpStorageSpace": "Giải phóng dung lượng lưu trữ",
+    "@freeUpStorageSpace": {
+        "description": "Phụ đề xóa bộ nhớ đệm"
+    },
+    "resetAllSettingsToDefault": "Đặt lại tất cả cài đặt về mặc định",
+    "@resetAllSettingsToDefault": {
+        "description": "Phụ đề đặt lại cài đặt"
+    },
+    "settingsResetSuccessfully": "Đã đặt lại cài đặt thành công",
+    "@settingsResetSuccessfully": {
+        "description": "Thông báo thành công đặt lại cài đặt"
+    },
+    "welcomeBack": "Chào mừng trở lại",
+    "@welcomeBack": {
+        "description": "Tiêu đề chào mừng trở lại cho màn hình đăng nhập"
+    },
+    "signInToContinue": "Đăng nhập để tiếp tục",
+    "@signInToContinue": {
+        "description": "Phụ đề đăng nhập"
+    },
+    "signUpToStart": "Đăng ký để bắt đầu",
+    "@signUpToStart": {
+        "description": "Phụ đề đăng ký"
+    },
+    "selectSavedAccount": "Chọn tài khoản đã lưu",
+    "@selectSavedAccount": {
+        "description": "Gợi ý dropdown tài khoản đã lưu"
+    },
+    "enterEmailManually": "Nhập email thủ công",
+    "@enterEmailManually": {
+        "description": "Tùy chọn nhập email thủ công"
+    },
+    "fullName": "Họ và tên",
+    "@fullName": {
+        "description": "Nhãn trường họ và tên"
+    },
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "@rememberMe": {
+        "description": "Văn bản checkbox ghi nhớ"
+    },
+    "signIn": "Đăng nhập",
+    "@signIn": {
+        "description": "Văn bản nút đăng nhập"
+    },
+    "pleaseEnterYourName": "Vui lòng nhập tên của bạn",
+    "@pleaseEnterYourName": {
+        "description": "Thông báo xác thực tên"
+    },
+    "pleaseEnterYourEmail": "Vui lòng nhập email của bạn",
+    "@pleaseEnterYourEmail": {
+        "description": "Thông báo xác thực email"
+    },
+    "pleaseEnterYourPassword": "Vui lòng nhập mật khẩu của bạn",
+    "@pleaseEnterYourPassword": {
+        "description": "Thông báo xác thực mật khẩu"
+    },
+    "passwordMustBeAtLeast6Characters": "Mật khẩu phải có ít nhất 6 ký tự",
+    "@passwordMustBeAtLeast6Characters": {
+        "description": "Thông báo xác thực độ dài mật khẩu"
+    },
+    "noAccountFoundWithThisEmail": "Không tìm thấy tài khoản với email này",
+    "@noAccountFoundWithThisEmail": {
+        "description": "Thông báo lỗi không tìm thấy người dùng"
+    },
+    "invalidEmailOrPassword": "Email hoặc mật khẩu không hợp lệ. Vui lòng kiểm tra thông tin đăng nhập và thử lại.",
+    "@invalidEmailOrPassword": {
+        "description": "Thông báo lỗi thông tin đăng nhập không hợp lệ"
+    },
+    "accountAlreadyExistsWithThisEmail": "Đã có tài khoản với email này",
+    "@accountAlreadyExistsWithThisEmail": {
+        "description": "Thông báo lỗi email đã được sử dụng"
+    },
+    "passwordIsTooWeak": "Mật khẩu quá yếu",
+    "@passwordIsTooWeak": {
+        "description": "Thông báo lỗi mật khẩu yếu"
+    },
+    "invalidEmailAddress": "Địa chỉ email không hợp lệ",
+    "@invalidEmailAddress": {
+        "description": "Thông báo lỗi định dạng email không hợp lệ"
+    },
+    "networkConnectionFailed": "Kết nối mạng thất bại. Vui lòng kiểm tra kết nối internet của bạn.",
+    "@networkConnectionFailed": {
+        "description": "Thông báo lỗi mạng"
+    },
+    "tooManyFailedAttempts": "Quá nhiều lần thử thất bại. Vui lòng thử lại sau.",
+    "@tooManyFailedAttempts": {
+        "description": "Thông báo lỗi giới hạn tốc độ"
+    },
+    "authenticationFailed": "Xác thực thất bại: {error}",
+    "@authenticationFailed": {
+        "placeholders": {
+            "error": {
+                "type": "String",
+                "description": "Thông báo lỗi"
+            }
+        },
+        "description": "Thông báo lỗi xác thực chung"
+    },
+    "accountSavedAndSyncedWithFirebase": "Tài khoản đã được lưu và đồng bộ với Firebase",
+    "@accountSavedAndSyncedWithFirebase": {
+        "description": "Thông báo thành công lưu tài khoản"
+    }
+}

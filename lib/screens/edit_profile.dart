@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/user_model.dart';
 import '../services/firebase_service.dart';
+import '../l10n/app_localizations.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final UserModel userProfile;
@@ -64,8 +65,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Profile updated successfully!'),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.profileUpdatedSuccess),
             backgroundColor: Colors.green,
           ),
         );
@@ -75,7 +76,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error updating profile: $e'),
+            content: Text(
+              '${AppLocalizations.of(context)!.errorUpdatingProfile}: $e',
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -96,9 +99,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFF8FAFC),
         elevation: 0,
-        title: const Text(
-          'Edit Profile',
-          style: TextStyle(
+        title: Text(
+          AppLocalizations.of(context)!.editProfile,
+          style: const TextStyle(
             color: Color(0xFF1E293B),
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -196,9 +199,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               onTap: () {
                                 // TODO: Implement image picker
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
+                                  SnackBar(
                                     content: Text(
-                                      'Photo upload feature coming soon!',
+                                      AppLocalizations.of(
+                                        context,
+                                      )!.photoUploadComingSoon,
                                     ),
                                     backgroundColor: Colors.blue,
                                   ),
@@ -226,7 +231,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Tap camera icon to change photo',
+                        AppLocalizations.of(context)!.tapCameraToChangePhoto,
                         style: TextStyle(
                           color: Colors.grey.shade600,
                           fontSize: 14,
@@ -255,9 +260,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Personal Information',
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context)!.personalInformation,
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF1E293B),
@@ -269,8 +274,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       TextFormField(
                         controller: _displayNameController,
                         decoration: InputDecoration(
-                          labelText: 'Display Name',
-                          hintText: 'Enter your display name',
+                          labelText: AppLocalizations.of(context)!.displayName,
+                          hintText: AppLocalizations.of(
+                            context,
+                          )!.enterDisplayName,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.grey.shade300),
@@ -287,10 +294,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         ),
                         validator: (value) {
                           if (value == null || value.trim().isEmpty) {
-                            return 'Please enter a display name';
+                            return AppLocalizations.of(
+                              context,
+                            )!.pleaseEnterDisplayName;
                           }
                           if (value.trim().length < 2) {
-                            return 'Display name must be at least 2 characters';
+                            return AppLocalizations.of(
+                              context,
+                            )!.displayNameMinLength;
                           }
                           return null;
                         },
@@ -302,7 +313,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       TextFormField(
                         controller: _emailController,
                         decoration: InputDecoration(
-                          labelText: 'Email Address',
+                          labelText: AppLocalizations.of(context)!.emailAddress,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.grey.shade300),
@@ -336,7 +347,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
-                                'Email cannot be changed from this screen for security reasons',
+                                AppLocalizations.of(
+                                  context,
+                                )!.emailCannotBeChanged,
                                 style: TextStyle(
                                   color: Colors.blue.shade600,
                                   fontSize: 12,
@@ -370,9 +383,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           ),
                           side: BorderSide(color: Colors.grey.shade400),
                         ),
-                        child: const Text(
-                          'Cancel',
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context)!.cancel,
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                             color: Colors.grey,
@@ -404,9 +417,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                   color: Colors.white,
                                 ),
                               )
-                            : const Text(
-                                'Update Profile',
-                                style: TextStyle(
+                            : Text(
+                                AppLocalizations.of(context)!.updateProfile,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),

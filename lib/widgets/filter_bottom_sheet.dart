@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/filter_presets_service.dart';
+import '../l10n/app_localizations.dart';
 
 class FilterBottomSheet extends StatefulWidget {
   final Map<String, dynamic> currentFilters;
@@ -75,7 +76,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               children: [
                 Expanded(
                   child: Text(
-                    'Filter & Search Tasks',
+                    AppLocalizations.of(context)!.filterTasksTitle,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w700,
                       fontSize: 22,
@@ -88,7 +89,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     TextButton(
                       onPressed: _clearFilters,
                       child: Text(
-                        'Clear All',
+                        AppLocalizations.of(context)!.clearAll,
                         style: TextStyle(
                           color: colorScheme.primary,
                           fontWeight: FontWeight.w600,
@@ -113,43 +114,59 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Search Section
-                  _buildSearchSection(),
-                  const SizedBox(height: 24),
+                  // // Search Section
+                  // _buildSearchSection(),
+                  // const SizedBox(height: 24),
 
-                  // Saved Presets Section
-                  if (_savedPresets.isNotEmpty) ...[
-                    _buildPresetsSection(),
-                    const SizedBox(height: 24),
-                  ],
+                  // // Saved Presets Section
+                  // if (_savedPresets.isNotEmpty) ...[
+                  //   _buildPresetsSection(),
+                  //   const SizedBox(height: 24),
+                  // ],
 
                   // Status Filter
-                  _buildFilterSection('Status', [
-                    _FilterOption('all', 'All Tasks', Icons.list_alt),
-                    _FilterOption('pending', 'Pending', Icons.pending_actions),
-                    _FilterOption('completed', 'Completed', Icons.task_alt),
+                  _buildFilterSection(AppLocalizations.of(context)!.status, [
+                    _FilterOption(
+                      'all',
+                      AppLocalizations.of(context)!.allTasks,
+                      Icons.list_alt,
+                    ),
+                    _FilterOption(
+                      'pending',
+                      AppLocalizations.of(context)!.pending,
+                      Icons.pending_actions,
+                    ),
+                    _FilterOption(
+                      'completed',
+                      AppLocalizations.of(context)!.completed,
+                      Icons.task_alt,
+                    ),
                   ], 'status'),
 
                   const SizedBox(height: 24),
 
                   // Priority Filter
-                  _buildFilterSection('Priority', [
-                    _FilterOption('all', 'All Priorities', Icons.flag_outlined),
+                  _buildFilterSection(AppLocalizations.of(context)!.priority, [
+                    _FilterOption(
+                      'all',
+                      AppLocalizations.of(context)!.allPriorities,
+                      Icons.flag_outlined,
+                    ),
                     _FilterOption(
                       'high',
-                      'High Priority',
+                      AppLocalizations.of(context)!.highPriority,
                       Icons.priority_high,
                       Colors.red,
                     ),
                     _FilterOption(
                       'medium',
-                      'Medium Priority',
+                      AppLocalizations.of(context)!.mediumPriority,
                       Icons.flag,
                       Colors.orange,
                     ),
                     _FilterOption(
                       'low',
-                      'Low Priority',
+                      AppLocalizations.of(context)!.lowPriority,
                       Icons.flag_outlined,
                       Colors.green,
                     ),
@@ -158,19 +175,31 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   const SizedBox(height: 24),
 
                   // Due Date Filter
-                  _buildFilterSection('Due Date', [
-                    _FilterOption('all', 'All Dates', Icons.calendar_month),
-                    _FilterOption('today', 'Due Today', Icons.today),
-                    _FilterOption('week', 'This Week', Icons.date_range),
+                  _buildFilterSection(AppLocalizations.of(context)!.dueDate, [
+                    _FilterOption(
+                      'all',
+                      AppLocalizations.of(context)!.allDates,
+                      Icons.calendar_month,
+                    ),
+                    _FilterOption(
+                      'today',
+                      AppLocalizations.of(context)!.dueToday,
+                      Icons.today,
+                    ),
+                    _FilterOption(
+                      'week',
+                      AppLocalizations.of(context)!.thisWeek,
+                      Icons.date_range,
+                    ),
                     _FilterOption(
                       'overdue',
-                      'Overdue',
+                      AppLocalizations.of(context)!.overdue,
                       Icons.warning,
                       Colors.red,
                     ),
                     _FilterOption(
                       'custom',
-                      'Custom Range',
+                      AppLocalizations.of(context)!.customRange,
                       Icons.date_range_outlined,
                     ),
                   ], 'dueDate'),
@@ -185,13 +214,37 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   const SizedBox(height: 24),
 
                   // Category Filter
-                  _buildFilterSection('Category', [
-                    _FilterOption('all', 'All Categories', Icons.category),
-                    _FilterOption('work', 'Work', Icons.work),
-                    _FilterOption('personal', 'Personal', Icons.person),
-                    _FilterOption('shopping', 'Shopping', Icons.shopping_cart),
-                    _FilterOption('health', 'Health', Icons.health_and_safety),
-                    _FilterOption('education', 'Education', Icons.school),
+                  _buildFilterSection(AppLocalizations.of(context)!.category, [
+                    _FilterOption(
+                      'all',
+                      AppLocalizations.of(context)!.allCategories,
+                      Icons.category,
+                    ),
+                    _FilterOption(
+                      'work',
+                      AppLocalizations.of(context)!.work,
+                      Icons.work,
+                    ),
+                    _FilterOption(
+                      'personal',
+                      AppLocalizations.of(context)!.personal,
+                      Icons.person,
+                    ),
+                    _FilterOption(
+                      'shopping',
+                      AppLocalizations.of(context)!.shopping,
+                      Icons.shopping_cart,
+                    ),
+                    _FilterOption(
+                      'health',
+                      AppLocalizations.of(context)!.health,
+                      Icons.health_and_safety,
+                    ),
+                    _FilterOption(
+                      'education',
+                      AppLocalizations.of(context)!.education,
+                      Icons.school,
+                    ),
                   ], 'category'),
 
                   const SizedBox(height: 24),
@@ -223,9 +276,9 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                       ),
                       elevation: 0,
                     ),
-                    child: const Text(
-                      'Apply Filters',
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.applyFilters,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
@@ -362,7 +415,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   Future<void> _savePreset() async {
     final name = _presetNameController.text.trim();
     if (name.isEmpty) {
-      _showSnackBar('Please enter a preset name');
+      _showSnackBar(AppLocalizations.of(context)!.pleaseEnterPresetName);
       return;
     }
 
@@ -377,7 +430,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
     await FilterPresetsService.savePreset(name, filtersToSave);
     _presetNameController.clear();
     await _loadSavedPresets();
-    _showSnackBar('Preset "$name" saved successfully!');
+    _showSnackBar(AppLocalizations.of(context)!.presetSavedSuccessfully(name));
   }
 
   Future<void> _applyPreset(Map<String, dynamic> preset) async {
@@ -403,13 +456,13 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
       _showCustomDateRange = _customStartDate != null && _customEndDate != null;
     });
 
-    _showSnackBar('Applied preset "${preset['name']}"');
+    _showSnackBar(AppLocalizations.of(context)!.appliedPreset(preset['name']));
   }
 
   Future<void> _deletePreset(String name) async {
     await FilterPresetsService.deletePreset(name);
     await _loadSavedPresets();
-    _showSnackBar('Preset "$name" removed');
+    _showSnackBar(AppLocalizations.of(context)!.presetRemoved(name));
   }
 
   void _showSnackBar(String message) {
@@ -551,7 +604,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Custom Date Range',
+                AppLocalizations.of(context)!.customDateRange,
                 style: Theme.of(
                   context,
                 ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
@@ -559,7 +612,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               IconButton(
                 icon: const Icon(Icons.clear),
                 onPressed: _clearCustomDateRange,
-                tooltip: 'Clear custom range',
+                tooltip: AppLocalizations.of(context)!.clearCustomRange,
               ),
             ],
           ),
@@ -573,7 +626,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   label: Text(
                     _customStartDate != null && _customEndDate != null
                         ? '${_formatDate(_customStartDate!)} - ${_formatDate(_customEndDate!)}'
-                        : 'Select Date Range',
+                        : AppLocalizations.of(context)!.selectDateRange,
                     style: const TextStyle(fontSize: 12),
                   ),
                   style: OutlinedButton.styleFrom(
@@ -601,7 +654,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Save Current Filters',
+          AppLocalizations.of(context)!.saveCurrentFilters,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w600,
             color: colorScheme.onSurface,
@@ -643,7 +696,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             FilledButton.icon(
               onPressed: _savePreset,
               icon: const Icon(Icons.save, size: 16),
-              label: const Text('Save'),
+              label: Text(AppLocalizations.of(context)!.save),
               style: FilledButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
@@ -665,21 +718,21 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Delete Preset'),
+        title: Text(AppLocalizations.of(context)!.deletePreset),
         content: Text(
-          'Are you sure you want to delete the preset "$presetName"?',
+          AppLocalizations.of(context)!.deletePresetConfirmation(presetName),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
               _deletePreset(presetName);
             },
-            child: const Text('Delete'),
+            child: Text(AppLocalizations.of(context)!.delete),
           ),
         ],
       ),

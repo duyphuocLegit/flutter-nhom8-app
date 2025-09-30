@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
@@ -17,7 +18,7 @@ class HelpScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Help',
+          AppLocalizations.of(context)!.help,
           style: TextStyle(
             color: Colors.grey.shade800,
             fontWeight: FontWeight.bold,
@@ -56,7 +57,7 @@ class HelpScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'How can we help you?',
+                        AppLocalizations.of(context)!.howCanWeHelp,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -65,7 +66,7 @@ class HelpScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Find answers to common questions and learn how to use the app effectively.',
+                        AppLocalizations.of(context)!.helpDescription,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
@@ -105,7 +106,9 @@ class HelpScreen extends StatelessWidget {
                             ),
                             const SizedBox(width: 12),
                             Text(
-                              'Frequently Asked Questions',
+                              AppLocalizations.of(
+                                context,
+                              )!.frequentlyAskedQuestions,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -116,24 +119,24 @@ class HelpScreen extends StatelessWidget {
                         ),
                       ),
                       _buildFAQItem(
-                        'How do I create a new task?',
-                        'Tap the "+" button on the home screen and fill in the task details including title, description, and priority level.',
+                        AppLocalizations.of(context)!.howToCreateTask,
+                        AppLocalizations.of(context)!.createTaskAnswer,
                       ),
                       _buildFAQItem(
-                        'How can I edit my profile?',
-                        'Go to Menu > My Account > Edit Profile to update your personal information and profile picture.',
+                        AppLocalizations.of(context)!.howToEditProfile,
+                        AppLocalizations.of(context)!.editProfileAnswer,
                       ),
                       _buildFAQItem(
-                        'How do I change my password?',
-                        'Navigate to Menu > My Account > Change Password and follow the instructions to update your password.',
+                        AppLocalizations.of(context)!.howToChangePassword,
+                        AppLocalizations.of(context)!.changePasswordAnswer,
                       ),
                       _buildFAQItem(
-                        'Can I delete completed tasks?',
-                        'Yes, you can delete tasks by swiping left on any task in your task list and tapping the delete button.',
+                        AppLocalizations.of(context)!.howToDeleteTasks,
+                        AppLocalizations.of(context)!.deleteTasksAnswer,
                       ),
                       _buildFAQItem(
-                        'How do I set task priorities?',
-                        'When creating or editing a task, you can select from three priority levels: High, Medium, or Low.',
+                        AppLocalizations.of(context)!.howToSetPriorities,
+                        AppLocalizations.of(context)!.setPrioritiesAnswer,
                       ),
                     ],
                   ),
@@ -167,7 +170,7 @@ class HelpScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: 12),
                           Text(
-                            'Quick Actions',
+                            AppLocalizations.of(context)!.quickActions,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -179,20 +182,26 @@ class HelpScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       _buildQuickAction(
                         icon: Icons.contact_support,
-                        title: 'Contact Support',
-                        subtitle: 'Get help from our support team',
+                        title: AppLocalizations.of(context)!.contactSupport,
+                        subtitle: AppLocalizations.of(
+                          context,
+                        )!.getHelpFromSupport,
                         onTap: () => Navigator.pop(context),
                       ),
                       _buildQuickAction(
                         icon: Icons.bug_report,
-                        title: 'Report a Bug',
-                        subtitle: 'Let us know about any issues',
+                        title: AppLocalizations.of(context)!.reportBug,
+                        subtitle: AppLocalizations.of(
+                          context,
+                        )!.letUsKnowAboutIssues,
                         onTap: () => _showReportDialog(context),
                       ),
                       _buildQuickAction(
                         icon: Icons.feedback,
-                        title: 'Send Feedback',
-                        subtitle: 'Share your thoughts and suggestions',
+                        title: AppLocalizations.of(context)!.sendFeedback,
+                        subtitle: AppLocalizations.of(
+                          context,
+                        )!.shareThoughtsSuggestions,
                         onTap: () => _showFeedbackDialog(context),
                       ),
                     ],
@@ -288,18 +297,18 @@ class HelpScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Report a Bug'),
+        title: Text(AppLocalizations.of(context)!.reportBug),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Please describe the bug you encountered:'),
+            Text(AppLocalizations.of(context)!.describeBugEncountered),
             const SizedBox(height: 16),
             TextField(
               controller: reportController,
               maxLines: 4,
-              decoration: const InputDecoration(
-                hintText: 'Describe the bug...',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                hintText: AppLocalizations.of(context)!.describeBugPlaceholder,
+                border: const OutlineInputBorder(),
               ),
             ),
           ],
@@ -307,19 +316,21 @@ class HelpScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Bug report submitted successfully!'),
+                SnackBar(
+                  content: Text(
+                    AppLocalizations.of(context)!.bugReportSubmitted,
+                  ),
                   backgroundColor: Colors.green,
                 ),
               );
             },
-            child: const Text('Submit'),
+            child: Text(AppLocalizations.of(context)!.send),
           ),
         ],
       ),
@@ -332,18 +343,18 @@ class HelpScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Send Feedback'),
+        title: Text(AppLocalizations.of(context)!.sendFeedback),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('We\'d love to hear your thoughts:'),
+            Text(AppLocalizations.of(context)!.wedLoveHearThoughts),
             const SizedBox(height: 16),
             TextField(
               controller: feedbackController,
               maxLines: 4,
-              decoration: const InputDecoration(
-                hintText: 'Your feedback...',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                hintText: AppLocalizations.of(context)!.yourFeedbackPlaceholder,
+                border: const OutlineInputBorder(),
               ),
             ),
           ],
@@ -351,19 +362,21 @@ class HelpScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Feedback sent successfully!'),
+                SnackBar(
+                  content: Text(
+                    AppLocalizations.of(context)!.feedbackSentSuccessfully,
+                  ),
                   backgroundColor: Colors.green,
                 ),
               );
             },
-            child: const Text('Send'),
+            child: Text(AppLocalizations.of(context)!.send),
           ),
         ],
       ),

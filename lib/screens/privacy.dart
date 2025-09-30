@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../l10n/app_localizations.dart';
 
 class PrivacyPolicyScreen extends StatefulWidget {
   const PrivacyPolicyScreen({super.key});
@@ -32,7 +33,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Privacy Policy',
+          AppLocalizations.of(context)!.privacyPolicy,
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -78,13 +79,13 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Privacy Policy',
+                              AppLocalizations.of(context)!.privacyPolicy,
                               style: theme.textTheme.headlineSmall?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              'Last updated: September 27, 2025',
+                              AppLocalizations.of(context)!.lastUpdated,
                               style: theme.textTheme.bodySmall?.copyWith(
                                 color: colorScheme.onSurface.withValues(
                                   alpha: 0.7,
@@ -98,7 +99,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Your privacy is important to us. This policy explains how we collect, use, and protect your information.',
+                    AppLocalizations.of(context)!.privacyDescription,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurface.withOpacity(0.8),
                     ),
@@ -127,66 +128,66 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
   List<Widget> _buildPrivacySections(ThemeData theme, ColorScheme colorScheme) {
     final sections = [
       _PrivacySection(
-        title: 'Information We Collect',
+        title: AppLocalizations.of(context)!.informationWeCollect,
         icon: Icons.info_outline,
         content: [
-          'Account Information: Email address, name, and profile picture when you sign up',
-          'Task Data: Your tasks, categories, due dates, and completion status',
-          'Usage Data: How you interact with the app for improving user experience',
-          'Device Information: Device type and operating system for compatibility',
+          AppLocalizations.of(context)!.accountInfoCollection,
+          AppLocalizations.of(context)!.taskDataCollection,
+          AppLocalizations.of(context)!.usageDataCollection,
+          AppLocalizations.of(context)!.deviceInfoCollection,
         ],
       ),
       _PrivacySection(
-        title: 'How We Use Your Information',
+        title: AppLocalizations.of(context)!.howWeUseYourInformation,
         icon: Icons.how_to_reg,
         content: [
-          'Provide and maintain the task management service',
-          'Sync your data across your devices securely',
-          'Send notifications about your tasks and deadlines',
-          'Improve app performance and add new features',
-          'Provide customer support when needed',
+          AppLocalizations.of(context)!.provideService,
+          AppLocalizations.of(context)!.syncData,
+          AppLocalizations.of(context)!.sendNotifications,
+          AppLocalizations.of(context)!.improveApp,
+          AppLocalizations.of(context)!.customerSupport,
         ],
       ),
       _PrivacySection(
-        title: 'Data Storage & Security',
+        title: AppLocalizations.of(context)!.dataStorageSecurity,
         icon: Icons.security,
         content: [
-          'Your data is stored securely using Firebase with industry-standard encryption',
-          'We use secure HTTPS connections for all data transmission',
-          'Your tasks are private and only accessible to you',
-          'We implement regular security updates and monitoring',
-          'Data backups are encrypted and stored securely',
+          AppLocalizations.of(context)!.secureStorage,
+          AppLocalizations.of(context)!.httpsConnections,
+          AppLocalizations.of(context)!.privateTasks,
+          AppLocalizations.of(context)!.securityUpdates,
+          AppLocalizations.of(context)!.encryptedBackups,
         ],
       ),
       _PrivacySection(
-        title: 'Data Sharing',
+        title: AppLocalizations.of(context)!.dataSharing,
         icon: Icons.share,
         content: [
-          'We do not sell your personal information to third parties',
-          'We do not share your task data with other users',
-          'Anonymous usage statistics may be used to improve the app',
-          'We may share data only if required by law or to protect our rights',
+          AppLocalizations.of(context)!.noSellData,
+          AppLocalizations.of(context)!.noShareTasks,
+          AppLocalizations.of(context)!.anonymousStats,
+          AppLocalizations.of(context)!.legalRequirements,
         ],
       ),
       _PrivacySection(
-        title: 'Your Rights',
+        title: AppLocalizations.of(context)!.yourRights,
         icon: Icons.account_circle,
         content: [
-          'Access: You can view all your data within the app',
-          'Update: You can modify your profile and task information anytime',
-          'Delete: You can delete your account and all associated data',
-          'Export: You can request a copy of your data',
-          'Control: You can manage notification and privacy settings',
+          AppLocalizations.of(context)!.accessRight,
+          AppLocalizations.of(context)!.updateRight,
+          AppLocalizations.of(context)!.deleteRight,
+          AppLocalizations.of(context)!.exportRight,
+          AppLocalizations.of(context)!.controlRight,
         ],
       ),
       _PrivacySection(
-        title: 'Third-Party Services',
+        title: AppLocalizations.of(context)!.thirdPartyServices,
         icon: Icons.integration_instructions,
         content: [
-          'Firebase: Used for authentication, data storage, and cloud functions',
-          'Google Play Services: For app distribution and crash reporting',
-          'No advertising networks or tracking services are used',
-          'All third-party services comply with their own privacy policies',
+          AppLocalizations.of(context)!.firebaseService,
+          AppLocalizations.of(context)!.googlePlayServices,
+          AppLocalizations.of(context)!.noAdvertising,
+          AppLocalizations.of(context)!.thirdPartyCompliance,
         ],
       ),
     ];
@@ -293,7 +294,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
               Icon(Icons.contact_support, color: colorScheme.primary, size: 24),
               const SizedBox(width: 12),
               Text(
-                'Questions or Concerns?',
+                AppLocalizations.of(context)!.questionsOrConcerns,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -302,7 +303,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
           ),
           const SizedBox(height: 16),
           Text(
-            'If you have any questions about this Privacy Policy or how we handle your data, please contact us:',
+            AppLocalizations.of(context)!.privacyContactDescription,
             style: theme.textTheme.bodyMedium?.copyWith(height: 1.5),
           ),
           const SizedBox(height: 12),
@@ -332,7 +333,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'We will respond to all privacy-related inquiries within 48 hours.',
+                    AppLocalizations.of(context)!.privacyResponseTime,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: colorScheme.primary,
                       fontWeight: FontWeight.w500,

@@ -1,0 +1,1989 @@
+{
+    "@@locale": "en",
+    "appTitle": "TaskApp",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "hello": "Hello",
+    "@hello": {
+        "description": "A greeting"
+    },
+    "welcome": "Welcome",
+    "@welcome": {
+        "description": "Welcome message"
+    },
+    "letsBeProductive": "Let's be productive today",
+    "@letsBeProductive": {
+        "description": "Motivational message for home screen"
+    },
+    "login": "Login",
+    "@login": {
+        "description": "Login button text"
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "Logout button text"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email field label"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Password field label"
+    },
+    "confirmPassword": "Confirm Password",
+    "@confirmPassword": {
+        "description": "Confirm password field label"
+    },
+    "signUp": "Sign Up",
+    "@signUp": {
+        "description": "Sign up button text"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Forgot password link text"
+    },
+    "createAccount": "Create Account",
+    "@createAccount": {
+        "description": "Create account text"
+    },
+    "alreadyHaveAccount": "Already have an account?",
+    "@alreadyHaveAccount": {
+        "description": "Already have account text"
+    },
+    "dontHaveAccount": "Don't have an account?",
+    "@dontHaveAccount": {
+        "description": "Don't have account text"
+    },
+    "home": "Home",
+    "@home": {
+        "description": "Home tab label"
+    },
+    "tasks": "Tasks",
+    "@tasks": {
+        "description": "Tasks tab label"
+    },
+    "calendar": "Calendar",
+    "@calendar": {
+        "description": "Calendar tab label"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": "Settings tab label"
+    },
+    "profile": "Profile",
+    "@profile": {
+        "description": "Profile tab label"
+    },
+    "addTask": "Add Task",
+    "@addTask": {
+        "description": "Add task button text"
+    },
+    "taskTitle": "Task Title",
+    "@taskTitle": {
+        "description": "Task title field label"
+    },
+    "taskDescription": "Task Description",
+    "@taskDescription": {
+        "description": "Task description field label"
+    },
+    "dueDate": "Due Date",
+    "@dueDate": {
+        "description": "Due date field label"
+    },
+    "priority": "Priority",
+    "@priority": {
+        "description": "Priority field label"
+    },
+    "high": "High",
+    "@high": {
+        "description": "High priority"
+    },
+    "medium": "Medium",
+    "@medium": {
+        "description": "Medium priority"
+    },
+    "low": "Low",
+    "@low": {
+        "description": "Low priority"
+    },
+    "save": "Save",
+    "@save": {
+        "description": "Save button text"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Cancel button text"
+    },
+    "delete": "Delete",
+    "@delete": {
+        "description": "Delete button text"
+    },
+    "edit": "Edit",
+    "@edit": {
+        "description": "Edit button text"
+    },
+    "language": "Language",
+    "@language": {
+        "description": "Language setting label"
+    },
+    "theme": "Theme",
+    "@theme": {
+        "description": "Theme setting label"
+    },
+    "notifications": "Notifications",
+    "@notifications": {
+        "description": "Notifications setting label"
+    },
+    "aboutApp": "About App",
+    "@aboutApp": {
+        "description": "About app setting label"
+    },
+    "version": "Version",
+    "@version": {
+        "description": "Version label"
+    },
+    "darkMode": "Dark Mode",
+    "@darkMode": {
+        "description": "Dark mode setting label"
+    },
+    "lightMode": "Light Mode",
+    "@lightMode": {
+        "description": "Light mode setting label"
+    },
+    "systemMode": "System Mode",
+    "@systemMode": {
+        "description": "System mode setting label"
+    },
+    "completed": "Completed",
+    "@completed": {
+        "description": "Completed status"
+    },
+    "pending": "Pending",
+    "@pending": {
+        "description": "Pending status"
+    },
+    "overdue": "Overdue",
+    "@overdue": {
+        "description": "Overdue status"
+    },
+    "noTasksFound": "No tasks found",
+    "@noTasksFound": {
+        "description": "Message when no tasks are found"
+    },
+    "searchTasks": "Search tasks...",
+    "@searchTasks": {
+        "description": "Search tasks placeholder"
+    },
+    "yourProgress": "Your Progress",
+    "@yourProgress": {
+        "description": "Progress section title"
+    },
+    "done": "Done",
+    "@done": {
+        "description": "Completed tasks label"
+    },
+    "left": "Left",
+    "@left": {
+        "description": "Remaining tasks label"
+    },
+    "findTasks": "Find Tasks",
+    "@findTasks": {
+        "description": "Find tasks section title"
+    },
+    "yourTasks": "Your Tasks",
+    "@yourTasks": {
+        "description": "Your tasks section title"
+    },
+    "clear": "Clear",
+    "@clear": {
+        "description": "Clear filters button text"
+    },
+    "showingTasks": "Showing {count} task{count, plural, =1{} other{s}}",
+    "@showingTasks": {
+        "description": "Task count display text",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "allCompleted": "All completed! 🎉",
+    "@allCompleted": {
+        "description": "Message when all tasks are completed"
+    },
+    "clearAllFilters": "Clear All Filters",
+    "@clearAllFilters": {
+        "description": "Clear all filters button text"
+    },
+    "filterByPriority": "Filter by Priority",
+    "@filterByPriority": {
+        "description": "Filter by priority option"
+    },
+    "filterByStatus": "Filter by Status",
+    "@filterByStatus": {
+        "description": "Filter by status option"
+    },
+    "all": "All",
+    "@all": {
+        "description": "All filter option"
+    },
+    "today": "Today",
+    "@today": {
+        "description": "Today filter option"
+    },
+    "thisWeek": "This Week",
+    "@thisWeek": {
+        "description": "This week filter option"
+    },
+    "thisMonth": "This Month",
+    "@thisMonth": {
+        "description": "This month filter option"
+    },
+    "error": "Error",
+    "@error": {
+        "description": "Generic error message"
+    },
+    "success": "Success",
+    "@success": {
+        "description": "Generic success message"
+    },
+    "loading": "Loading...",
+    "@loading": {
+        "description": "Loading message"
+    },
+    "retry": "Retry",
+    "@retry": {
+        "description": "Retry button text"
+    },
+    "noInternetConnection": "No internet connection",
+    "@noInternetConnection": {
+        "description": "No internet connection message"
+    },
+    "pleaseEnterValidEmail": "Please enter a valid email",
+    "@pleaseEnterValidEmail": {
+        "description": "Invalid email validation message"
+    },
+    "passwordTooShort": "Password must be at least 6 characters",
+    "@passwordTooShort": {
+        "description": "Password too short validation message"
+    },
+    "passwordsDoNotMatch": "Passwords do not match",
+    "@passwordsDoNotMatch": {
+        "description": "Passwords don't match validation message"
+    },
+    "fieldRequired": "This field is required",
+    "@fieldRequired": {
+        "description": "Required field validation message"
+    },
+    "clearCache": "Clear Cache",
+    "@clearCache": {
+        "description": "Clear cache button/option text"
+    },
+    "resetSettings": "Reset Settings",
+    "@resetSettings": {
+        "description": "Reset settings button/option text"
+    },
+    "clearCacheMessage": "This will clear all temporary files and cached data. The app may need to download content again.",
+    "@clearCacheMessage": {
+        "description": "Clear cache dialog message"
+    },
+    "resetSettingsMessage": "This will reset all settings to their default values. This action cannot be undone.",
+    "@resetSettingsMessage": {
+        "description": "Reset settings dialog message"
+    },
+    "cacheCleared": "Cache cleared successfully",
+    "@cacheCleared": {
+        "description": "Cache cleared success message"
+    },
+    "reset": "Reset",
+    "@reset": {
+        "description": "Reset button text"
+    },
+    "removeAccount": "Remove Account",
+    "@removeAccount": {
+        "description": "Remove account dialog title"
+    },
+    "removeAccountMessage": "Remove {email} from saved accounts?",
+    "@removeAccountMessage": {
+        "description": "Remove account confirmation message",
+        "placeholders": {
+            "email": {
+                "type": "String",
+                "description": "The email address to remove"
+            }
+        }
+    },
+    "remove": "Remove",
+    "@remove": {
+        "description": "Remove button text"
+    },
+    "accountRemoved": "Account removed",
+    "@accountRemoved": {
+        "description": "Account removed success message"
+    },
+    "errorRemovingAccount": "Error removing account: {error}",
+    "@errorRemovingAccount": {
+        "description": "Error removing account message",
+        "placeholders": {
+            "error": {
+                "type": "String",
+                "description": "The error message"
+            }
+        }
+    },
+    "accountSaved": "Account saved and synced with Firebase",
+    "@accountSaved": {
+        "description": "Account saved success message"
+    },
+    "mostRecent": "Most Recent",
+    "@mostRecent": {
+        "description": "Most recent sort option"
+    },
+    "alphabetical": "Alphabetical",
+    "@alphabetical": {
+        "description": "Alphabetical sort option"
+    },
+    "editTask": "Edit Task",
+    "@editTask": {
+        "description": "Edit task screen title"
+    },
+    "addNewTask": "Add New Task",
+    "@addNewTask": {
+        "description": "Add new task screen title"
+    },
+    "menu": "Menu",
+    "@menu": {
+        "description": "Menu screen title"
+    },
+    "account": "Account",
+    "@account": {
+        "description": "Account menu item"
+    },
+    "contactUs": "Contact Us",
+    "@contactUs": {
+        "description": "Contact Us menu item"
+    },
+    "aboutUs": "About Us",
+    "@aboutUs": {
+        "description": "About Us menu item"
+    },
+    "help": "Help",
+    "@help": {
+        "description": "Help menu item"
+    },
+    "sendMessage": "Send Message",
+    "@sendMessage": {
+        "description": "Send message button text"
+    },
+    "send": "Send",
+    "@send": {
+        "description": "Send button text"
+    },
+    "name": "Name",
+    "@name": {
+        "description": "Name field label"
+    },
+    "message": "Message",
+    "@message": {
+        "description": "Message field label"
+    },
+    "writeYourMessage": "Write your message here...",
+    "@writeYourMessage": {
+        "description": "Message field placeholder"
+    },
+    "messageSent": "Message sent successfully!",
+    "@messageSent": {
+        "description": "Message sent success text"
+    },
+    "viewAll": "View All",
+    "@viewAll": {
+        "description": "View all button text"
+    },
+    "editProfile": "Edit Profile",
+    "@editProfile": {
+        "description": "Edit profile button text"
+    },
+    "changePassword": "Change Password",
+    "@changePassword": {
+        "description": "Change password button text"
+    },
+    "accountDataUsage": "Account Data Usage",
+    "@accountDataUsage": {
+        "description": "Account data usage section title"
+    },
+    "totalTasks": "Total Tasks",
+    "@totalTasks": {
+        "description": "Total tasks label"
+    },
+    "activeProjects": "Active Projects",
+    "@activeProjects": {
+        "description": "Active projects label"
+    },
+    "dataSync": "Data Sync",
+    "@dataSync": {
+        "description": "Data sync label"
+    },
+    "privacyPolicy": "Privacy Policy",
+    "@privacyPolicy": {
+        "description": "Privacy Policy title"
+    },
+    "lastUpdated": "Last updated: September 27, 2025",
+    "@lastUpdated": {
+        "description": "Last updated date"
+    },
+    "privacyDescription": "Your privacy is important to us. This policy explains how we collect, use, and protect your information.",
+    "@privacyDescription": {
+        "description": "Privacy policy description"
+    },
+    "informationWeCollect": "Information We Collect",
+    "@informationWeCollect": {
+        "description": "Privacy section title"
+    },
+    "howWeUseYourInformation": "How We Use Your Information",
+    "@howWeUseYourInformation": {
+        "description": "Privacy section title"
+    },
+    "dataStorageSecurity": "Data Storage & Security",
+    "@dataStorageSecurity": {
+        "description": "Privacy section title"
+    },
+    "dataSharing": "Data Sharing",
+    "@dataSharing": {
+        "description": "Privacy section title"
+    },
+    "yourRights": "Your Rights",
+    "@yourRights": {
+        "description": "Privacy section title"
+    },
+    "thirdPartyServices": "Third-Party Services",
+    "@thirdPartyServices": {
+        "description": "Privacy section title"
+    },
+    "questionsOrConcerns": "Questions or Concerns?",
+    "@questionsOrConcerns": {
+        "description": "Contact section title"
+    },
+    "privacyContactDescription": "If you have any questions about this Privacy Policy or how we handle your data, please contact us:",
+    "@privacyContactDescription": {
+        "description": "Privacy contact description"
+    },
+    "privacyResponseTime": "We will respond to all privacy-related inquiries within 48 hours.",
+    "@privacyResponseTime": {
+        "description": "Privacy response time message"
+    },
+    "accountInfoCollection": "Account Information: Email address, name, and profile picture when you sign up",
+    "@accountInfoCollection": {
+        "description": "Privacy content item"
+    },
+    "taskDataCollection": "Task Data: Your tasks, categories, due dates, and completion status",
+    "@taskDataCollection": {
+        "description": "Privacy content item"
+    },
+    "usageDataCollection": "Usage Data: How you interact with the app for improving user experience",
+    "@usageDataCollection": {
+        "description": "Privacy content item"
+    },
+    "deviceInfoCollection": "Device Information: Device type and operating system for compatibility",
+    "@deviceInfoCollection": {
+        "description": "Privacy content item"
+    },
+    "provideService": "Provide and maintain the task management service",
+    "@provideService": {
+        "description": "Privacy content item"
+    },
+    "syncData": "Sync your data across your devices securely",
+    "@syncData": {
+        "description": "Privacy content item"
+    },
+    "sendNotifications": "Send notifications about your tasks and deadlines",
+    "@sendNotifications": {
+        "description": "Privacy content item"
+    },
+    "improveApp": "Improve app performance and add new features",
+    "@improveApp": {
+        "description": "Privacy content item"
+    },
+    "customerSupport": "Provide customer support when needed",
+    "@customerSupport": {
+        "description": "Privacy content item"
+    },
+    "secureStorage": "Your data is stored securely using Firebase with industry-standard encryption",
+    "@secureStorage": {
+        "description": "Privacy content item"
+    },
+    "httpsConnections": "We use secure HTTPS connections for all data transmission",
+    "@httpsConnections": {
+        "description": "Privacy content item"
+    },
+    "privateTasks": "Your tasks are private and only accessible to you",
+    "@privateTasks": {
+        "description": "Privacy content item"
+    },
+    "securityUpdates": "We implement regular security updates and monitoring",
+    "@securityUpdates": {
+        "description": "Privacy content item"
+    },
+    "encryptedBackups": "Data backups are encrypted and stored securely",
+    "@encryptedBackups": {
+        "description": "Privacy content item"
+    },
+    "noSellData": "We do not sell your personal information to third parties",
+    "@noSellData": {
+        "description": "Privacy content item"
+    },
+    "noShareTasks": "We do not share your task data with other users",
+    "@noShareTasks": {
+        "description": "Privacy content item"
+    },
+    "anonymousStats": "Anonymous usage statistics may be used to improve the app",
+    "@anonymousStats": {
+        "description": "Privacy content item"
+    },
+    "legalRequirements": "We may share data only if required by law or to protect our rights",
+    "@legalRequirements": {
+        "description": "Privacy content item"
+    },
+    "accessRight": "Access: You can view all your data within the app",
+    "@accessRight": {
+        "description": "Privacy content item"
+    },
+    "updateRight": "Update: You can modify your profile and task information anytime",
+    "@updateRight": {
+        "description": "Privacy content item"
+    },
+    "deleteRight": "Delete: You can delete your account and all associated data",
+    "@deleteRight": {
+        "description": "Privacy content item"
+    },
+    "exportRight": "Export: You can request a copy of your data",
+    "@exportRight": {
+        "description": "Privacy content item"
+    },
+    "controlRight": "Control: You can manage notification and privacy settings",
+    "@controlRight": {
+        "description": "Privacy content item"
+    },
+    "firebaseService": "Firebase: Used for authentication, data storage, and cloud functions",
+    "@firebaseService": {
+        "description": "Privacy content item"
+    },
+    "googlePlayServices": "Google Play Services: For app distribution and crash reporting",
+    "@googlePlayServices": {
+        "description": "Privacy content item"
+    },
+    "noAdvertising": "No advertising networks or tracking services are used",
+    "@noAdvertising": {
+        "description": "Privacy content item"
+    },
+    "thirdPartyCompliance": "All third-party services comply with their own privacy policies",
+    "@thirdPartyCompliance": {
+        "description": "Privacy content item"
+    },
+    "profileUpdatedSuccess": "Profile updated successfully!",
+    "@profileUpdatedSuccess": {
+        "description": "Profile update success message"
+    },
+    "errorUpdatingProfile": "Error updating profile",
+    "@errorUpdatingProfile": {
+        "description": "Profile update error message"
+    },
+    "photoUploadComingSoon": "Photo upload feature coming soon!",
+    "@photoUploadComingSoon": {
+        "description": "Photo upload feature message"
+    },
+    "tapCameraToChangePhoto": "Tap camera icon to change photo",
+    "@tapCameraToChangePhoto": {
+        "description": "Photo change instruction"
+    },
+    "personalInformation": "Personal Information",
+    "@personalInformation": {
+        "description": "Personal information section title"
+    },
+    "displayName": "Display Name",
+    "@displayName": {
+        "description": "Display name field label"
+    },
+    "enterDisplayName": "Enter your display name",
+    "@enterDisplayName": {
+        "description": "Display name field placeholder"
+    },
+    "pleaseEnterDisplayName": "Please enter a display name",
+    "@pleaseEnterDisplayName": {
+        "description": "Display name validation message"
+    },
+    "displayNameMinLength": "Display name must be at least 2 characters",
+    "@displayNameMinLength": {
+        "description": "Display name length validation message"
+    },
+    "emailAddress": "Email Address",
+    "@emailAddress": {
+        "description": "Email address field label"
+    },
+    "emailCannotBeChanged": "Email cannot be changed from this screen for security reasons",
+    "@emailCannotBeChanged": {
+        "description": "Email security message"
+    },
+    "passwordChangedSuccess": "Password changed successfully!",
+    "@passwordChangedSuccess": {
+        "description": "Password change success message"
+    },
+    "currentPasswordIncorrect": "Current password is incorrect",
+    "@currentPasswordIncorrect": {
+        "description": "Wrong password error message"
+    },
+    "newPasswordTooWeak": "New password is too weak",
+    "@newPasswordTooWeak": {
+        "description": "Weak password error message"
+    },
+    "requiresRecentLogin": "Please log out and log in again before changing password",
+    "@requiresRecentLogin": {
+        "description": "Recent login required error message"
+    },
+    "errorChangingPassword": "Error changing password",
+    "@errorChangingPassword": {
+        "description": "General password change error"
+    },
+    "currentPassword": "Current Password",
+    "@currentPassword": {
+        "description": "Current password field label"
+    },
+    "newPassword": "New Password",
+    "@newPassword": {
+        "description": "New password field label"
+    },
+    "confirmNewPassword": "Confirm New Password",
+    "@confirmNewPassword": {
+        "description": "Confirm password field label"
+    },
+    "pleaseEnterCurrentPassword": "Please enter your current password",
+    "@pleaseEnterCurrentPassword": {
+        "description": "Current password validation message"
+    },
+    "pleaseEnterNewPassword": "Please enter a new password",
+    "@pleaseEnterNewPassword": {
+        "description": "New password validation message"
+    },
+    "passwordMinLength": "Password must be at least 6 characters",
+    "@passwordMinLength": {
+        "description": "Password length validation message"
+    },
+    "pleaseConfirmNewPassword": "Please confirm your new password",
+    "@pleaseConfirmNewPassword": {
+        "description": "Confirm password validation message"
+    },
+    "contactMessages": "Contact Messages",
+    "@contactMessages": {
+        "description": "Contact messages screen title"
+    },
+    "newMessages": "new",
+    "@newMessages": {
+        "description": "New messages count label"
+    },
+    "errorLoadingMessages": "Error",
+    "@errorLoadingMessages": {
+        "description": "Error loading messages"
+    },
+    "noContactMessages": "No contact messages yet",
+    "@noContactMessages": {
+        "description": "Empty state message"
+    },
+    "newLabel": "NEW",
+    "@newLabel": {
+        "description": "New message label"
+    },
+    "messageLabel": "Message:",
+    "@messageLabel": {
+        "description": "Message content label"
+    },
+    "markAsRead": "Mark as Read",
+    "@markAsRead": {
+        "description": "Mark as read button"
+    },
+    "markAsUnread": "Mark as Unread",
+    "@markAsUnread": {
+        "description": "Mark as unread button"
+    },
+    "reply": "Reply",
+    "@reply": {
+        "description": "Reply button"
+    },
+    "deleteMessage": "Delete Message",
+    "@deleteMessage": {
+        "description": "Delete message button"
+    },
+    "dayAgo": "day ago",
+    "@dayAgo": {
+        "description": "Single day ago"
+    },
+    "daysAgo": "days ago",
+    "@daysAgo": {
+        "description": "Multiple days ago"
+    },
+    "hourAgo": "hour ago",
+    "@hourAgo": {
+        "description": "Single hour ago"
+    },
+    "hoursAgo": "hours ago",
+    "@hoursAgo": {
+        "description": "Multiple hours ago"
+    },
+    "minuteAgo": "minute ago",
+    "@minuteAgo": {
+        "description": "Single minute ago"
+    },
+    "minutesAgo": "minutes ago",
+    "@minutesAgo": {
+        "description": "Multiple minutes ago"
+    },
+    "justNow": "Just now",
+    "@justNow": {
+        "description": "Just now time label"
+    },
+    "failedToUpdateStatus": "Failed to update message status",
+    "@failedToUpdateStatus": {
+        "description": "Update status error message"
+    },
+    "confirmDeleteMessage": "Are you sure you want to delete this message? This action cannot be undone.",
+    "@confirmDeleteMessage": {
+        "description": "Delete confirmation message"
+    },
+    "messageDeletedSuccess": "Message deleted successfully",
+    "@messageDeletedSuccess": {
+        "description": "Delete success message"
+    },
+    "failedToDeleteMessage": "Failed to delete message",
+    "@failedToDeleteMessage": {
+        "description": "Delete error message"
+    },
+    "replyTo": "Reply to",
+    "@replyTo": {
+        "description": "Reply dialog title prefix"
+    },
+    "emailLabel": "Email:",
+    "@emailLabel": {
+        "description": "Email field label"
+    },
+    "emailAppDescription": "This will open your default email app to compose a reply.",
+    "@emailAppDescription": {
+        "description": "Email app description"
+    },
+    "openEmailApp": "Open Email App",
+    "@openEmailApp": {
+        "description": "Open email app button"
+    },
+    "emailFunctionalityPlaceholder": "Email functionality would be implemented here",
+    "@emailFunctionalityPlaceholder": {
+        "description": "Email functionality placeholder message"
+    },
+    "userName": "User Name",
+    "@userName": {
+        "description": "Default user name fallback"
+    },
+    "defaultEmail": "user@example.com",
+    "@defaultEmail": {
+        "description": "Default email fallback"
+    },
+    "tasksCompleted": "Tasks\nCompleted",
+    "@tasksCompleted": {
+        "description": "Tasks completed label"
+    },
+    "activeTasks": "Active\nTasks",
+    "@activeTasks": {
+        "description": "Active tasks label"
+    },
+    "daysStreak": "Days\nStreak",
+    "@daysStreak": {
+        "description": "Days streak label"
+    },
+    "appearance": "Appearance",
+    "appSettings": "App Settings",
+    "getRemindersForTasks": "Get reminders for your tasks",
+    "updateProfile": "Update Profile",
+    "@updateProfile": {
+        "description": "Update profile button text"
+    },
+    "taskManager": "Task Manager",
+    "@taskManager": {
+        "description": "App name in about screen"
+    },
+    "versionNumber": "Version 1.0.0",
+    "@versionNumber": {
+        "description": "App version number"
+    },
+    "ourMission": "Our Mission",
+    "@ourMission": {
+        "description": "Our mission section title"
+    },
+    "missionDescription": "We believe in making task management simple and efficient. Our app is designed to help you organize your daily tasks, set priorities, and achieve your goals with ease.",
+    "@missionDescription": {
+        "description": "Mission description text"
+    },
+    "keyFeatures": "Key Features",
+    "@keyFeatures": {
+        "description": "Key features section title"
+    },
+    "taskCreationManagement": "Task Creation & Management",
+    "@taskCreationManagement": {
+        "description": "Task creation feature"
+    },
+    "prioritySetting": "Priority Setting",
+    "@prioritySetting": {
+        "description": "Priority setting feature"
+    },
+    "userProfileManagement": "User Profile Management",
+    "@userProfileManagement": {
+        "description": "Profile management feature"
+    },
+    "secureAuthentication": "Secure Authentication",
+    "@secureAuthentication": {
+        "description": "Authentication feature"
+    },
+    "cloudSynchronization": "Cloud Synchronization",
+    "@cloudSynchronization": {
+        "description": "Cloud sync feature"
+    },
+    "ourTeam": "Our Team",
+    "@ourTeam": {
+        "description": "Our team section title"
+    },
+    "teamDescription": "Developed by Group 10 - A dedicated team of developers passionate about creating intuitive and powerful productivity tools.",
+    "@teamDescription": {
+        "description": "Team description text"
+    },
+    "messageSavedSuccessfully": "Message saved successfully!",
+    "@messageSavedSuccessfully": {
+        "description": "Message saved success message"
+    },
+    "messageSavedDescription": "Your message has been saved to our database. We'll get back to you within 24 hours.",
+    "@messageSavedDescription": {
+        "description": "Message saved description"
+    },
+    "thankYou": "Thank You!",
+    "@thankYou": {
+        "description": "Thank you dialog title"
+    },
+    "thankYouDescription": "Your message has been saved to our database. We'll respond within 24 hours.",
+    "@thankYouDescription": {
+        "description": "Thank you dialog description"
+    },
+    "failedToSendMessage": "Failed to send message",
+    "@failedToSendMessage": {
+        "description": "Failed to send message error title"
+    },
+    "checkConnectionTryAgain": "Please check your connection and try again.",
+    "@checkConnectionTryAgain": {
+        "description": "Connection error message"
+    },
+    "pleaseEnterMessage": "Please enter your message",
+    "@pleaseEnterMessage": {
+        "description": "Message validation error"
+    },
+    "messageMinLength": "Message must be at least 10 characters (currently {currentLength})",
+    "@messageMinLength": {
+        "description": "Message minimum length validation",
+        "placeholders": {
+            "currentLength": {
+                "type": "int",
+                "description": "Current message length"
+            }
+        }
+    },
+    "messageTooLong": "Message is too long (maximum 500 characters)",
+    "@messageTooLong": {
+        "description": "Message maximum length validation"
+    },
+    "meaningfulMessage": "Please enter a meaningful message (avoid repeated characters)",
+    "@meaningfulMessage": {
+        "description": "Meaningful message validation"
+    },
+    "messageMustContainLetters": "Message must contain letters or numbers",
+    "@messageMustContainLetters": {
+        "description": "Message content validation"
+    },
+    "invalidMessageFormat": "Invalid message format. Please try again.",
+    "@invalidMessageFormat": {
+        "description": "Invalid message format error"
+    },
+    "howCanWeHelp": "How can we help you?",
+    "@howCanWeHelp": {
+        "description": "Help screen header"
+    },
+    "helpDescription": "Find answers to common questions and learn how to use the app effectively.",
+    "@helpDescription": {
+        "description": "Help screen description"
+    },
+    "frequentlyAskedQuestions": "Frequently Asked Questions",
+    "@frequentlyAskedQuestions": {
+        "description": "FAQ section title"
+    },
+    "howToCreateTask": "How do I create a new task?",
+    "@howToCreateTask": {
+        "description": "FAQ question"
+    },
+    "createTaskAnswer": "Tap the \"+\" button on the home screen and fill in the task details including title, description, and priority level.",
+    "@createTaskAnswer": {
+        "description": "FAQ answer"
+    },
+    "howToEditProfile": "How can I edit my profile?",
+    "@howToEditProfile": {
+        "description": "FAQ question"
+    },
+    "editProfileAnswer": "Go to Menu > My Account > Edit Profile to update your personal information and profile picture.",
+    "@editProfileAnswer": {
+        "description": "FAQ answer"
+    },
+    "howToChangePassword": "How do I change my password?",
+    "@howToChangePassword": {
+        "description": "FAQ question"
+    },
+    "changePasswordAnswer": "Navigate to Menu > My Account > Change Password and follow the instructions to update your password.",
+    "@changePasswordAnswer": {
+        "description": "FAQ answer"
+    },
+    "howToDeleteTasks": "Can I delete completed tasks?",
+    "@howToDeleteTasks": {
+        "description": "FAQ question"
+    },
+    "deleteTasksAnswer": "Yes, you can delete tasks by swiping left on any task in your task list and tapping the delete button.",
+    "@deleteTasksAnswer": {
+        "description": "FAQ answer"
+    },
+    "howToSetPriorities": "How do I set task priorities?",
+    "@howToSetPriorities": {
+        "description": "FAQ question"
+    },
+    "setPrioritiesAnswer": "When creating or editing a task, you can select from three priority levels: High, Medium, or Low.",
+    "@setPrioritiesAnswer": {
+        "description": "FAQ answer"
+    },
+    "quickActions": "Quick Actions",
+    "@quickActions": {
+        "description": "Quick actions section title"
+    },
+    "contactSupport": "Contact Support",
+    "@contactSupport": {
+        "description": "Contact support action"
+    },
+    "getHelpFromSupport": "Get help from our support team",
+    "@getHelpFromSupport": {
+        "description": "Contact support description"
+    },
+    "reportBug": "Report a Bug",
+    "@reportBug": {
+        "description": "Report bug action"
+    },
+    "letUsKnowAboutIssues": "Let us know about any issues",
+    "@letUsKnowAboutIssues": {
+        "description": "Report bug description"
+    },
+    "sendFeedback": "Send Feedback",
+    "@sendFeedback": {
+        "description": "Send feedback action"
+    },
+    "shareThoughtsSuggestions": "Share your thoughts and suggestions",
+    "@shareThoughtsSuggestions": {
+        "description": "Send feedback description"
+    },
+    "describeBugEncountered": "Please describe the bug you encountered:",
+    "@describeBugEncountered": {
+        "description": "Bug report dialog text"
+    },
+    "describeBugPlaceholder": "Describe the bug...",
+    "@describeBugPlaceholder": {
+        "description": "Bug description placeholder"
+    },
+    "bugReportSubmitted": "Bug report submitted successfully!",
+    "@bugReportSubmitted": {
+        "description": "Bug report success message"
+    },
+    "wedLoveHearThoughts": "We'd love to hear your thoughts:",
+    "@wedLoveHearThoughts": {
+        "description": "Feedback dialog text"
+    },
+    "yourFeedbackPlaceholder": "Your feedback...",
+    "@yourFeedbackPlaceholder": {
+        "description": "Feedback placeholder"
+    },
+    "feedbackSentSuccessfully": "Feedback sent successfully!",
+    "@feedbackSentSuccessfully": {
+        "description": "Feedback success message"
+    },
+    "getInTouch": "Get in Touch",
+    "@getInTouch": {
+        "description": "Contact us header title"
+    },
+    "getInTouchDescription": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "@getInTouchDescription": {
+        "description": "Contact us header description"
+    },
+    "emailContact": "Email",
+    "@emailContact": {
+        "description": "Email contact option"
+    },
+    "phoneContact": "Phone",
+    "@phoneContact": {
+        "description": "Phone contact option"
+    },
+    "addressContact": "Address",
+    "@addressContact": {
+        "description": "Address contact option"
+    },
+    "supportEmail": "support@taskapp.com",
+    "@supportEmail": {
+        "description": "Support email address"
+    },
+    "supportPhone": "+1 (555) 123-4567",
+    "@supportPhone": {
+        "description": "Support phone number"
+    },
+    "supportAddress": "123 Main St, City, State 12345",
+    "@supportAddress": {
+        "description": "Support address"
+    },
+    "sendMessageButton": "Send Message",
+    "@sendMessageButton": {
+        "description": "Send message button text"
+    },
+    "nameAndEmailLocked": "Name and email are locked to your current account for security.",
+    "@nameAndEmailLocked": {
+        "description": "Account lock info message"
+    },
+    "nameFieldLabel": "Name *",
+    "@nameFieldLabel": {
+        "description": "Name field label"
+    },
+    "emailFieldLabel": "Email *",
+    "@emailFieldLabel": {
+        "description": "Email field label"
+    },
+    "messageFieldLabel": "Message *",
+    "@messageFieldLabel": {
+        "description": "Message field label"
+    },
+    "loadingText": "Loading...",
+    "@loadingText": {
+        "description": "Loading text"
+    },
+    "lockedToCurrentUser": "Locked to current user",
+    "@lockedToCurrentUser": {
+        "description": "Locked field hint"
+    },
+    "enterYourName": "Enter your name",
+    "@enterYourName": {
+        "description": "Name field placeholder"
+    },
+    "enterYourEmail": "Enter your email",
+    "@enterYourEmail": {
+        "description": "Email field placeholder"
+    },
+    "typeYourMessageHere": "Type your message here...",
+    "@typeYourMessageHere": {
+        "description": "Message field placeholder"
+    },
+    "accountNameNotFound": "Account name not found. Please update your profile.",
+    "@accountNameNotFound": {
+        "description": "Name validation error for authenticated users"
+    },
+    "nameMinLength": "Name must be at least 2 characters",
+    "@nameMinLength": {
+        "description": "Name minimum length validation"
+    },
+    "accountEmailNotFound": "Account email not found. Please update your profile.",
+    "@accountEmailNotFound": {
+        "description": "Email validation error for authenticated users"
+    },
+    "pleaseEnterValidEmailContact": "Please enter a valid email address",
+    "@pleaseEnterValidEmailContact": {
+        "description": "Invalid email validation message for contact"
+    },
+    "great": "Great!",
+    "@great": {
+        "description": "Success dialog button text"
+    },
+    "errorGettingUserProfile": "Error getting user profile from Firestore: {error}",
+    "@errorGettingUserProfile": {
+        "description": "Debug message for Firestore user profile error",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "loadedUserData": "Loaded user data - Name: {name}, Email: {email}",
+    "@loadedUserData": {
+        "description": "Debug message for successful user data loading",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            },
+            "email": {
+                "type": "String"
+            }
+        }
+    },
+    "errorLoadingUserData": "Error loading user data: {error}",
+    "@errorLoadingUserData": {
+        "description": "Debug message for user data loading error",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "messageValidationFailed": "Message validation failed: {validationError}",
+    "@messageValidationFailed": {
+        "description": "Error message for message validation failure",
+        "placeholders": {
+            "validationError": {
+                "type": "String"
+            }
+        }
+    },
+    "messageTooShort": "Message must be at least 10 characters long",
+    "@messageTooShort": {
+        "description": "Error message for message length validation"
+    },
+    "failedToSendMessageConnection": "Failed to send message. Please check your connection and try again.",
+    "@failedToSendMessageConnection": {
+        "description": "Error message for failed message sending due to connection issues"
+    },
+    "storageUsed": "Storage Used:",
+    "@storageUsed": {
+        "description": "Label for storage usage in data usage dialog"
+    },
+    "profileImages": "Profile Images:",
+    "@profileImages": {
+        "description": "Label for profile images count in data usage dialog"
+    },
+    "accountCreated": "Account Created:",
+    "@accountCreated": {
+        "description": "Label for account creation date in data usage dialog"
+    },
+    "lastActive": "Last Active:",
+    "@lastActive": {
+        "description": "Label for last active date in data usage dialog"
+    },
+    "confirmLogout": "Are you sure you want to logout from this device?",
+    "@confirmLogout": {
+        "description": "Confirmation message for logout dialog"
+    },
+    "signingOut": "Signing out...",
+    "@signingOut": {
+        "description": "Loading message during sign out process"
+    },
+    "errorSigningOut": "Error signing out: {error}",
+    "@errorSigningOut": {
+        "description": "Error message when sign out fails",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "completedTasks": "Completed Tasks:",
+    "@completedTasks": {
+        "description": "Label for completed tasks count in data usage dialog"
+    },
+    "pendingTasks": "Pending Tasks:",
+    "@pendingTasks": {
+        "description": "Label for pending tasks count in data usage dialog"
+    },
+    "close": "Close",
+    "@close": {
+        "description": "Close button text"
+    },
+    "accountManagement": "Account Management",
+    "@accountManagement": {
+        "description": "Account management section header"
+    },
+    "updateProfileDetails": "Update name, photo, and personal details",
+    "@updateProfileDetails": {
+        "description": "Edit profile subtitle"
+    },
+    "updatePasswordForSecurity": "Update your account password for security",
+    "@updatePasswordForSecurity": {
+        "description": "Change password subtitle"
+    },
+    "accountData": "Account Data",
+    "@accountData": {
+        "description": "Account data option title"
+    },
+    "viewAccountStorage": "View your account storage and data usage",
+    "@viewAccountStorage": {
+        "description": "Account data subtitle"
+    },
+    "signOutOfAccount": "Sign out of your account on this device",
+    "@signOutOfAccount": {
+        "description": "Logout subtitle"
+    },
+    "deleteAccount": "Delete Account",
+    "@deleteAccount": {
+        "description": "Delete account option title"
+    },
+    "permanentlyDeleteAccount": "Permanently delete your account and all data",
+    "@permanentlyDeleteAccount": {
+        "description": "Delete account subtitle"
+    },
+    "active": "Active",
+    "@active": {
+        "description": "User status indicator"
+    },
+    "deleteAccountWarning": "This action will permanently remove:",
+    "@deleteAccountWarning": {
+        "description": "Warning text in delete account dialog"
+    },
+    "deleteProfileSettings": "• Your profile and personal settings",
+    "@deleteProfileSettings": {
+        "description": "Profile deletion warning item"
+    },
+    "deleteAllTasks": "• All {taskCount} tasks and their data",
+    "@deleteAllTasks": {
+        "description": "Tasks deletion warning item",
+        "placeholders": {
+            "taskCount": {
+                "type": "String"
+            }
+        }
+    },
+    "deleteAccountAccess": "• Account access and login credentials",
+    "@deleteAccountAccess": {
+        "description": "Account access deletion warning item"
+    },
+    "deletePreferencesHistory": "• All stored preferences and history",
+    "@deletePreferencesHistory": {
+        "description": "Preferences deletion warning item"
+    },
+    "actionCannotBeUndone": "This action cannot be undone",
+    "@actionCannotBeUndone": {
+        "description": "Irreversible action warning"
+    },
+    "continueToDelete": "Continue to Delete",
+    "@continueToDelete": {
+        "description": "Continue button in delete confirmation"
+    },
+    "finalConfirmation": "Final Confirmation",
+    "@finalConfirmation": {
+        "description": "Final confirmation dialog title"
+    },
+    "finalDeleteInstruction": "For security, please enter your password and type \"DELETE\" to confirm:",
+    "@finalDeleteInstruction": {
+        "description": "Final delete confirmation instruction"
+    },
+    "enterPassword": "Enter your password",
+    "@enterPassword": {
+        "description": "Password field hint"
+    },
+    "confirmation": "Confirmation",
+    "@confirmation": {
+        "description": "Confirmation field label"
+    },
+    "typeDeleteHere": "Type DELETE here",
+    "@typeDeleteHere": {
+        "description": "Confirmation field hint"
+    },
+    "deleteWarningDetails": "⚠️ This will permanently delete:\n• Your profile and settings\n• All tasks and data\n• Account access",
+    "@deleteWarningDetails": {
+        "description": "Detailed delete warning"
+    },
+    "pleaseEnterPassword": "Please enter your password",
+    "@pleaseEnterPassword": {
+        "description": "Password validation error"
+    },
+    "pleaseTypeDelete": "Please type \"DELETE\" to confirm",
+    "@pleaseTypeDelete": {
+        "description": "Confirmation validation error"
+    },
+    "deleteForever": "Delete Forever",
+    "@deleteForever": {
+        "description": "Final delete button text"
+    },
+    "deletingAccount": "Deleting your account...",
+    "@deletingAccount": {
+        "description": "Account deletion progress message"
+    },
+    "mayTakeFewMoments": "This may take a few moments",
+    "@mayTakeFewMoments": {
+        "description": "Deletion progress subtitle"
+    },
+    "accountDeletedSuccessfully": "Account deleted successfully",
+    "@accountDeletedSuccessfully": {
+        "description": "Account deletion success message"
+    },
+    "incorrectPassword": "Incorrect password. Please try again.",
+    "@incorrectPassword": {
+        "description": "Password error message"
+    },
+    "tooManyAttempts": "Too many attempts. Please try again later.",
+    "@tooManyAttempts": {
+        "description": "Rate limit error message"
+    },
+    "networkError": "Network error. Please check your connection.",
+    "@networkError": {
+        "description": "Network error message"
+    },
+    "failedToDeleteAccount": "Failed to delete account: {error}",
+    "@failedToDeleteAccount": {
+        "description": "Generic account deletion error",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "signOutAndBackIn": "Please sign out and back in, then try again.",
+    "@signOutAndBackIn": {
+        "description": "Message when recent login is required for account deletion"
+    },
+    "january": "January",
+    "@january": {
+        "description": "Month name"
+    },
+    "february": "February",
+    "@february": {
+        "description": "Month name"
+    },
+    "march": "March",
+    "@march": {
+        "description": "Month name"
+    },
+    "april": "April",
+    "@april": {
+        "description": "Month name"
+    },
+    "may": "May",
+    "@may": {
+        "description": "Month name"
+    },
+    "june": "June",
+    "@june": {
+        "description": "Month name"
+    },
+    "july": "July",
+    "@july": {
+        "description": "Month name"
+    },
+    "august": "August",
+    "@august": {
+        "description": "Month name"
+    },
+    "september": "September",
+    "@september": {
+        "description": "Month name"
+    },
+    "october": "October",
+    "@october": {
+        "description": "Month name"
+    },
+    "november": "November",
+    "@november": {
+        "description": "Month name"
+    },
+    "december": "December",
+    "@december": {
+        "description": "Month name"
+    },
+    "filterTasksTitle": "Filter & Search Tasks",
+    "@filterTasksTitle": {
+        "description": "Filter bottom sheet title"
+    },
+    "clearAll": "Clear All",
+    "@clearAll": {
+        "description": "Clear all filters button text"
+    },
+    "status": "Status",
+    "@status": {
+        "description": "Status filter section title"
+    },
+    "allTasks": "All Tasks",
+    "@allTasks": {
+        "description": "All tasks filter option"
+    },
+    "allPriorities": "All Priorities",
+    "@allPriorities": {
+        "description": "All priorities filter option"
+    },
+    "highPriority": "High Priority",
+    "@highPriority": {
+        "description": "High priority filter option"
+    },
+    "mediumPriority": "Medium Priority",
+    "@mediumPriority": {
+        "description": "Medium priority filter option"
+    },
+    "lowPriority": "Low Priority",
+    "@lowPriority": {
+        "description": "Low priority filter option"
+    },
+    "allDates": "All Dates",
+    "@allDates": {
+        "description": "All dates filter option"
+    },
+    "dueToday": "Due Today",
+    "@dueToday": {
+        "description": "Due today filter option"
+    },
+    "customRange": "Custom Range",
+    "@customRange": {
+        "description": "Custom range filter option"
+    },
+    "customDateRange": "Custom Date Range",
+    "@customDateRange": {
+        "description": "Custom date range section title"
+    },
+    "clearCustomRange": "Clear custom range",
+    "@clearCustomRange": {
+        "description": "Clear custom range tooltip"
+    },
+    "selectDateRange": "Select Date Range",
+    "@selectDateRange": {
+        "description": "Select date range button text"
+    },
+    "category": "Category",
+    "@category": {
+        "description": "Category filter section title"
+    },
+    "allCategories": "All Categories",
+    "@allCategories": {
+        "description": "All categories filter option"
+    },
+    "work": "Work",
+    "@work": {
+        "description": "Work category filter option"
+    },
+    "personal": "Personal",
+    "@personal": {
+        "description": "Personal category filter option"
+    },
+    "shopping": "Shopping",
+    "@shopping": {
+        "description": "Shopping category filter option"
+    },
+    "health": "Health",
+    "@health": {
+        "description": "Health category filter option"
+    },
+    "education": "Education",
+    "@education": {
+        "description": "Education category filter option"
+    },
+    "saveCurrentFilters": "Save Current Filters",
+    "@saveCurrentFilters": {
+        "description": "Save current filters section title"
+    },
+    "applyFilters": "Apply Filters",
+    "@applyFilters": {
+        "description": "Apply filters button text"
+    },
+    "searchTasksTitle": "Search Tasks",
+    "@searchTasksTitle": {
+        "description": "Search tasks section title"
+    },
+    "searchByTaskNameOrDescription": "Search by task name or description...",
+    "@searchByTaskNameOrDescription": {
+        "description": "Search input hint text"
+    },
+    "savedPresets": "Saved Presets",
+    "@savedPresets": {
+        "description": "Saved presets section title"
+    },
+    "deletePreset": "Delete Preset",
+    "@deletePreset": {
+        "description": "Delete preset dialog title"
+    },
+    "deletePresetConfirmation": "Are you sure you want to delete the preset \"{presetName}\"?",
+    "@deletePresetConfirmation": {
+        "description": "Delete preset confirmation dialog content",
+        "placeholders": {
+            "presetName": {
+                "type": "String"
+            }
+        }
+    },
+    "pleaseEnterPresetName": "Please enter a preset name",
+    "@pleaseEnterPresetName": {
+        "description": "Error message when preset name is empty"
+    },
+    "presetSavedSuccessfully": "Preset \"{name}\" saved successfully!",
+    "@presetSavedSuccessfully": {
+        "description": "Success message when preset is saved",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "appliedPreset": "Applied preset \"{presetName}\"",
+    "@appliedPreset": {
+        "description": "Message when preset is applied",
+        "placeholders": {
+            "presetName": {
+                "type": "String"
+            }
+        }
+    },
+    "presetRemoved": "Preset \"{name}\" removed",
+    "@presetRemoved": {
+        "description": "Message when preset is deleted",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "noTasksYet": "No Tasks Yet",
+    "@noTasksYet": {
+        "description": "Empty state title when no tasks exist"
+    },
+    "createFirstTask": "Create your first task to get started with productivity!",
+    "@createFirstTask": {
+        "description": "Empty state subtitle when no tasks exist"
+    },
+    "noSearchResults": "No Search Results",
+    "@noSearchResults": {
+        "description": "Empty state title when search returns no results"
+    },
+    "noTasksMatchSearch": "No tasks match your search query. Try different keywords.",
+    "@noTasksMatchSearch": {
+        "description": "Empty state subtitle when search returns no results"
+    },
+    "clearSearch": "Clear Search",
+    "@clearSearch": {
+        "description": "Clear search action button text"
+    },
+    "noMatchingTasks": "No Matching Tasks",
+    "@noMatchingTasks": {
+        "description": "Empty state title when filters return no results"
+    },
+    "noTasksMatchCriteria": "No tasks match your search and filter criteria.",
+    "@noTasksMatchCriteria": {
+        "description": "Empty state subtitle when search and filters return no results"
+    },
+    "adjustFilters": "Try adjusting your filters to see more tasks.",
+    "@adjustFilters": {
+        "description": "Empty state subtitle when filters return no results"
+    },
+    "clearFilters": "Clear Filters",
+    "@clearFilters": {
+        "description": "Clear filters action button text"
+    },
+    "noTasksToDisplay": "No tasks to display",
+    "@noTasksToDisplay": {
+        "description": "Message when no tasks are available to display"
+    },
+    "addNewTaskToGetStarted": "Add a new task to get started",
+    "@addNewTaskToGetStarted": {
+        "description": "Message encouraging user to add first task"
+    },
+    "pullDownToRefresh": "Pull down to refresh or add a new task",
+    "@pullDownToRefresh": {
+        "description": "Hint text for refresh functionality"
+    },
+    "dueLabel": "Due:",
+    "@dueLabel": {
+        "description": "Label for due date in task details"
+    },
+    "markAsPending": "Mark as Pending",
+    "@markAsPending": {
+        "description": "Button text to mark task as pending"
+    },
+    "markAsCompleted": "Mark as Completed",
+    "@markAsCompleted": {
+        "description": "Button text to mark task as completed"
+    },
+    "enterTaskTitle": "Enter task title",
+    "@enterTaskTitle": {
+        "description": "Hint text for task title input field"
+    },
+    "pleaseEnterTitle": "Please enter a title",
+    "@pleaseEnterTitle": {
+        "description": "Validation error message for empty task title"
+    },
+    "taskDescriptionOptional": "Task Description (Optional)",
+    "@taskDescriptionOptional": {
+        "description": "Label for task description field"
+    },
+    "enterTaskDescriptionOptional": "Enter task description (optional)",
+    "@enterTaskDescriptionOptional": {
+        "description": "Hint text for task description input field"
+    },
+    "dueDateOptional": "Due Date (Optional)",
+    "@dueDateOptional": {
+        "description": "Label for due date field"
+    },
+    "selectDueDate": "Select due date",
+    "@selectDueDate": {
+        "description": "Placeholder text for due date selection"
+    },
+    "updateTask": "Update Task",
+    "@updateTask": {
+        "description": "Button text to update an existing task"
+    },
+    "taskUpdatedSuccessfully": "Task updated successfully!",
+    "@taskUpdatedSuccessfully": {
+        "description": "Success message when task is updated"
+    },
+    "taskAddedSuccessfully": "Task added successfully!",
+    "@taskAddedSuccessfully": {
+        "description": "Success message when task is added"
+    },
+    "failedToAddTask": "Failed to add task",
+    "@failedToAddTask": {
+        "description": "Error message when task creation fails"
+    },
+    "anErrorOccurred": "An error occurred: {error}",
+    "@anErrorOccurred": {
+        "description": "Generic error message with error details",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "helloFriend": "Hello, {name}! 👋",
+    "@helloFriend": {
+        "description": "Greeting message with user's name",
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "helloFriendDefault": "Hello, Friend! 👋",
+    "@helloFriendDefault": {
+        "description": "Default greeting message when no name is available"
+    },
+    "successRate": "Success Rate",
+    "@successRate": {
+        "description": "Success rate label"
+    },
+    "categories": "Categories",
+    "@categories": {
+        "description": "Categories label"
+    },
+    "dailyAvg": "Daily Avg",
+    "@dailyAvg": {
+        "description": "Daily average label"
+    },
+    "recentActivity": "Recent Activity",
+    "@recentActivity": {
+        "description": "Recent activity section title"
+    },
+    "noRecentActivity": "No recent activity",
+    "@noRecentActivity": {
+        "description": "Empty state message for recent activity"
+    },
+    "achievements": "Achievements 🏆",
+    "@achievements": {
+        "description": "Achievements section title"
+    },
+    "firstTask": "First Task",
+    "@firstTask": {
+        "description": "First task achievement title"
+    },
+    "firstTaskDesc": "Create your first task",
+    "@firstTaskDesc": {
+        "description": "First task achievement description"
+    },
+    "finisher": "Finisher",
+    "@finisher": {
+        "description": "Finisher achievement title"
+    },
+    "finisherDesc": "Complete your first task",
+    "@finisherDesc": {
+        "description": "Finisher achievement description"
+    },
+    "productive": "Productive",
+    "@productive": {
+        "description": "Productive achievement title"
+    },
+    "productiveDesc": "Complete 5 tasks",
+    "@productiveDesc": {
+        "description": "Productive achievement description"
+    },
+    "taskMaster": "Task Master",
+    "@taskMaster": {
+        "description": "Task master achievement title"
+    },
+    "taskMasterDesc": "Complete 20 tasks",
+    "@taskMasterDesc": {
+        "description": "Task master achievement description"
+    },
+    "lightning": "Lightning",
+    "@lightning": {
+        "description": "Lightning achievement title"
+    },
+    "lightningDesc": "Complete 50 tasks",
+    "@lightningDesc": {
+        "description": "Lightning achievement description"
+    },
+    "organizer": "Organizer",
+    "@organizer": {
+        "description": "Organizer achievement title"
+    },
+    "organizerDesc": "Use 3 different categories",
+    "@organizerDesc": {
+        "description": "Organizer achievement description"
+    },
+    "achiever": "Achiever",
+    "@achiever": {
+        "description": "Achiever achievement title"
+    },
+    "achieverDesc": "Maintain 80% completion rate",
+    "@achieverDesc": {
+        "description": "Achiever achievement description"
+    },
+    "streak": "Streak",
+    "@streak": {
+        "description": "Streak achievement title"
+    },
+    "streakDesc": "Complete tasks for 7 days",
+    "@streakDesc": {
+        "description": "Streak achievement description"
+    },
+    "achievementsProgress": "Progress: {earned}/{total} achievements unlocked",
+    "@achievementsProgress": {
+        "description": "Achievements progress text",
+        "placeholders": {
+            "earned": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "completedTask": "Completed \"{title}\"",
+    "@completedTask": {
+        "description": "Activity message for completed task",
+        "placeholders": {
+            "title": {
+                "type": "String"
+            }
+        }
+    },
+    "createdTask": "Created \"{title}\"",
+    "@createdTask": {
+        "description": "Activity message for created task",
+        "placeholders": {
+            "title": {
+                "type": "String"
+            }
+        }
+    },
+    "accountInformation": "Account Information",
+    "@accountInformation": {
+        "description": "Account information section title"
+    },
+    "memberSince": "Member Since",
+    "@memberSince": {
+        "description": "Member since label"
+    },
+    "lastUpdated": "Last Updated",
+    "@lastUpdated": {
+        "description": "Last updated label"
+    },
+    "notAvailable": "Not available",
+    "@notAvailable": {
+        "description": "Not available text"
+    },
+    "unknown": "Unknown",
+    "@unknown": {
+        "description": "Unknown value text"
+    },
+    "today": "Today",
+    "@today": {
+        "description": "Today text"
+    },
+    "monthAgo": "{count} month ago",
+    "@monthAgo": {
+        "description": "Time ago in months (singular)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "monthsAgo": "{count} months ago",
+    "@monthsAgo": {
+        "description": "Time ago in months (plural)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "yearAgo": "{count} year ago",
+    "@yearAgo": {
+        "description": "Time ago in years (singular)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "yearsAgo": "{count} years ago",
+    "@yearsAgo": {
+        "description": "Time ago in years (plural)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "productivityInsights": "Productivity Insights",
+    "@productivityInsights": {
+        "description": "Productivity insights section title"
+    },
+    "completionRate": "Completion Rate",
+    "@completionRate": {
+        "description": "Completion rate label"
+    },
+    "dailyAverage": "Daily Average",
+    "@dailyAverage": {
+        "description": "Daily average label"
+    },
+    "taskDistribution": "Task Distribution",
+    "@taskDistribution": {
+        "description": "Task distribution section title"
+    },
+    "byCategory": "By Category",
+    "@byCategory": {
+        "description": "By category subsection title"
+    },
+    "byPriority": "By Priority",
+    "@byPriority": {
+        "description": "By priority subsection title"
+    },
+    "weeklyProgress": "Weekly Progress",
+    "@weeklyProgress": {
+        "description": "Weekly progress section title"
+    },
+    "allActivity": "All Activity",
+    "@allActivity": {
+        "description": "All activity dialog title"
+    },
+    "noActivityToShow": "No activity to show",
+    "@noActivityToShow": {
+        "description": "Empty state message for all activity dialog"
+    },
+    "testNotifications": "Test Notifications",
+    "@testNotifications": {
+        "description": "Test notifications section title"
+    },
+    "testNotificationFeatures": "Test notification features:",
+    "@testNotificationFeatures": {
+        "description": "Test notification features description"
+    },
+    "dataAndPrivacy": "Data & Privacy",
+    "@dataAndPrivacy": {
+        "description": "Data and privacy section title"
+    },
+    "learnAboutPrivacyPractices": "Learn about our privacy practices",
+    "@learnAboutPrivacyPractices": {
+        "description": "Privacy policy subtitle"
+    },
+    "freeUpStorageSpace": "Free up storage space",
+    "@freeUpStorageSpace": {
+        "description": "Clear cache subtitle"
+    },
+    "resetAllSettingsToDefault": "Reset all settings to default",
+    "@resetAllSettingsToDefault": {
+        "description": "Reset settings subtitle"
+    },
+    "settingsResetSuccessfully": "Settings reset successfully",
+    "@settingsResetSuccessfully": {
+        "description": "Settings reset success message"
+    },
+    "welcomeBack": "Welcome Back",
+    "@welcomeBack": {
+        "description": "Welcome back title for login screen"
+    },
+    "signInToContinue": "Sign in to continue",
+    "@signInToContinue": {
+        "description": "Sign in subtitle"
+    },
+    "signUpToStart": "Sign up to start",
+    "@signUpToStart": {
+        "description": "Sign up subtitle"
+    },
+    "selectSavedAccount": "Select saved account",
+    "@selectSavedAccount": {
+        "description": "Saved accounts dropdown hint"
+    },
+    "enterEmailManually": "Enter email manually",
+    "@enterEmailManually": {
+        "description": "Manual email entry option"
+    },
+    "fullName": "Full Name",
+    "@fullName": {
+        "description": "Full name field label"
+    },
+    "rememberMe": "Remember Me",
+    "@rememberMe": {
+        "description": "Remember me checkbox text"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Sign in button text"
+    },
+    "pleaseEnterYourName": "Please enter your name",
+    "@pleaseEnterYourName": {
+        "description": "Name validation message"
+    },
+    "pleaseEnterYourEmail": "Please enter your email",
+    "@pleaseEnterYourEmail": {
+        "description": "Email validation message"
+    },
+    "pleaseEnterYourPassword": "Please enter your password",
+    "@pleaseEnterYourPassword": {
+        "description": "Password validation message"
+    },
+    "passwordMustBeAtLeast6Characters": "Password must be at least 6 characters",
+    "@passwordMustBeAtLeast6Characters": {
+        "description": "Password length validation message"
+    },
+    "noAccountFoundWithThisEmail": "No account found with this email",
+    "@noAccountFoundWithThisEmail": {
+        "description": "User not found error message"
+    },
+    "invalidEmailOrPassword": "Invalid email or password. Please check your credentials and try again.",
+    "@invalidEmailOrPassword": {
+        "description": "Invalid credentials error message"
+    },
+    "accountAlreadyExistsWithThisEmail": "An account already exists with this email",
+    "@accountAlreadyExistsWithThisEmail": {
+        "description": "Email already in use error message"
+    },
+    "passwordIsTooWeak": "Password is too weak",
+    "@passwordIsTooWeak": {
+        "description": "Weak password error message"
+    },
+    "invalidEmailAddress": "Invalid email address",
+    "@invalidEmailAddress": {
+        "description": "Invalid email format error message"
+    },
+    "networkConnectionFailed": "Network connection failed. Please check your internet connection.",
+    "@networkConnectionFailed": {
+        "description": "Network error message"
+    },
+    "tooManyFailedAttempts": "Too many failed attempts. Please try again later.",
+    "@tooManyFailedAttempts": {
+        "description": "Rate limit error message"
+    },
+    "authenticationFailed": "Authentication failed: {error}",
+    "@authenticationFailed": {
+        "placeholders": {
+            "error": {
+                "type": "String",
+                "description": "The error message"
+            }
+        },
+        "description": "Generic authentication error message"
+    },
+    "accountSavedAndSyncedWithFirebase": "Account saved and synced with Firebase",
+    "@accountSavedAndSyncedWithFirebase": {
+        "description": "Account saved success message"
+    }
+}

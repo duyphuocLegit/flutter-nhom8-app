@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class TaskListHeader extends StatelessWidget {
   final int taskCount;
@@ -52,7 +53,7 @@ class TaskListHeader extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Showing $taskCount task${taskCount != 1 ? 's' : ''}',
+                      AppLocalizations.of(context)!.showingTasks(taskCount),
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
@@ -62,7 +63,11 @@ class TaskListHeader extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      _getTaskSummaryText(completedCount, pendingCount),
+                      _getTaskSummaryText(
+                        context,
+                        completedCount,
+                        pendingCount,
+                      ),
                       style: TextStyle(
                         fontSize: 12,
                         color: colorScheme.onSurface.withValues(alpha: 0.7),
@@ -143,7 +148,7 @@ class TaskListHeader extends StatelessWidget {
                             children: [
                               Icon(Icons.access_time_rounded, size: 16),
                               const SizedBox(width: 8),
-                              Text('Most Recent'),
+                              Text(AppLocalizations.of(context)!.mostRecent),
                             ],
                           ),
                         ),
@@ -153,7 +158,7 @@ class TaskListHeader extends StatelessWidget {
                             children: [
                               Icon(Icons.priority_high_rounded, size: 16),
                               const SizedBox(width: 8),
-                              Text('Priority'),
+                              Text(AppLocalizations.of(context)!.priority),
                             ],
                           ),
                         ),
@@ -163,7 +168,7 @@ class TaskListHeader extends StatelessWidget {
                             children: [
                               Icon(Icons.event_rounded, size: 16),
                               const SizedBox(width: 8),
-                              Text('Due Date'),
+                              Text(AppLocalizations.of(context)!.dueDate),
                             ],
                           ),
                         ),
@@ -173,7 +178,7 @@ class TaskListHeader extends StatelessWidget {
                             children: [
                               Icon(Icons.sort_by_alpha_rounded, size: 16),
                               const SizedBox(width: 8),
-                              Text('Alphabetical'),
+                              Text(AppLocalizations.of(context)!.alphabetical),
                             ],
                           ),
                         ),
@@ -218,7 +223,7 @@ class TaskListHeader extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          'Clear All Filters',
+                          AppLocalizations.of(context)!.clearAllFilters,
                           style: TextStyle(
                             color: colorScheme.onErrorContainer,
                             fontSize: 13,
@@ -237,9 +242,10 @@ class TaskListHeader extends StatelessWidget {
     );
   }
 
-  String _getTaskSummaryText(int completed, int pending) {
-    if (completed == 0) return '$pending pending';
-    if (pending == 0) return 'All completed! 🎉';
-    return '$completed completed • $pending pending';
+  String _getTaskSummaryText(BuildContext context, int completed, int pending) {
+    final l10n = AppLocalizations.of(context)!;
+    if (completed == 0) return '${pending} ${l10n.pending}';
+    if (pending == 0) return l10n.allCompleted;
+    return '${completed} ${l10n.completed} • ${pending} ${l10n.pending}';
   }
 }

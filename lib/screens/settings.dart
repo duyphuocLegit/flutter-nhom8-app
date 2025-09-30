@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/setting_service.dart';
 import '../services/theme_service.dart';
+import '../services/language_service.dart';
 import '../widgets/notification_test_widget.dart';
+import '../l10n/app_localizations.dart';
 import 'privacy.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -72,14 +74,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     if (_isLoading) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Settings'), centerTitle: true),
-        body: const Center(
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.settings),
+          centerTitle: true,
+        ),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 16),
-              Text('Loading settings...'),
+              const CircularProgressIndicator(),
+              const SizedBox(height: 16),
+              Text(AppLocalizations.of(context)!.loading),
             ],
           ),
         ),
@@ -93,7 +98,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          'Settings ⚙️',
+          '${AppLocalizations.of(context)!.settings} ⚙️',
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -107,20 +112,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               // Theme Settings
               _buildSettingsCard(
-                title: 'Appearance',
+                title: AppLocalizations.of(context)!.appearance,
                 icon: Icons.palette,
                 children: [_buildThemeSelector()],
               ),
               const SizedBox(height: 16),
 
+              // Language Settings
+              _buildSettingsCard(
+                title: AppLocalizations.of(context)!.language,
+                icon: Icons.language,
+                children: [
+                  _buildSettingItem(
+                    title: AppLocalizations.of(context)!.language,
+                    subtitle: _getCurrentLanguageLabel(context),
+                    onTap: () => _showLanguageDialog(context),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+
               // App Settings
               _buildSettingsCard(
-                title: 'App Settings',
+                title: AppLocalizations.of(context)!.appSettings,
                 icon: Icons.tune,
                 children: [
                   _buildToggleItem(
-                    title: 'Notifications',
-                    subtitle: 'Get reminders for your tasks',
+                    title: AppLocalizations.of(context)!.notifications,
+                    subtitle: AppLocalizations.of(
+                      context,
+                    )!.getRemindersForTasks,
                     value: _settings['taskReminders'] ?? true,
                     onChanged: (value) => _updateSetting(
                       'taskReminders',
@@ -134,11 +155,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
               // Notification Test
               _buildSettingsCard(
-                title: 'Test Notifications',
+                title: AppLocalizations.of(context)!.testNotifications,
                 icon: Icons.notifications_active,
                 children: [
-                  const Text(
-                    'Test notification features:',
+                  Text(
+                    AppLocalizations.of(context)!.testNotificationFeatures,
                     style: TextStyle(color: Colors.grey),
                   ),
                   const SizedBox(height: 16),
@@ -149,12 +170,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
               // Data & Privacy
               _buildSettingsCard(
-                title: 'Data & Privacy',
+                title: AppLocalizations.of(context)!.dataAndPrivacy,
                 icon: Icons.privacy_tip,
                 children: [
                   _buildSettingItem(
-                    title: 'Privacy Policy',
-                    subtitle: 'Learn about our privacy practices',
+                    title: AppLocalizations.of(context)!.privacyPolicy,
+                    subtitle: AppLocalizations.of(
+                      context,
+                    )!.learnAboutPrivacyPractices,
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -163,13 +186,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   _buildSettingItem(
-                    title: 'Clear Cache',
-                    subtitle: 'Free up storage space',
+                    title: AppLocalizations.of(context)!.clearCache,
+                    subtitle: AppLocalizations.of(context)!.freeUpStorageSpace,
                     onTap: _showClearCacheDialog,
                   ),
                   _buildSettingItem(
-                    title: 'Reset Settings',
-                    subtitle: 'Reset all settings to default',
+                    title: AppLocalizations.of(context)!.resetSettings,
+                    subtitle: AppLocalizations.of(
+                      context,
+                    )!.resetAllSettingsToDefault,
                     onTap: _showResetDialog,
                     isDestructive: true,
                   ),
@@ -316,6 +341,63 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
+  String _getCurrentLanguageLabel(BuildContext context) {
+    final locale = Localizations.localeOf(context).languageCode;
+    switch (locale) {
+      case 'vi':
+        return 'Tiếng Việt';
+      case 'en':
+        return 'English';
+      default:
+        return locale;
+    }
+  }
+
+  void _showLanguageDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(AppLocalizations.of(context)!.language),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              title: const Text('Tiếng Việt'),
+              onTap: () {
+                _changeLanguage(const Locale('vi'));
+                Navigator.pop(context);
+              },
+              selected: Localizations.localeOf(context).languageCode == 'vi',
+            ),
+            ListTile(
+              title: const Text('English'),
+              onTap: () {
+                _changeLanguage(const Locale('en'));
+                Navigator.pop(context);
+              },
+              selected: Localizations.localeOf(context).languageCode == 'en',
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(AppLocalizations.of(context)!.cancel),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _changeLanguage(Locale locale) {
+    // This assumes you use a ChangeNotifier/Provider for locale management
+    // Replace ThemeService with your actual LocaleProvider
+    Provider.of<LanguageService>(
+      context,
+      listen: false,
+    ).setLanguage(locale.languageCode);
+  }
+
   Widget _buildThemeOption(
     String title,
     String subtitle,
@@ -326,7 +408,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       title: Text(title, style: const TextStyle(fontWeight: FontWeight.w500)),
       subtitle: Text(subtitle),
       value: mode,
+      // ignore: deprecated_member_use
       groupValue: themeService.themeMode,
+      // ignore: deprecated_member_use
       onChanged: (ThemeMode? value) {
         if (value != null) {
           themeService.setThemeMode(value);
@@ -340,19 +424,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Clear Cache'),
-        content: const Text(
-          'This will remove temporary files and may help improve app performance. '
-          'Your tasks and settings will not be affected.',
-        ),
+        title: Text(AppLocalizations.of(context)!.clearCache),
+        content: Text(AppLocalizations.of(context)!.clearCacheMessage),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Clear Cache'),
+            child: Text(AppLocalizations.of(context)!.clearCache),
           ),
         ],
       ),
@@ -361,8 +442,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     if (confirmed == true && mounted) {
       // Show success message
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Cache cleared successfully'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.cacheCleared),
           backgroundColor: Colors.green,
         ),
       );
@@ -373,22 +454,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Reset Settings'),
-        content: const Text(
-          'This will reset all settings to their default values. '
-          'Your tasks will not be affected. This action cannot be undone.',
-        ),
+        title: Text(AppLocalizations.of(context)!.resetSettings),
+        content: Text(AppLocalizations.of(context)!.resetSettingsMessage),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
             style: FilledButton.styleFrom(
               backgroundColor: Theme.of(context).colorScheme.error,
             ),
-            child: const Text('Reset'),
+            child: Text(AppLocalizations.of(context)!.reset),
           ),
         ],
       ),
@@ -401,8 +479,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Settings reset successfully'),
+            SnackBar(
+              content: Text(
+                AppLocalizations.of(context)!.settingsResetSuccessfully,
+              ),
               backgroundColor: Colors.green,
             ),
           );

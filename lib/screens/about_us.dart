@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -17,7 +18,7 @@ class AboutUsScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'About Us',
+          AppLocalizations.of(context)!.aboutUs,
           style: TextStyle(
             color: Colors.grey.shade800,
             fontWeight: FontWeight.bold,
@@ -56,7 +57,7 @@ class AboutUsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Task Manager',
+                        AppLocalizations.of(context)!.taskManager,
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
@@ -65,7 +66,7 @@ class AboutUsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Version 1.0.0',
+                        AppLocalizations.of(context)!.versionNumber,
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey.shade600,
@@ -103,7 +104,7 @@ class AboutUsScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: 12),
                           Text(
-                            'Our Mission',
+                            AppLocalizations.of(context)!.ourMission,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -114,7 +115,7 @@ class AboutUsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'We believe in making task management simple and efficient. Our app is designed to help you organize your daily tasks, set priorities, and achieve your goals with ease.',
+                        AppLocalizations.of(context)!.missionDescription,
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey.shade600,
@@ -153,7 +154,7 @@ class AboutUsScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: 12),
                           Text(
-                            'Key Features',
+                            AppLocalizations.of(context)!.keyFeatures,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -163,11 +164,21 @@ class AboutUsScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 16),
-                      _buildFeatureItem('Task Creation & Management'),
-                      _buildFeatureItem('Priority Setting'),
-                      _buildFeatureItem('User Profile Management'),
-                      _buildFeatureItem('Secure Authentication'),
-                      _buildFeatureItem('Cloud Synchronization'),
+                      _buildFeatureItem(
+                        AppLocalizations.of(context)!.taskCreationManagement,
+                      ),
+                      _buildFeatureItem(
+                        AppLocalizations.of(context)!.prioritySetting,
+                      ),
+                      _buildFeatureItem(
+                        AppLocalizations.of(context)!.userProfileManagement,
+                      ),
+                      _buildFeatureItem(
+                        AppLocalizations.of(context)!.secureAuthentication,
+                      ),
+                      _buildFeatureItem(
+                        AppLocalizations.of(context)!.cloudSynchronization,
+                      ),
                     ],
                   ),
                 ),
@@ -200,7 +211,7 @@ class AboutUsScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: 12),
                           Text(
-                            'Our Team',
+                            AppLocalizations.of(context)!.ourTeam,
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -211,7 +222,7 @@ class AboutUsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Developed by Group 10 - A dedicated team of developers passionate about creating intuitive and powerful productivity tools.',
+                        AppLocalizations.of(context)!.teamDescription,
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey.shade600,

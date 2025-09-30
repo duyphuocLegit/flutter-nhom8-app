@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../components/upperHead.dart';
+import '../l10n/app_localizations.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({super.key});
@@ -54,8 +55,8 @@ class _ChangePasswordState extends State<ChangePassword> {
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Password changed successfully!'),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.passwordChangedSuccess),
             backgroundColor: Colors.green,
           ),
         );
@@ -65,14 +66,13 @@ class _ChangePasswordState extends State<ChangePassword> {
       String errorMessage;
       switch (e.code) {
         case 'wrong-password':
-          errorMessage = 'Current password is incorrect';
+          errorMessage = AppLocalizations.of(context)!.currentPasswordIncorrect;
           break;
         case 'weak-password':
-          errorMessage = 'New password is too weak';
+          errorMessage = AppLocalizations.of(context)!.newPasswordTooWeak;
           break;
         case 'requires-recent-login':
-          errorMessage =
-              'Please log out and log in again before changing password';
+          errorMessage = AppLocalizations.of(context)!.requiresRecentLogin;
           break;
         default:
           errorMessage = 'Error: ${e.message}';
@@ -87,7 +87,9 @@ class _ChangePasswordState extends State<ChangePassword> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error changing password: $e'),
+            content: Text(
+              '${AppLocalizations.of(context)!.errorChangingPassword}: $e',
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -121,7 +123,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 TextFormField(
                   controller: _currentPasswordController,
                   decoration: InputDecoration(
-                    labelText: 'Current Password',
+                    labelText: AppLocalizations.of(context)!.currentPassword,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -142,7 +144,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                   obscureText: _obscureCurrentPassword,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your current password';
+                      return AppLocalizations.of(
+                        context,
+                      )!.pleaseEnterCurrentPassword;
                     }
                     return null;
                   },
@@ -154,7 +158,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 TextFormField(
                   controller: _newPasswordController,
                   decoration: InputDecoration(
-                    labelText: 'New Password',
+                    labelText: AppLocalizations.of(context)!.newPassword,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -175,10 +179,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                   obscureText: _obscureNewPassword,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter a new password';
+                      return AppLocalizations.of(
+                        context,
+                      )!.pleaseEnterNewPassword;
                     }
                     if (value.length < 6) {
-                      return 'Password must be at least 6 characters';
+                      return AppLocalizations.of(context)!.passwordMinLength;
                     }
                     return null;
                   },
@@ -190,7 +196,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 TextFormField(
                   controller: _confirmPasswordController,
                   decoration: InputDecoration(
-                    labelText: 'Confirm New Password',
+                    labelText: AppLocalizations.of(context)!.confirmNewPassword,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -211,10 +217,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                   obscureText: _obscureConfirmPassword,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please confirm your new password';
+                      return AppLocalizations.of(
+                        context,
+                      )!.pleaseConfirmNewPassword;
                     }
                     if (value != _newPasswordController.text) {
-                      return 'Passwords do not match';
+                      return AppLocalizations.of(context)!.passwordsDoNotMatch;
                     }
                     return null;
                   },
@@ -244,9 +252,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                               color: Colors.white,
                             ),
                           )
-                        : const Text(
-                            'Change Password',
-                            style: TextStyle(
+                        : Text(
+                            AppLocalizations.of(context)!.changePassword,
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),

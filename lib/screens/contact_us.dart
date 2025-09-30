@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/contact_service.dart';
 import '../services/firebase_service.dart';
+import '../l10n/app_localizations.dart';
 
 class ContactUsScreen extends StatefulWidget {
   const ContactUsScreen({super.key});
@@ -54,7 +55,9 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
             email = userProfile.email;
           }
         } catch (e) {
-          print('Error getting user profile from Firestore: $e');
+          print(
+            AppLocalizations.of(context)!.errorGettingUserProfile(e.toString()),
+          );
         }
 
         // Fallback to Firebase Auth user data if Firestore data is empty
@@ -69,10 +72,10 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         _nameController.text = displayName;
         _emailController.text = email;
 
-        print('Loaded user data - Name: $displayName, Email: $email');
+        print(AppLocalizations.of(context)!.loadedUserData(displayName, email));
       }
     } catch (e) {
-      print('Error loading user data: $e');
+      print(AppLocalizations.of(context)!.errorLoadingUserData(e.toString()));
       // In case of any error (e.g., Firebase not initialized), leave fields empty
       // This allows the app to work in test environments or when Firebase is unavailable
     } finally {
@@ -98,7 +101,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Contact Us',
+          AppLocalizations.of(context)!.contactUs,
           style: TextStyle(
             color: Colors.grey.shade800,
             fontWeight: FontWeight.bold,
@@ -137,7 +140,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Get in Touch',
+                        AppLocalizations.of(context)!.getInTouch,
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -146,7 +149,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.',
+                        AppLocalizations.of(context)!.getInTouchDescription,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
@@ -177,22 +180,22 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     children: [
                       _buildContactOption(
                         icon: Icons.email_outlined,
-                        title: 'Email',
-                        subtitle: 'support@taskapp.com',
+                        title: AppLocalizations.of(context)!.emailContact,
+                        subtitle: AppLocalizations.of(context)!.supportEmail,
                         color: Colors.red.shade600,
                       ),
                       const SizedBox(height: 16),
                       _buildContactOption(
                         icon: Icons.phone_outlined,
-                        title: 'Phone',
-                        subtitle: '+1 (555) 123-4567',
+                        title: AppLocalizations.of(context)!.phoneContact,
+                        subtitle: AppLocalizations.of(context)!.supportPhone,
                         color: Colors.green.shade600,
                       ),
                       const SizedBox(height: 16),
                       _buildContactOption(
                         icon: Icons.location_on_outlined,
-                        title: 'Address',
-                        subtitle: '123 Main St, City, State 12345',
+                        title: AppLocalizations.of(context)!.addressContact,
+                        subtitle: AppLocalizations.of(context)!.supportAddress,
                         color: Colors.orange.shade600,
                       ),
                       const SizedBox(height: 24),
@@ -212,8 +215,8 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          child: const Text(
-                            'Send Message',
+                          child: Text(
+                            AppLocalizations.of(context)!.sendMessageButton,
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -292,7 +295,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
             children: [
               Icon(Icons.message, color: Colors.blue.shade600),
               const SizedBox(width: 8),
-              const Text('Send Message'),
+              Text(AppLocalizations.of(context)!.sendMessage),
             ],
           ),
           content: Form(
@@ -320,7 +323,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              'Name and email are locked to your current account for security.',
+                              AppLocalizations.of(context)!.nameAndEmailLocked,
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.blue.shade700,
@@ -336,12 +339,12 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     enabled: !_isLoading,
                     readOnly: _isUserAuthenticated(),
                     decoration: InputDecoration(
-                      labelText: 'Name *',
+                      labelText: AppLocalizations.of(context)!.nameFieldLabel,
                       hintText: _isLoadingUserData
-                          ? 'Loading...'
+                          ? AppLocalizations.of(context)!.loadingText
                           : _isUserAuthenticated()
-                          ? 'Locked to current user'
-                          : 'Enter your name',
+                          ? AppLocalizations.of(context)!.lockedToCurrentUser
+                          : AppLocalizations.of(context)!.enterYourName,
                       border: const OutlineInputBorder(),
                       prefixIcon: const Icon(Icons.person),
                       suffixIcon: _isLoadingUserData
@@ -357,11 +360,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return _isUserAuthenticated()
-                            ? 'Account name not found. Please update your profile.'
-                            : 'Please enter your name';
+                            ? AppLocalizations.of(context)!.accountNameNotFound
+                            : AppLocalizations.of(context)!.pleaseEnterMessage;
                       }
                       if (value.trim().length < 2) {
-                        return 'Name must be at least 2 characters';
+                        return AppLocalizations.of(context)!.nameMinLength;
                       }
                       return null;
                     },
@@ -373,12 +376,12 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     readOnly: _isUserAuthenticated(),
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      labelText: 'Email *',
+                      labelText: AppLocalizations.of(context)!.emailFieldLabel,
                       hintText: _isLoadingUserData
-                          ? 'Loading...'
+                          ? AppLocalizations.of(context)!.loadingText
                           : _isUserAuthenticated()
-                          ? 'Locked to current user'
-                          : 'Enter your email',
+                          ? AppLocalizations.of(context)!.lockedToCurrentUser
+                          : AppLocalizations.of(context)!.enterYourEmail,
                       border: const OutlineInputBorder(),
                       prefixIcon: const Icon(Icons.email),
                       suffixIcon: _isLoadingUserData
@@ -394,11 +397,15 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return _isUserAuthenticated()
-                            ? 'Account email not found. Please update your profile.'
-                            : 'Please enter your email';
+                            ? AppLocalizations.of(context)!.accountEmailNotFound
+                            : AppLocalizations.of(
+                                context,
+                              )!.pleaseEnterValidEmailContact;
                       }
                       if (!_isValidEmail(value.trim())) {
-                        return 'Please enter a valid email address';
+                        return AppLocalizations.of(
+                          context,
+                        )!.pleaseEnterValidEmailContact;
                       }
                       return null;
                     },
@@ -409,11 +416,15 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     enabled: !_isLoading,
                     maxLines: 4,
                     maxLength: 500,
-                    decoration: const InputDecoration(
-                      labelText: 'Message *',
-                      hintText: 'Type your message here...',
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.message),
+                    decoration: InputDecoration(
+                      labelText: AppLocalizations.of(
+                        context,
+                      )!.messageFieldLabel,
+                      hintText: AppLocalizations.of(
+                        context,
+                      )!.typeYourMessageHere,
+                      border: const OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.message),
                     ),
                     validator: _validateMessage,
                   ),
@@ -429,7 +440,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                       _clearForm();
                       Navigator.pop(context);
                     },
-              child: const Text('Cancel'),
+              child: Text(AppLocalizations.of(context)!.cancel),
             ),
             ElevatedButton(
               onPressed: _isLoading
@@ -449,7 +460,10 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                     )
-                  : const Text('Send', style: TextStyle(color: Colors.white)),
+                  : Text(
+                      AppLocalizations.of(context)!.send,
+                      style: const TextStyle(color: Colors.white),
+                    ),
             ),
           ],
         ),
@@ -473,36 +487,38 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
   String? _validateMessage(String? value) {
     try {
       if (value == null || value.trim().isEmpty) {
-        return 'Please enter your message';
+        return AppLocalizations.of(context)!.pleaseEnterMessage;
       }
 
       final trimmedValue = value.trim();
 
       // Minimum length check
       if (trimmedValue.length < 10) {
-        return 'Message must be at least 10 characters (currently ${trimmedValue.length})';
+        return AppLocalizations.of(
+          context,
+        )!.messageMinLength(trimmedValue.length);
       }
 
       // Maximum length check (additional safety)
       if (trimmedValue.length > 500) {
-        return 'Message is too long (maximum 500 characters)';
+        return AppLocalizations.of(context)!.messageTooLong;
       }
 
       // Check for meaningful content (not just repeated characters)
       final uniquePattern = trimmedValue.replaceAll(RegExp(r'(.)\1*'), '\$1');
       if (uniquePattern.length < 5) {
-        return 'Please enter a meaningful message (avoid repeated characters)';
+        return AppLocalizations.of(context)!.meaningfulMessage;
       }
 
       // Check for basic content quality (at least some letters or numbers)
       if (!RegExp(r'[a-zA-Z0-9]').hasMatch(trimmedValue)) {
-        return 'Message must contain letters or numbers';
+        return AppLocalizations.of(context)!.messageMustContainLetters;
       }
 
       return null; // Valid message
     } catch (e) {
       // Handle any unexpected errors in validation
-      return 'Invalid message format. Please try again.';
+      return AppLocalizations.of(context)!.invalidMessageFormat;
     }
   }
 
@@ -536,13 +552,17 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
       // Additional validation before sending
       final messageValidation = _validateMessage(_messageController.text);
       if (messageValidation != null) {
-        throw Exception('Message validation failed: $messageValidation');
+        throw Exception(
+          AppLocalizations.of(
+            context,
+          )!.messageValidationFailed(messageValidation),
+        );
       }
 
       // Ensure message meets minimum requirements
       final messageText = _messageController.text.trim();
       if (messageText.length < 10) {
-        throw Exception('Message must be at least 10 characters long');
+        throw Exception(AppLocalizations.of(context)!.messageTooShort);
       }
 
       // Save message to Firebase
@@ -560,7 +580,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         }
       } else {
         throw Exception(
-          'Failed to send message. Please check your connection and try again.',
+          AppLocalizations.of(context)!.failedToSendMessageConnection,
         );
       }
     } catch (e) {
@@ -592,12 +612,12 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
-                    'Message saved successfully!',
+                  Text(
+                    AppLocalizations.of(context)!.messageSavedSuccessfully,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Your message has been saved to our database. We\'ll get back to you within 24 hours.',
+                    AppLocalizations.of(context)!.messageSavedDescription,
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.green.shade100,
@@ -651,13 +671,13 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               },
             ),
             const SizedBox(height: 24),
-            const Text(
-              'Thank You!',
+            Text(
+              AppLocalizations.of(context)!.thankYou,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Your message has been saved to our database. We\'ll respond within 24 hours.',
+            Text(
+              AppLocalizations.of(context)!.thankYouDescription,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
@@ -670,7 +690,10 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               backgroundColor: Colors.green,
               minimumSize: const Size(double.infinity, 45),
             ),
-            child: const Text('Great!', style: TextStyle(color: Colors.white)),
+            child: Text(
+              AppLocalizations.of(context)!.great,
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),
@@ -689,12 +712,12 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
-                    'Failed to send message',
+                  Text(
+                    AppLocalizations.of(context)!.failedToSendMessage,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Please check your connection and try again.',
+                    AppLocalizations.of(context)!.checkConnectionTryAgain,
                     style: TextStyle(fontSize: 12, color: Colors.red.shade100),
                   ),
                 ],

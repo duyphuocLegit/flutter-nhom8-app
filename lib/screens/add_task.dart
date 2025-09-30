@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/task_model.dart';
 import '../services/firebase_service.dart';
 import '../utils/responsive_utils.dart';
+import '../l10n/app_localizations.dart';
 
 class AddTaskScreen extends StatefulWidget {
   final TaskItemModel? existingTask;
@@ -9,7 +10,7 @@ class AddTaskScreen extends StatefulWidget {
   const AddTaskScreen({super.key, this.existingTask});
 
   @override
-  State<AddTaskScreen> createState() => _AddTaskScreenState();
+  _AddTaskScreenState createState() => _AddTaskScreenState();
 }
 
 class _AddTaskScreenState extends State<AddTaskScreen> {
@@ -29,9 +30,39 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     'Work',
     'Shopping',
     'Health',
-    'Study',
+    'Education',
   ];
   final List<String> _priorities = ['low', 'medium', 'high'];
+
+  String _getLocalizedCategory(BuildContext context, String category) {
+    switch (category.toLowerCase()) {
+      case 'personal':
+        return AppLocalizations.of(context)!.personal;
+      case 'work':
+        return AppLocalizations.of(context)!.work;
+      case 'shopping':
+        return AppLocalizations.of(context)!.shopping;
+      case 'health':
+        return AppLocalizations.of(context)!.health;
+      case 'education':
+        return AppLocalizations.of(context)!.education;
+      default:
+        return category;
+    }
+  }
+
+  String _getLocalizedPriority(BuildContext context, String priority) {
+    switch (priority.toLowerCase()) {
+      case 'high':
+        return AppLocalizations.of(context)!.high;
+      case 'medium':
+        return AppLocalizations.of(context)!.medium;
+      case 'low':
+        return AppLocalizations.of(context)!.low;
+      default:
+        return priority;
+    }
+  }
 
   @override
   void initState() {
@@ -65,7 +96,9 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         elevation: 0,
         toolbarHeight: ResponsiveUtils.getAppBarHeight(context),
         title: Text(
-          widget.existingTask != null ? 'Edit Task' : 'Add New Task',
+          widget.existingTask != null
+              ? AppLocalizations.of(context)!.editTask
+              : AppLocalizations.of(context)!.addNewTask,
           style: TextStyle(
             color: const Color(0xFF1E293B),
             fontWeight: FontWeight.bold,
@@ -88,7 +121,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               children: [
                 // Task Title
                 Text(
-                  'Task Title',
+                  AppLocalizations.of(context)!.taskTitle,
                   style: TextStyle(
                     fontSize: isSmallScreen ? 14 : 16,
                     fontWeight: FontWeight.w600,
@@ -103,7 +136,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   enableInteractiveSelection: true,
                   style: TextStyle(fontSize: isSmallScreen ? 14 : 16),
                   decoration: InputDecoration(
-                    hintText: 'Enter task title',
+                    hintText: AppLocalizations.of(context)!.enterTaskTitle,
                     hintStyle: TextStyle(fontSize: isSmallScreen ? 13 : 14),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(
@@ -119,7 +152,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter a title';
+                      return AppLocalizations.of(context)!.pleaseEnterTitle;
                     }
                     return null;
                   },
@@ -131,7 +164,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
                 // Task Description
                 Text(
-                  'Task Description (Optional)',
+                  AppLocalizations.of(context)!.taskDescriptionOptional,
                   style: TextStyle(
                     fontSize: isSmallScreen ? 14 : 16,
                     fontWeight: FontWeight.w600,
@@ -146,7 +179,9 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   enableInteractiveSelection: true,
                   maxLines: 3,
                   decoration: InputDecoration(
-                    hintText: 'Enter task description (optional)',
+                    hintText: AppLocalizations.of(
+                      context,
+                    )!.enterTaskDescriptionOptional,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -163,8 +198,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 const SizedBox(height: 20),
 
                 // Category Selection
-                const Text(
-                  'Category',
+                Text(
+                  AppLocalizations.of(context)!.category,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -186,7 +221,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     items: _categories.map((category) {
                       return DropdownMenuItem(
                         value: category,
-                        child: Text(category),
+                        child: Text(_getLocalizedCategory(context, category)),
                       );
                     }).toList(),
                     onChanged: _isTaskCompleted
@@ -202,8 +237,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 const SizedBox(height: 20),
 
                 // Priority Selection
-                const Text(
-                  'Priority',
+                Text(
+                  AppLocalizations.of(context)!.priority,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -241,7 +276,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                             ),
                           ),
                           child: Text(
-                            priority.toUpperCase(),
+                            _getLocalizedPriority(
+                              context,
+                              priority,
+                            ).toUpperCase(),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: _isTaskCompleted
@@ -261,8 +299,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 const SizedBox(height: 20),
 
                 // Due Date
-                const Text(
-                  'Due Date (Optional)',
+                Text(
+                  AppLocalizations.of(context)!.dueDateOptional,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -289,7 +327,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         const SizedBox(width: 12),
                         Text(
                           _selectedDate == null
-                              ? 'Select due date'
+                              ? AppLocalizations.of(context)!.selectDueDate
                               : '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}',
                           style: TextStyle(
                             color: _selectedDate == null
@@ -330,8 +368,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         ? const CircularProgressIndicator(color: Colors.white)
                         : Text(
                             widget.existingTask != null
-                                ? 'Update Task'
-                                : 'Add Task',
+                                ? AppLocalizations.of(context)!.updateTask
+                                : AppLocalizations.of(context)!.addTask,
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -406,8 +444,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
         if (mounted && context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Task updated successfully!'),
+            SnackBar(
+              content: Text(
+                AppLocalizations.of(context)!.taskUpdatedSuccessfully,
+              ),
               backgroundColor: Colors.green,
               duration: Duration(seconds: 2),
             ),
@@ -443,8 +483,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         if (taskId != null) {
           if (mounted && context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Task added successfully!'),
+              SnackBar(
+                content: Text(
+                  AppLocalizations.of(context)!.taskAddedSuccessfully,
+                ),
                 backgroundColor: Colors.green,
                 duration: Duration(seconds: 2),
               ),
@@ -460,13 +502,13 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             }
           }
         } else {
-          _showError('Failed to add task');
+          _showError(AppLocalizations.of(context)!.failedToAddTask);
         }
       }
     } catch (e) {
       debugPrint('Error submitting task: $e');
       if (mounted) {
-        _showError('An error occurred: $e');
+        _showError(AppLocalizations.of(context)!.anErrorOccurred(e.toString()));
       }
     } finally {
       // Ensure loading state is reset even if there's an error

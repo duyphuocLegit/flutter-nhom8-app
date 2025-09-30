@@ -5,6 +5,7 @@ import 'package:nhom10/widgets/enhanced_task_card.dart';
 import 'package:nhom10/widgets/skeletion_loader.dart';
 import 'package:nhom10/widgets/task_list_header.dart';
 import 'package:nhom10/services/firebase_service.dart';
+import '../l10n/app_localizations.dart';
 
 class TaskWidget extends StatefulWidget {
   final VoidCallback? onTaskChanged;
@@ -78,6 +79,36 @@ class _TaskWidgetState extends State<TaskWidget> {
         ) ||
         (widget.filters!['search'] != null &&
             widget.filters!['search'].toString().isNotEmpty);
+  }
+
+  String _getLocalizedPriority(BuildContext context, String priority) {
+    switch (priority.toLowerCase()) {
+      case 'high':
+        return AppLocalizations.of(context)!.high;
+      case 'medium':
+        return AppLocalizations.of(context)!.medium;
+      case 'low':
+        return AppLocalizations.of(context)!.low;
+      default:
+        return priority;
+    }
+  }
+
+  String _getLocalizedCategory(BuildContext context, String category) {
+    switch (category.toLowerCase()) {
+      case 'work':
+        return AppLocalizations.of(context)!.work;
+      case 'personal':
+        return AppLocalizations.of(context)!.personal;
+      case 'shopping':
+        return AppLocalizations.of(context)!.shopping;
+      case 'health':
+        return AppLocalizations.of(context)!.health;
+      case 'education':
+        return AppLocalizations.of(context)!.education;
+      default:
+        return category;
+    }
   }
 
   void _sortTasks(String sortType) {
@@ -399,8 +430,8 @@ class _TaskWidgetState extends State<TaskWidget> {
     // Check for empty state
     if (taskList.isEmpty) {
       return EmptyState(
-        title: "No Tasks Yet",
-        subtitle: "Create your first task to get started with productivity!",
+        title: AppLocalizations.of(context)!.noTasksYet,
+        subtitle: AppLocalizations.of(context)!.createFirstTask,
         icon: Icons.task_alt,
       );
     }
@@ -417,19 +448,19 @@ class _TaskWidgetState extends State<TaskWidget> {
       if (hasSearchQuery && !hasFilters) {
         // Only search query is active
         return EmptyState(
-          title: "No Search Results",
-          subtitle: "No tasks match your search query. Try different keywords.",
+          title: AppLocalizations.of(context)!.noSearchResults,
+          subtitle: AppLocalizations.of(context)!.noTasksMatchSearch,
           icon: Icons.search_off,
-          actionText: "Clear Search",
+          actionText: AppLocalizations.of(context)!.clearSearch,
           onAction: widget.onClearSearch,
         );
       } else if (hasSearchQuery && hasFilters) {
         // Both search and filters are active
         return EmptyState(
-          title: "No Matching Tasks",
-          subtitle: "No tasks match your search and filter criteria.",
+          title: AppLocalizations.of(context)!.noMatchingTasks,
+          subtitle: AppLocalizations.of(context)!.noTasksMatchCriteria,
           icon: Icons.filter_list_off,
-          actionText: "Clear All",
+          actionText: AppLocalizations.of(context)!.clearAll,
           onAction: () {
             widget.onClearSearch?.call();
             widget.onClearFilters?.call();
@@ -438,10 +469,10 @@ class _TaskWidgetState extends State<TaskWidget> {
       } else {
         // Only filters are active
         return EmptyState(
-          title: "No Matching Tasks",
-          subtitle: "Try adjusting your filters to see more tasks.",
+          title: AppLocalizations.of(context)!.noMatchingTasks,
+          subtitle: AppLocalizations.of(context)!.adjustFilters,
           icon: Icons.filter_list_off,
-          actionText: "Clear Filters",
+          actionText: AppLocalizations.of(context)!.clearFilters,
           onAction: widget.onClearFilters,
         );
       }
@@ -495,7 +526,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'No tasks to display',
+                      AppLocalizations.of(context)!.noTasksToDisplay,
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
@@ -504,7 +535,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Add a new task to get started',
+                      AppLocalizations.of(context)!.addNewTaskToGetStarted,
                       style: TextStyle(
                         fontSize: 14,
                         color: colorScheme.onSurface.withValues(alpha: 0.5),
@@ -566,7 +597,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'No tasks to display',
+                            AppLocalizations.of(context)!.noTasksToDisplay,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
@@ -577,7 +608,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            'Pull down to refresh or add a new task',
+                            AppLocalizations.of(context)!.pullDownToRefresh,
                             style: TextStyle(
                               fontSize: 14,
                               color: colorScheme.onSurface.withValues(
@@ -693,7 +724,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
-                    task.priority.toUpperCase(),
+                    _getLocalizedPriority(context, task.priority).toUpperCase(),
                     style: TextStyle(
                       color: task.priorityColor,
                       fontWeight: FontWeight.bold,
@@ -711,7 +742,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
-                    task.category,
+                    _getLocalizedCategory(context, task.category),
                     style: TextStyle(
                       color: colorScheme.secondary,
                       fontWeight: FontWeight.bold,
@@ -731,7 +762,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    'Due: ${task.dueDate!.day}/${task.dueDate!.month}/${task.dueDate!.year}',
+                    '${AppLocalizations.of(context)!.dueLabel} ${task.dueDate!.day}/${task.dueDate!.month}/${task.dueDate!.year}',
                     style: TextStyle(
                       fontSize: 14,
                       color: colorScheme.onSurface.withOpacity(0.8),
@@ -761,8 +792,8 @@ class _TaskWidgetState extends State<TaskWidget> {
                     ),
                     child: Text(
                       task.isCompleted
-                          ? 'Mark as Pending'
-                          : 'Mark as Completed',
+                          ? AppLocalizations.of(context)!.markAsPending
+                          : AppLocalizations.of(context)!.markAsCompleted,
                       style: TextStyle(
                         color: task.isCompleted
                             ? colorScheme.onSecondary

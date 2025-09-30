@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/user_model.dart';
 import '../models/task_model.dart';
 import '../services/firebase_service.dart';
+import '../l10n/app_localizations.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -122,7 +123,7 @@ class _ProfilePageState extends State<ProfilePage> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Profile',
+          AppLocalizations.of(context)!.profile,
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w600,
             color: colorScheme.onSurface,
@@ -202,7 +203,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
           // Name and greeting
           Text(
-            'Hello, ${userProfile?.displayName != null ? userProfile!.displayName.split(' ').first : 'Friend'}! 👋',
+            userProfile?.displayName != null
+                ? AppLocalizations.of(
+                    context,
+                  )!.helloFriend(userProfile!.displayName.split(' ').first)
+                : AppLocalizations.of(context)!.helloFriendDefault,
             style: theme.textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -245,7 +250,7 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               _buildStatItem(
                 '${taskStats['completed']}',
-                'Completed',
+                AppLocalizations.of(context)!.completed,
                 Colors.green.shade600,
                 icon: Icons.check_circle,
               ),
@@ -256,7 +261,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               _buildStatItem(
                 '${taskStats['pending']}',
-                'Pending',
+                AppLocalizations.of(context)!.pending,
                 Colors.orange.shade600,
                 icon: Icons.schedule,
               ),
@@ -267,7 +272,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               _buildStatItem(
                 '${taskStats['total']}',
-                'Total Tasks',
+                AppLocalizations.of(context)!.totalTasks,
                 colorScheme.primary,
                 icon: Icons.list_alt,
               ),
@@ -280,19 +285,19 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               _buildSmallStatItem(
                 '${(completionRate * 100).toInt()}%',
-                'Success Rate',
+                AppLocalizations.of(context)!.successRate,
                 completionRate > 0.7
                     ? Colors.green.shade600
                     : Colors.orange.shade600,
               ),
               _buildSmallStatItem(
                 '${tasksByCategory.length}',
-                'Categories',
+                AppLocalizations.of(context)!.categories,
                 Colors.purple.shade600,
               ),
               _buildSmallStatItem(
                 '${_calculateDailyAverage().toStringAsFixed(1)}',
-                'Daily Avg',
+                AppLocalizations.of(context)!.dailyAvg,
                 Colors.blue.shade600,
               ),
             ],
@@ -319,7 +324,7 @@ class _ProfilePageState extends State<ProfilePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Recent Activity',
+                AppLocalizations.of(context)!.recentActivity,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -327,7 +332,7 @@ class _ProfilePageState extends State<ProfilePage> {
               if (recentTasks.isNotEmpty)
                 TextButton(
                   onPressed: _showAllActivity,
-                  child: const Text('View All'),
+                  child: Text(AppLocalizations.of(context)!.viewAll),
                 ),
             ],
           ),
@@ -344,7 +349,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'No recent activity',
+                    AppLocalizations.of(context)!.noRecentActivity,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.outline,
                     ),
@@ -371,7 +376,7 @@ class _ProfilePageState extends State<ProfilePage> {
     final colorScheme = theme.colorScheme;
 
     // Calculate achievements
-    final achievements = _calculateAchievements();
+    final achievements = _calculateAchievements(context);
 
     return Container(
       padding: const EdgeInsets.all(20),
@@ -387,7 +392,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Icon(Icons.emoji_events, color: colorScheme.primary),
               const SizedBox(width: 8),
               Text(
-                'Achievements 🏆',
+                AppLocalizations.of(context)!.achievements,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -416,7 +421,10 @@ class _ProfilePageState extends State<ProfilePage> {
 
           // Achievement progress
           Text(
-            'Progress: ${achievements.where((a) => a['earned']).length}/${achievements.length} achievements unlocked',
+            AppLocalizations.of(context)!.achievementsProgress(
+              achievements.where((a) => a['earned']).length,
+              achievements.length,
+            ),
             style: theme.textTheme.bodySmall?.copyWith(
               color: colorScheme.onSurface.withValues(alpha: 0.7),
             ),
@@ -451,8 +459,8 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               Text(
                 task.isCompleted
-                    ? 'Completed "${task.title}"'
-                    : 'Created "${task.title}"',
+                    ? AppLocalizations.of(context)!.completedTask(task.title)
+                    : AppLocalizations.of(context)!.createdTask(task.title),
                 style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
@@ -461,7 +469,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 overflow: TextOverflow.ellipsis,
               ),
               Text(
-                _formatTimeAgo(task.createdAt),
+                _formatTimeAgo(context, task.createdAt),
                 style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
               ),
             ],
@@ -547,7 +555,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  List<Map<String, dynamic>> _calculateAchievements() {
+  List<Map<String, dynamic>> _calculateAchievements(BuildContext context) {
     final completed = taskStats['completed'] ?? 0;
     final total = taskStats['total'] ?? 0;
     final categories = tasksByCategory.length;
@@ -555,50 +563,50 @@ class _ProfilePageState extends State<ProfilePage> {
     return [
       {
         'icon': Icons.task_alt,
-        'title': 'First Task',
-        'description': 'Create your first task',
+        'title': AppLocalizations.of(context)!.firstTask,
+        'description': AppLocalizations.of(context)!.firstTaskDesc,
         'earned': total > 0,
       },
       {
         'icon': Icons.check_circle,
-        'title': 'Finisher',
-        'description': 'Complete your first task',
+        'title': AppLocalizations.of(context)!.finisher,
+        'description': AppLocalizations.of(context)!.finisherDesc,
         'earned': completed > 0,
       },
       {
         'icon': Icons.trending_up,
-        'title': 'Productive',
-        'description': 'Complete 5 tasks',
+        'title': AppLocalizations.of(context)!.productive,
+        'description': AppLocalizations.of(context)!.productiveDesc,
         'earned': completed >= 5,
       },
       {
         'icon': Icons.star,
-        'title': 'Task Master',
-        'description': 'Complete 20 tasks',
+        'title': AppLocalizations.of(context)!.taskMaster,
+        'description': AppLocalizations.of(context)!.taskMasterDesc,
         'earned': completed >= 20,
       },
       {
         'icon': Icons.flash_on,
-        'title': 'Lightning',
-        'description': 'Complete 50 tasks',
+        'title': AppLocalizations.of(context)!.lightning,
+        'description': AppLocalizations.of(context)!.lightningDesc,
         'earned': completed >= 50,
       },
       {
         'icon': Icons.category,
-        'title': 'Organizer',
-        'description': 'Use 3 different categories',
+        'title': AppLocalizations.of(context)!.organizer,
+        'description': AppLocalizations.of(context)!.organizerDesc,
         'earned': categories >= 3,
       },
       {
         'icon': Icons.percent,
-        'title': 'Achiever',
-        'description': 'Maintain 80% completion rate',
+        'title': AppLocalizations.of(context)!.achiever,
+        'description': AppLocalizations.of(context)!.achieverDesc,
         'earned': completionRate >= 0.8 && total >= 5,
       },
       {
         'icon': Icons.local_fire_department,
-        'title': 'Streak',
-        'description': 'Complete tasks for 7 days',
+        'title': AppLocalizations.of(context)!.streak,
+        'description': AppLocalizations.of(context)!.streakDesc,
         'earned': _hasWeeklyStreak(),
       },
     ];
@@ -628,7 +636,7 @@ class _ProfilePageState extends State<ProfilePage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
+            child: Text(AppLocalizations.of(context)!.close),
           ),
         ],
       ),
@@ -713,18 +721,18 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
-  String _formatTimeAgo(DateTime date) {
+  String _formatTimeAgo(BuildContext context, DateTime date) {
     final now = DateTime.now();
     final difference = now.difference(date);
 
     if (difference.inMinutes < 1) {
-      return 'Just now';
+      return AppLocalizations.of(context)!.justNow;
     } else if (difference.inMinutes < 60) {
-      return '${difference.inMinutes} minutes ago';
+      return '${difference.inMinutes} ${AppLocalizations.of(context)!.minutesAgo}';
     } else if (difference.inHours < 24) {
-      return '${difference.inHours} hours ago';
+      return '${difference.inHours} ${AppLocalizations.of(context)!.hoursAgo}';
     } else if (difference.inDays < 7) {
-      return '${difference.inDays} days ago';
+      return '${difference.inDays} ${AppLocalizations.of(context)!.daysAgo}';
     } else {
       return '${date.day}/${date.month}/${date.year}';
     }
@@ -748,7 +756,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Icon(Icons.person_outline, color: colorScheme.primary),
               const SizedBox(width: 8),
               Text(
-                'Account Information',
+                AppLocalizations.of(context)!.accountInformation,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -758,20 +766,20 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 16),
 
           _buildInfoRow(
-            'Email',
-            userProfile?.email ?? 'Not available',
+            AppLocalizations.of(context)!.email,
+            userProfile?.email ?? AppLocalizations.of(context)!.notAvailable,
             Icons.email_outlined,
           ),
           const SizedBox(height: 12),
           _buildInfoRow(
-            'Member Since',
-            _formatMemberSince(),
+            AppLocalizations.of(context)!.memberSince,
+            _formatMemberSince(context),
             Icons.calendar_today_outlined,
           ),
           const SizedBox(height: 12),
           _buildInfoRow(
-            'Last Updated',
-            _formatLastUpdate(),
+            AppLocalizations.of(context)!.lastUpdated,
+            _formatLastUpdate(context),
             Icons.update_outlined,
           ),
         ],
@@ -821,7 +829,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Icon(Icons.trending_up, color: colorScheme.primary),
               const SizedBox(width: 8),
               Text(
-                'Productivity Insights',
+                AppLocalizations.of(context)!.productivityInsights,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -835,7 +843,7 @@ class _ProfilePageState extends State<ProfilePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Completion Rate',
+                AppLocalizations.of(context)!.completionRate,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -872,7 +880,7 @@ class _ProfilePageState extends State<ProfilePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Daily Average',
+                AppLocalizations.of(context)!.dailyAverage,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -909,7 +917,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Icon(Icons.pie_chart_outline, color: colorScheme.primary),
               const SizedBox(width: 8),
               Text(
-                'Task Distribution',
+                AppLocalizations.of(context)!.taskDistribution,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -920,41 +928,37 @@ class _ProfilePageState extends State<ProfilePage> {
 
           // By Category
           Text(
-            'By Category',
+            AppLocalizations.of(context)!.byCategory,
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 8),
-          ...tasksByCategory.entries
-              .map(
-                (entry) => _buildDistributionItem(
-                  entry.key,
-                  entry.value,
-                  _getCategoryColor(entry.key),
-                ),
-              )
-              .toList(),
+          ...tasksByCategory.entries.map(
+            (entry) => _buildDistributionItem(
+              entry.key,
+              entry.value,
+              _getCategoryColor(entry.key),
+            ),
+          ),
 
           const SizedBox(height: 16),
 
           // By Priority
           Text(
-            'By Priority',
+            AppLocalizations.of(context)!.byPriority,
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 8),
-          ...tasksByPriority.entries
-              .map(
-                (entry) => _buildDistributionItem(
-                  entry.key,
-                  entry.value,
-                  _getPriorityColor(entry.key),
-                ),
-              )
-              .toList(),
+          ...tasksByPriority.entries.map(
+            (entry) => _buildDistributionItem(
+              entry.key,
+              entry.value,
+              _getPriorityColor(entry.key),
+            ),
+          ),
         ],
       ),
     );
@@ -1005,7 +1009,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Icon(Icons.analytics_outlined, color: colorScheme.primary),
               const SizedBox(width: 8),
               Text(
-                'Weekly Progress',
+                AppLocalizations.of(context)!.weeklyProgress,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -1057,7 +1061,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -1088,41 +1092,49 @@ class _ProfilePageState extends State<ProfilePage> {
     return (taskStats['total'] ?? 0) / daysSinceMember;
   }
 
-  String _formatMemberSince() {
-    if (userProfile?.createdAt == null) return 'Unknown';
+  String _formatMemberSince(BuildContext context) {
+    if (userProfile?.createdAt == null)
+      return AppLocalizations.of(context)!.unknown;
 
     final memberSince = userProfile!.createdAt;
     final now = DateTime.now();
     final difference = now.difference(memberSince);
 
     if (difference.inDays < 1) {
-      return 'Today';
+      return AppLocalizations.of(context)!.today;
     } else if (difference.inDays < 30) {
-      return '${difference.inDays} days ago';
+      return '${difference.inDays} ${AppLocalizations.of(context)!.daysAgo}';
     } else if (difference.inDays < 365) {
       final months = (difference.inDays / 30).floor();
-      return '$months month${months > 1 ? 's' : ''} ago';
+      return months > 1
+          ? AppLocalizations.of(context)!.monthsAgo(months)
+          : AppLocalizations.of(context)!.monthAgo(months);
     } else {
       final years = (difference.inDays / 365).floor();
-      return '$years year${years > 1 ? 's' : ''} ago';
+      return years > 1
+          ? AppLocalizations.of(context)!.yearsAgo(years)
+          : AppLocalizations.of(context)!.yearAgo(years);
     }
   }
 
-  String _formatLastUpdate() {
-    if (userProfile?.updatedAt == null) return 'Unknown';
-    return _formatTimeAgo(userProfile!.updatedAt);
+  String _formatLastUpdate(BuildContext context) {
+    if (userProfile?.updatedAt == null)
+      return AppLocalizations.of(context)!.unknown;
+    return _formatTimeAgo(context, userProfile!.updatedAt);
   }
 
   void _showAllActivity() {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('All Activity'),
+        title: Text(AppLocalizations.of(context)!.allActivity),
         content: SizedBox(
           width: double.maxFinite,
           height: 300,
           child: recentTasks.isEmpty
-              ? const Center(child: Text('No activity to show'))
+              ? Center(
+                  child: Text(AppLocalizations.of(context)!.noActivityToShow),
+                )
               : ListView.builder(
                   itemCount: recentTasks.length,
                   itemBuilder: (context, index) {
@@ -1135,12 +1147,16 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       title: Text(
                         task.isCompleted
-                            ? 'Completed "${task.title}"'
-                            : 'Created "${task.title}"',
+                            ? AppLocalizations.of(
+                                context,
+                              )!.completedTask(task.title)
+                            : AppLocalizations.of(
+                                context,
+                              )!.createdTask(task.title),
                         style: const TextStyle(fontSize: 14),
                       ),
                       subtitle: Text(
-                        _formatTimeAgo(task.createdAt),
+                        _formatTimeAgo(context, task.createdAt),
                         style: const TextStyle(fontSize: 12),
                       ),
                       trailing: Container(
@@ -1169,7 +1185,7 @@ class _ProfilePageState extends State<ProfilePage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
+            child: Text(AppLocalizations.of(context)!.close),
           ),
         ],
       ),

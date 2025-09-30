@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nhom10/screens/settings.dart';
 import '../components/menu_item.dart';
+import '../l10n/app_localizations.dart';
 import 'account.dart';
 import 'contact_us.dart';
 import 'about_us.dart';
@@ -21,7 +22,7 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: colorScheme.surface,
       appBar: AppBar(
         title: Text(
-          'Menu',
+          AppLocalizations.of(context)!.menu,
           style: Theme.of(
             context,
           ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
@@ -63,7 +64,7 @@ class _MenuPageState extends State<MenuPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MenuItem(
-            title: 'Account',
+            title: AppLocalizations.of(context)!.account,
             icon: Icons.account_circle_outlined,
             iconColor: colorScheme.primary,
             onTap: () {
@@ -91,7 +92,7 @@ class _MenuPageState extends State<MenuPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MenuItem(
-            title: 'Settings',
+            title: AppLocalizations.of(context)!.settings,
             icon: Icons.settings_outlined,
             iconColor: colorScheme.primary,
             onTap: () {
@@ -119,7 +120,7 @@ class _MenuPageState extends State<MenuPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MenuItem(
-            title: 'Contact Us',
+            title: AppLocalizations.of(context)!.contactUs,
             icon: Icons.contact_support_outlined,
             iconColor: colorScheme.secondary,
             onTap: () {
@@ -133,7 +134,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           _buildDivider(),
           MenuItem(
-            title: 'About Us',
+            title: AppLocalizations.of(context)!.aboutUs,
             icon: Icons.info_outline,
             iconColor: colorScheme.primary,
             onTap: () {
@@ -145,7 +146,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           _buildDivider(),
           MenuItem(
-            title: 'Help',
+            title: AppLocalizations.of(context)!.help,
             icon: Icons.help_outline,
             iconColor: colorScheme.tertiary,
             onTap: () {

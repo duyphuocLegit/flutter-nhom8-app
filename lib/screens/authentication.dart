@@ -3,6 +3,7 @@ import '../services/firebase_service.dart';
 import '../services/saved_accounts_service.dart';
 import '../models/user_model.dart';
 import '../utils/responsive_utils.dart';
+import '../l10n/app_localizations.dart';
 import 'home.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -112,16 +113,18 @@ class _AuthScreenState extends State<AuthScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Remove Account'),
-          content: Text('Remove ${account.email} from saved accounts?'),
+          title: Text(AppLocalizations.of(context)!.removeAccount),
+          content: Text(
+            AppLocalizations.of(context)!.removeAccountMessage(account.email),
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('Cancel'),
+              child: Text(AppLocalizations.of(context)!.cancel),
             ),
             TextButton(
               onPressed: () => Navigator.of(context).pop(true),
-              child: const Text('Remove'),
+              child: Text(AppLocalizations.of(context)!.remove),
             ),
           ],
         );
@@ -135,10 +138,10 @@ class _AuthScreenState extends State<AuthScreen> {
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Account removed'),
+            SnackBar(
+              content: Text(AppLocalizations.of(context)!.accountRemoved),
               backgroundColor: Colors.orange,
-              duration: Duration(seconds: 2),
+              duration: const Duration(seconds: 2),
             ),
           );
         }
@@ -146,7 +149,11 @@ class _AuthScreenState extends State<AuthScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Error removing account: ${e.toString()}'),
+              content: Text(
+                AppLocalizations.of(
+                  context,
+                )!.errorRemovingAccount(e.toString()),
+              ),
               backgroundColor: Colors.red,
             ),
           );
@@ -196,7 +203,9 @@ class _AuthScreenState extends State<AuthScreen> {
 
                 Center(
                   child: Text(
-                    _isLogin ? 'Welcome Back' : 'Create Account',
+                    _isLogin
+                        ? AppLocalizations.of(context)!.welcomeBack
+                        : AppLocalizations.of(context)!.createAccount,
                     style: TextStyle(
                       fontSize: isSmallScreen ? 20 : 28,
                       fontWeight: FontWeight.bold,
@@ -210,7 +219,9 @@ class _AuthScreenState extends State<AuthScreen> {
 
                 Center(
                   child: Text(
-                    _isLogin ? 'Sign in to continue' : 'Sign up to start',
+                    _isLogin
+                        ? AppLocalizations.of(context)!.signInToContinue
+                        : AppLocalizations.of(context)!.signUpToStart,
                     style: TextStyle(
                       fontSize: isSmallScreen ? 14 : 16,
                       color: Colors.grey.shade600,
@@ -250,7 +261,9 @@ class _AuthScreenState extends State<AuthScreen> {
                               ),
                               SizedBox(width: isSmallScreen ? 6 : 8),
                               Text(
-                                'Select saved account',
+                                AppLocalizations.of(
+                                  context,
+                                )!.selectSavedAccount,
                                 style: TextStyle(
                                   fontSize: isSmallScreen ? 13 : 15,
                                   color: Colors.grey.shade600,
@@ -279,7 +292,9 @@ class _AuthScreenState extends State<AuthScreen> {
                                   SizedBox(width: isSmallScreen ? 6 : 8),
                                   Flexible(
                                     child: Text(
-                                      'Enter email manually',
+                                      AppLocalizations.of(
+                                        context,
+                                      )!.enterEmailManually,
                                       style: TextStyle(
                                         fontSize: isSmallScreen ? 12 : 14,
                                         color: Colors.grey.shade700,
@@ -400,7 +415,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     controller: _nameController,
                     style: TextStyle(fontSize: isSmallScreen ? 14 : 16),
                     decoration: InputDecoration(
-                      labelText: 'Full Name',
+                      labelText: AppLocalizations.of(context)!.fullName,
                       labelStyle: TextStyle(fontSize: isSmallScreen ? 13 : 14),
                       prefixIcon: Icon(
                         Icons.person_outline,
@@ -421,7 +436,9 @@ class _AuthScreenState extends State<AuthScreen> {
                     validator: (value) {
                       if (!_isLogin &&
                           (value == null || value.trim().isEmpty)) {
-                        return 'Please enter your name';
+                        return AppLocalizations.of(
+                          context,
+                        )!.pleaseEnterYourName;
                       }
                       return null;
                     },
@@ -435,7 +452,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   keyboardType: TextInputType.emailAddress,
                   style: TextStyle(fontSize: isSmallScreen ? 14 : 16),
                   decoration: InputDecoration(
-                    labelText: 'Email',
+                    labelText: AppLocalizations.of(context)!.email,
                     labelStyle: TextStyle(fontSize: isSmallScreen ? 13 : 14),
                     prefixIcon: Icon(
                       Icons.email_outlined,
@@ -485,10 +502,10 @@ class _AuthScreenState extends State<AuthScreen> {
                   },
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return 'Please enter your email';
+                      return AppLocalizations.of(context)!.pleaseEnterYourEmail;
                     }
                     if (!_isValidEmail(value.trim())) {
-                      return 'Please enter a valid email';
+                      return AppLocalizations.of(context)!.invalidEmailAddress;
                     }
                     return null;
                   },
@@ -502,7 +519,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   obscureText: true,
                   style: TextStyle(fontSize: isSmallScreen ? 14 : 16),
                   decoration: InputDecoration(
-                    labelText: 'Password',
+                    labelText: AppLocalizations.of(context)!.password,
                     labelStyle: TextStyle(fontSize: isSmallScreen ? 13 : 14),
                     prefixIcon: Icon(
                       Icons.lock_outline,
@@ -522,10 +539,14 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
+                      return AppLocalizations.of(
+                        context,
+                      )!.pleaseEnterYourPassword;
                     }
                     if (!_isLogin && value.length < 6) {
-                      return 'Password must be at least 6 characters';
+                      return AppLocalizations.of(
+                        context,
+                      )!.passwordMustBeAtLeast6Characters;
                     }
                     return null;
                   },
@@ -550,7 +571,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       SizedBox(width: isSmallScreen ? 4 : 8),
                       Expanded(
                         child: Text(
-                          'Remember Me',
+                          AppLocalizations.of(context)!.rememberMe,
                           style: TextStyle(
                             fontSize: isSmallScreen ? 13 : 14,
                             color: Colors.grey.shade700,
@@ -587,7 +608,9 @@ class _AuthScreenState extends State<AuthScreen> {
                             ),
                           )
                         : Text(
-                            _isLogin ? 'Sign In' : 'Sign Up',
+                            _isLogin
+                                ? AppLocalizations.of(context)!.signIn
+                                : AppLocalizations.of(context)!.signUp,
                             style: TextStyle(
                               fontSize: isSmallScreen ? 14 : 16,
                               fontWeight: FontWeight.bold,
@@ -625,7 +648,9 @@ class _AuthScreenState extends State<AuthScreen> {
                         });
                       },
                       child: Text(
-                        _isLogin ? 'Sign Up' : 'Sign In',
+                        _isLogin
+                            ? AppLocalizations.of(context)!.signUp
+                            : AppLocalizations.of(context)!.signIn,
                         style: TextStyle(
                           color: const Color(0xFF3B82F6),
                           fontWeight: FontWeight.bold,
@@ -680,8 +705,12 @@ class _AuthScreenState extends State<AuthScreen> {
 
               if (mounted) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Account saved and synced with Firebase'),
+                  SnackBar(
+                    content: Text(
+                      AppLocalizations.of(
+                        context,
+                      )!.accountSavedAndSyncedWithFirebase,
+                    ),
                     backgroundColor: Colors.green,
                     duration: Duration(seconds: 2),
                   ),
@@ -762,28 +791,32 @@ class _AuthScreenState extends State<AuthScreen> {
         }
       }
     } catch (e) {
-      String errorMessage = 'An error occurred';
+      String errorMessage = AppLocalizations.of(context)!.error;
 
       if (e.toString().contains('user-not-found')) {
-        errorMessage = 'No account found with this email';
+        errorMessage = AppLocalizations.of(
+          context,
+        )!.noAccountFoundWithThisEmail;
       } else if (e.toString().contains('wrong-password')) {
-        errorMessage = 'Incorrect password';
+        errorMessage = AppLocalizations.of(context)!.invalidEmailOrPassword;
       } else if (e.toString().contains('invalid-credential')) {
-        errorMessage =
-            'Invalid email or password. Please check your credentials and try again.';
+        errorMessage = AppLocalizations.of(context)!.invalidEmailOrPassword;
       } else if (e.toString().contains('email-already-in-use')) {
-        errorMessage = 'An account already exists with this email';
+        errorMessage = AppLocalizations.of(
+          context,
+        )!.accountAlreadyExistsWithThisEmail;
       } else if (e.toString().contains('weak-password')) {
-        errorMessage = 'Password is too weak';
+        errorMessage = AppLocalizations.of(context)!.passwordIsTooWeak;
       } else if (e.toString().contains('invalid-email')) {
-        errorMessage = 'Invalid email address';
+        errorMessage = AppLocalizations.of(context)!.invalidEmailAddress;
       } else if (e.toString().contains('network-request-failed')) {
-        errorMessage =
-            'Network connection failed. Please check your internet connection.';
+        errorMessage = AppLocalizations.of(context)!.networkConnectionFailed;
       } else if (e.toString().contains('too-many-requests')) {
-        errorMessage = 'Too many failed attempts. Please try again later.';
+        errorMessage = AppLocalizations.of(context)!.tooManyFailedAttempts;
       } else {
-        errorMessage = 'Authentication failed: ${e.toString()}';
+        errorMessage = AppLocalizations.of(
+          context,
+        )!.authenticationFailed(e.toString());
       }
 
       _showError(errorMessage);

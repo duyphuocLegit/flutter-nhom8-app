@@ -12,6 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
   cupertino_icons: ^1.0.8
   dotted_border: ^2.0.0+3
@@ -40,5 +43,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
   assets:
     - assets/
