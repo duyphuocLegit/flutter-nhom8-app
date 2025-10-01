@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
 import '../components/upperHead.dart';
 import '../l10n/app_localizations.dart';
+import '../services/language_service.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({super.key});
@@ -21,8 +23,22 @@ class _ChangePasswordState extends State<ChangePassword> {
   bool _obscureNewPassword = true;
   bool _obscureConfirmPassword = true;
 
+  late LanguageService _languageService;
+
+  @override
+  void initState() {
+    super.initState();
+    _languageService = Provider.of<LanguageService>(context, listen: false);
+    _languageService.addListener(_onLocaleChanged);
+  }
+
+  void _onLocaleChanged() {
+    setState(() {});
+  }
+
   @override
   void dispose() {
+    _languageService.removeListener(_onLocaleChanged);
     _currentPasswordController.dispose();
     _newPasswordController.dispose();
     _confirmPasswordController.dispose();
@@ -116,7 +132,12 @@ class _ChangePasswordState extends State<ChangePassword> {
             key: _formKey,
             child: Column(
               children: [
-                upperHeader("Change Password", context, false, null),
+                upperHeader(
+                  AppLocalizations.of(context)!.changePassword,
+                  context,
+                  false,
+                  null,
+                ),
                 SizedBox(height: screenHeight * 0.04),
 
                 // Current Password Field
@@ -185,6 +206,28 @@ class _ChangePasswordState extends State<ChangePassword> {
                     }
                     if (value.length < 6) {
                       return AppLocalizations.of(context)!.passwordMinLength;
+                    }
+                    if (!RegExp(r'(?=.*[a-z])').hasMatch(value)) {
+                      return AppLocalizations.of(
+                        context,
+                      )!.passwordMustContainLowercase;
+                    }
+                    if (!RegExp(r'(?=.*[A-Z])').hasMatch(value)) {
+                      return AppLocalizations.of(
+                        context,
+                      )!.passwordMustContainUppercase;
+                    }
+                    if (!RegExp(r'(?=.*\d)').hasMatch(value)) {
+                      return AppLocalizations.of(
+                        context,
+                      )!.passwordMustContainNumber;
+                    }
+                    if (!RegExp(
+                      r'(?=.*[!@#$%^&*(),.?":{}|<>])',
+                    ).hasMatch(value)) {
+                      return AppLocalizations.of(
+                        context,
+                      )!.passwordMustContainSpecial;
                     }
                     return null;
                   },

@@ -35,11 +35,22 @@ dependencies:
   # Notification dependencies
   flutter_local_notifications: ^17.2.2 # For local notifications
   timezone: ^0.9.4 # For timezone handling in notifications
+  flutter_native_splash: ^2.4.1 # For splash screen
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+
+# Splash screen configuration
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/logo.png
+  android_gravity: center
+  ios_content_mode: center
+  android: true
+  ios: true
+  web: true
 
 flutter:
   uses-material-design: true

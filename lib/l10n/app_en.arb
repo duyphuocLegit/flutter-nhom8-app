@@ -669,6 +669,22 @@
     "@passwordMinLength": {
         "description": "Password length validation message"
     },
+    "passwordMustContainLowercase": "Password must contain at least one lowercase letter",
+    "@passwordMustContainLowercase": {
+        "description": "Password strength validation message"
+    },
+    "passwordMustContainUppercase": "Password must contain at least one uppercase letter",
+    "@passwordMustContainUppercase": {
+        "description": "Password strength validation message"
+    },
+    "passwordMustContainNumber": "Password must contain at least one number",
+    "@passwordMustContainNumber": {
+        "description": "Password strength validation message"
+    },
+    "passwordMustContainSpecial": "Password must contain at least one special character",
+    "@passwordMustContainSpecial": {
+        "description": "Password strength validation message"
+    },
     "pleaseConfirmNewPassword": "Please confirm your new password",
     "@pleaseConfirmNewPassword": {
         "description": "Confirm password validation message"

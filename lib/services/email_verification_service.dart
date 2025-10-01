@@ -29,6 +29,7 @@ class EmailVerificationService {
   static Future<void> sendVerificationEmail() async {
     final user = _auth.currentUser;
     if (user == null) throw Exception('No signed-in user.');
+    if (user.emailVerified) return;
     await _auth.setLanguageCode('vi'); // email tiếng Việt
     await user.sendEmailVerification(); // dùng template Firebase (có nút)
   }

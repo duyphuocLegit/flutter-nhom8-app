@@ -544,6 +544,21 @@ class AppLocalizationsVi extends AppLocalizations {
   String get passwordMinLength => 'Mật khẩu phải có ít nhất 6 ký tự';
 
   @override
+  String get passwordMustContainLowercase =>
+      'Mật khẩu phải chứa ít nhất một chữ cái thường';
+
+  @override
+  String get passwordMustContainUppercase =>
+      'Mật khẩu phải chứa ít nhất một chữ cái hoa';
+
+  @override
+  String get passwordMustContainNumber => 'Mật khẩu phải chứa ít nhất một số';
+
+  @override
+  String get passwordMustContainSpecial =>
+      'Mật khẩu phải chứa ít nhất một ký tự đặc biệt';
+
+  @override
   String get pleaseConfirmNewPassword => 'Vui lòng xác nhận mật khẩu mới';
 
   @override

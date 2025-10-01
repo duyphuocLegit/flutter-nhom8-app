@@ -1076,6 +1076,30 @@ abstract class AppLocalizations {
   /// **'Password must be at least 6 characters'**
   String get passwordMinLength;
 
+  /// Password strength validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one lowercase letter'**
+  String get passwordMustContainLowercase;
+
+  /// Password strength validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one uppercase letter'**
+  String get passwordMustContainUppercase;
+
+  /// Password strength validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one number'**
+  String get passwordMustContainNumber;
+
+  /// Password strength validation message
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one special character'**
+  String get passwordMustContainSpecial;
+
   /// Confirm password validation message
   ///
   /// In en, this message translates to:
