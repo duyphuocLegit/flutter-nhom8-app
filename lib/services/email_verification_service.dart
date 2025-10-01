@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 
 // class EmailVerificationService {
 //   static final _auth = FirebaseAuth.instance;
@@ -32,12 +33,20 @@ class EmailVerificationService {
     if (user.emailVerified) return;
     await _auth.setLanguageCode('vi'); // email tiếng Việt
     await user.sendEmailVerification(); // dùng template Firebase (có nút)
+    debugPrint('Verification email sent to: ${user.email}');
   }
 
   static Future<bool> reloadAndIsVerified() async {
     await _auth.currentUser?.reload();
-    return _auth.currentUser?.emailVerified ?? false;
+    final isVerified = _auth.currentUser?.emailVerified ?? false;
+    debugPrint(
+      'Email verification status: $isVerified for user: ${_auth.currentUser?.email}',
+    );
+    return isVerified;
   }
+
+  /// Listen to auth state changes for more reliable verification detection
+  static Stream<User?> get authStateChanges => _auth.authStateChanges();
 
   static Future<void> signOut() => _auth.signOut();
 }

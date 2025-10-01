@@ -832,8 +832,10 @@ class _AuthScreenState extends State<AuthScreen> {
 
           if (!mounted) return;
 
+          debugPrint('Checking email verification status after login...');
           final isVerified =
               await EmailVerificationService.reloadAndIsVerified();
+          debugPrint('Email verified: $isVerified');
           if (isVerified) {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const MyHomePage()),

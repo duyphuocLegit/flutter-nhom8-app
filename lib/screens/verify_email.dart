@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../services/email_verification_service.dart';
 import 'home.dart';
 import 'authentication.dart';
@@ -18,15 +19,31 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
   int _cooldown = 0;
   Timer? _cooldownTimer;
   Timer? _pollTimer;
+  StreamSubscription<User?>? _authSubscription;
 
   @override
   void initState() {
     super.initState();
-    // Tự polling 3s/lần để “bắt” khi user đã bấm link trong mail
+    // Listen to auth state changes for immediate verification detection
+    _authSubscription = EmailVerificationService.authStateChanges.listen((
+      user,
+    ) {
+      if (user != null && user.emailVerified && mounted) {
+        _authSubscription?.cancel();
+        _pollTimer?.cancel();
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const MyHomePage()),
+          (_) => false,
+        );
+      }
+    });
+
+    // Fallback polling every 3 seconds
     _pollTimer = Timer.periodic(const Duration(seconds: 3), (_) async {
       final ok = await EmailVerificationService.reloadAndIsVerified();
       if (!mounted) return;
       if (ok) {
+        _authSubscription?.cancel();
         _pollTimer?.cancel();
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (_) => const MyHomePage()),
@@ -40,6 +57,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
   void dispose() {
     _cooldownTimer?.cancel();
     _pollTimer?.cancel();
+    _authSubscription?.cancel();
     super.dispose();
   }
 
@@ -137,6 +155,12 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 const Text(
                   'Hãy mở email và click vào đường link để kích hoạt tài khoản.',
                   textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Sau khi xác thực, quay lại ứng dụng và nhấn "Kiểm tra lại". Nếu không hoạt động, hãy khởi động lại ứng dụng.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
                 ),
                 const SizedBox(height: 20),
                 FilledButton(
