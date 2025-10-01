@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/task_model.dart';
 import '../services/firebase_service.dart';
+import '../services/task_notification_manager.dart';
 import '../utils/responsive_utils.dart';
 import '../l10n/app_localizations.dart';
 
@@ -442,6 +443,12 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
         await FirebaseService.updateTask(updatedTask);
 
+        // Handle notifications for the updated task
+        await TaskNotificationManager.onTaskUpdated(
+          widget.existingTask!,
+          updatedTask,
+        );
+
         if (mounted && context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -481,6 +488,11 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         debugPrint('FirebaseService.addTask returned: $taskId');
 
         if (taskId != null) {
+          // Handle notifications for the new task
+          await TaskNotificationManager.onTaskCreated(
+            task.copyWith(id: taskId),
+          );
+
           if (mounted && context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

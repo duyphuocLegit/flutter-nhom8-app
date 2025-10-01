@@ -18,6 +18,20 @@ class TaskNotificationManager {
       }
     }
 
+    // Show immediate notification if task is due today
+    if (task.dueDate != null) {
+      final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
+      final taskDueDate = DateTime(
+        task.dueDate!.year,
+        task.dueDate!.month,
+        task.dueDate!.day,
+      );
+      if (taskDueDate.isAtSameMomentAs(today)) {
+        await NotificationService.showTaskReminder(task);
+      }
+    }
+
     // Provide haptic feedback for task creation
     await NotificationService.performHapticFeedback();
   }
