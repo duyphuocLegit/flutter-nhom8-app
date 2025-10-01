@@ -1537,4 +1537,36 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get accountSavedAndSyncedWithFirebase =>
       'Account saved and synced with Firebase';
+
+  @override
+  String get taskReminderTitle => 'Task Reminder';
+
+  @override
+  String taskReminderBody(String title) {
+    return '$title is due soon!';
+  }
+
+  @override
+  String get tasksDueTodayTitle => 'Tasks Due Today';
+
+  @override
+  String get taskCompletedTitle => 'Task Completed! 🎉';
+
+  @override
+  String taskCompletedBody(String title) {
+    return 'Great job! You completed \"$title\"';
+  }
+
+  @override
+  String get dailySummaryTitle => 'Daily Summary';
+
+  @override
+  String dailySummaryAllCompleted(int totalTasks) {
+    return 'Awesome! You completed all $totalTasks tasks today! 🌟';
+  }
+
+  @override
+  String dailySummaryPartial(int completedTasks, int totalTasks) {
+    return 'You completed $completedTasks out of $totalTasks tasks today. Keep it up! 💪';
+  }
 }

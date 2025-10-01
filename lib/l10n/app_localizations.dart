@@ -2899,6 +2899,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account saved and synced with Firebase'**
   String get accountSavedAndSyncedWithFirebase;
+
+  /// Title for task reminder notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Task Reminder'**
+  String get taskReminderTitle;
+
+  /// Body for task reminder notifications
+  ///
+  /// In en, this message translates to:
+  /// **'{title} is due soon!'**
+  String taskReminderBody(String title);
+
+  /// Title for tasks due today notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks Due Today'**
+  String get tasksDueTodayTitle;
+
+  /// Title for task completion notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Task Completed! 🎉'**
+  String get taskCompletedTitle;
+
+  /// Body for task completion notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Great job! You completed \"{title}\"'**
+  String taskCompletedBody(String title);
+
+  /// Title for daily summary notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Summary'**
+  String get dailySummaryTitle;
+
+  /// Body for daily summary when all tasks completed
+  ///
+  /// In en, this message translates to:
+  /// **'Awesome! You completed all {totalTasks} tasks today! 🌟'**
+  String dailySummaryAllCompleted(int totalTasks);
+
+  /// Body for daily summary when some tasks completed
+  ///
+  /// In en, this message translates to:
+  /// **'You completed {completedTasks} out of {totalTasks} tasks today. Keep it up! 💪'**
+  String dailySummaryPartial(int completedTasks, int totalTasks);
 }
 
 class _AppLocalizationsDelegate

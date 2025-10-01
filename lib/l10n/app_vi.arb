@@ -1575,5 +1575,65 @@
     "accountSavedAndSyncedWithFirebase": "Tài khoản đã được lưu và đồng bộ với Firebase",
     "@accountSavedAndSyncedWithFirebase": {
         "description": "Thông báo thành công lưu tài khoản"
+    },
+    "taskReminderTitle": "Nhắc nhở nhiệm vụ",
+    "@taskReminderTitle": {
+        "description": "Tiêu đề cho thông báo nhắc nhở nhiệm vụ"
+    },
+    "taskReminderBody": "{title} sắp đến hạn!",
+    "@taskReminderBody": {
+        "placeholders": {
+            "title": {
+                "type": "String",
+                "description": "Tên nhiệm vụ"
+            }
+        },
+        "description": "Nội dung cho thông báo nhắc nhở nhiệm vụ"
+    },
+    "tasksDueTodayTitle": "Nhiệm vụ đến hạn hôm nay",
+    "@tasksDueTodayTitle": {
+        "description": "Tiêu đề cho thông báo nhiệm vụ đến hạn hôm nay"
+    },
+    "taskCompletedTitle": "Hoàn thành nhiệm vụ! 🎉",
+    "@taskCompletedTitle": {
+        "description": "Tiêu đề cho thông báo hoàn thành nhiệm vụ"
+    },
+    "taskCompletedBody": "Tuyệt vời! Bạn đã hoàn thành \"{title}\"",
+    "@taskCompletedBody": {
+        "placeholders": {
+            "title": {
+                "type": "String",
+                "description": "Tên nhiệm vụ đã hoàn thành"
+            }
+        },
+        "description": "Nội dung cho thông báo hoàn thành nhiệm vụ"
+    },
+    "dailySummaryTitle": "Tóm tắt hàng ngày",
+    "@dailySummaryTitle": {
+        "description": "Tiêu đề cho thông báo tóm tắt hàng ngày"
+    },
+    "dailySummaryAllCompleted": "Tuyệt vời! Bạn đã hoàn thành tất cả {totalTasks} nhiệm vụ hôm nay! 🌟",
+    "@dailySummaryAllCompleted": {
+        "placeholders": {
+            "totalTasks": {
+                "type": "int",
+                "description": "Tổng số nhiệm vụ đã hoàn thành"
+            }
+        },
+        "description": "Nội dung cho tóm tắt hàng ngày khi hoàn thành tất cả nhiệm vụ"
+    },
+    "dailySummaryPartial": "Bạn đã hoàn thành {completedTasks} trong số {totalTasks} nhiệm vụ hôm nay. Tiếp tục nhé! 💪",
+    "@dailySummaryPartial": {
+        "placeholders": {
+            "completedTasks": {
+                "type": "int",
+                "description": "Số nhiệm vụ đã hoàn thành"
+            },
+            "totalTasks": {
+                "type": "int",
+                "description": "Tổng số nhiệm vụ"
+            }
+        },
+        "description": "Nội dung cho tóm tắt hàng ngày khi hoàn thành một số nhiệm vụ"
     }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/task_model.dart';
 import '../services/notification_service.dart';
 import '../services/setting_service.dart';
+import '../services/firebase_service.dart';
 
 class TaskNotificationManager {
   /// Handle task creation notifications
@@ -152,20 +153,77 @@ class TaskNotificationManager {
     }
   }
 
-  /// Test notification system
+  /// Test notification system - shows tasks due today
   static Future<void> testNotification() async {
-    // Create a test task for demonstration
-    final testTask = TaskItemModel(
-      id: 'test_${DateTime.now().millisecondsSinceEpoch}',
-      title: 'Test Notification',
-      description: 'This is a test notification to verify the system works.',
-      isCompleted: false,
-      priority: 'medium',
-      category: 'Personal',
-      createdAt: DateTime.now(),
-      dueDate: DateTime.now().add(const Duration(minutes: 1)),
-    );
+    try {
+      // Get all user tasks
+      final allTasks = await FirebaseService.getUserTasks();
 
-    await NotificationService.showTaskReminder(testTask);
+      // Filter tasks due today (not completed)
+      final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
+
+      final tasksDueToday = allTasks.where((task) {
+        if (task.isCompleted || task.dueDate == null) return false;
+
+        final taskDueDate = DateTime(
+          task.dueDate!.year,
+          task.dueDate!.month,
+          task.dueDate!.day,
+        );
+
+        return taskDueDate.isAtSameMomentAs(today);
+      }).toList();
+
+      // Create a dummy task with appropriate message
+      final testTask = TaskItemModel(
+        id: 'test_due_today_${DateTime.now().millisecondsSinceEpoch}',
+        title: 'Tasks Due Today',
+        description: _getTasksDueTodayMessage(tasksDueToday),
+        isCompleted: false,
+        priority: 'high',
+        category: 'Reminder',
+        createdAt: DateTime.now(),
+        dueDate: DateTime.now().add(const Duration(minutes: 1)),
+      );
+
+      await NotificationService.showTaskReminder(testTask);
+    } catch (e) {
+      // Fallback to simple test notification if something goes wrong
+      final testTask = TaskItemModel(
+        id: 'test_${DateTime.now().millisecondsSinceEpoch}',
+        title: 'Test Notification',
+        description: 'This is a test notification to verify the system works.',
+        isCompleted: false,
+        priority: 'medium',
+        category: 'Personal',
+        createdAt: DateTime.now(),
+        dueDate: DateTime.now().add(const Duration(minutes: 1)),
+      );
+
+      await NotificationService.showTaskReminder(testTask);
+    }
+  }
+
+  /// Helper method to create message for tasks due today
+  static String _getTasksDueTodayMessage(List<TaskItemModel> tasksDueToday) {
+    if (tasksDueToday.isEmpty) {
+      return 'You have no tasks due today. Great job staying on top of things!';
+    }
+
+    final taskCount = tasksDueToday.length;
+    final taskTitles = tasksDueToday
+        .take(3)
+        .map((task) => task.title)
+        .join(', ');
+    final remainingCount = taskCount - 3;
+
+    if (taskCount == 1) {
+      return 'You have 1 task due today: ${tasksDueToday.first.title}';
+    } else if (taskCount <= 3) {
+      return 'You have $taskCount tasks due today: $taskTitles';
+    } else {
+      return 'You have $taskCount tasks due today: $taskTitles and $remainingCount more';
+    }
   }
 }

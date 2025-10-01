@@ -15,7 +15,7 @@ class NotificationTestWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Notification Test',
+              'Tasks Due Today Test',
               style: Theme.of(
                 context,
               ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -26,7 +26,7 @@ class NotificationTestWidget extends StatelessWidget {
             ElevatedButton.icon(
               onPressed: () => _testNotification(context),
               icon: const Icon(Icons.notifications),
-              label: const Text('Test Notification'),
+              label: const Text('Show Tasks Due Today'),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 48),
               ),

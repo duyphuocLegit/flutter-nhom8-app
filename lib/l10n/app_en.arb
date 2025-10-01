@@ -2001,5 +2001,65 @@
     "accountSavedAndSyncedWithFirebase": "Account saved and synced with Firebase",
     "@accountSavedAndSyncedWithFirebase": {
         "description": "Account saved success message"
+    },
+    "taskReminderTitle": "Task Reminder",
+    "@taskReminderTitle": {
+        "description": "Title for task reminder notifications"
+    },
+    "taskReminderBody": "{title} is due soon!",
+    "@taskReminderBody": {
+        "placeholders": {
+            "title": {
+                "type": "String",
+                "description": "The task title"
+            }
+        },
+        "description": "Body for task reminder notifications"
+    },
+    "tasksDueTodayTitle": "Tasks Due Today",
+    "@tasksDueTodayTitle": {
+        "description": "Title for tasks due today notifications"
+    },
+    "taskCompletedTitle": "Task Completed! 🎉",
+    "@taskCompletedTitle": {
+        "description": "Title for task completion notifications"
+    },
+    "taskCompletedBody": "Great job! You completed \"{title}\"",
+    "@taskCompletedBody": {
+        "placeholders": {
+            "title": {
+                "type": "String",
+                "description": "The completed task title"
+            }
+        },
+        "description": "Body for task completion notifications"
+    },
+    "dailySummaryTitle": "Daily Summary",
+    "@dailySummaryTitle": {
+        "description": "Title for daily summary notifications"
+    },
+    "dailySummaryAllCompleted": "Awesome! You completed all {totalTasks} tasks today! 🌟",
+    "@dailySummaryAllCompleted": {
+        "placeholders": {
+            "totalTasks": {
+                "type": "int",
+                "description": "The total number of tasks completed"
+            }
+        },
+        "description": "Body for daily summary when all tasks completed"
+    },
+    "dailySummaryPartial": "You completed {completedTasks} out of {totalTasks} tasks today. Keep it up! 💪",
+    "@dailySummaryPartial": {
+        "placeholders": {
+            "completedTasks": {
+                "type": "int",
+                "description": "The number of completed tasks"
+            },
+            "totalTasks": {
+                "type": "int",
+                "description": "The total number of tasks"
+            }
+        },
+        "description": "Body for daily summary when some tasks completed"
     }
 }

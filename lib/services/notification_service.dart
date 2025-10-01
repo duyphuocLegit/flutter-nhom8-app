@@ -4,6 +4,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 import '../models/task_model.dart';
+import '../utils/notification_localizations.dart';
 
 class NotificationService {
   static final FlutterLocalNotificationsPlugin _notifications =
@@ -151,10 +152,17 @@ class NotificationService {
       iOS: iosDetails,
     );
 
+    final title = task.title == 'Tasks Due Today'
+        ? await NotificationLocalizations.tasksDueTodayTitle
+        : await NotificationLocalizations.taskReminderTitle;
+    final body = task.title == 'Tasks Due Today'
+        ? task.description
+        : await NotificationLocalizations.taskReminderBody(task.title);
+
     await _notifications.show(
       task.id?.hashCode ?? 0,
-      'Task Reminder',
-      '${task.title} is due soon!',
+      title,
+      body,
       platformDetails,
       payload: 'task_reminder_${task.id ?? ''}',
     );
@@ -195,8 +203,8 @@ class NotificationService {
 
     await _notifications.show(
       (task.id?.hashCode ?? 0) + 1000, // Offset to avoid ID conflicts
-      'Task Completed! 🎉',
-      'Great job! You completed "${task.title}"',
+      await NotificationLocalizations.taskCompletedTitle,
+      await NotificationLocalizations.taskCompletedBody(task.title),
       platformDetails,
       payload: 'task_completed_${task.id ?? ''}',
     );
@@ -220,8 +228,11 @@ class NotificationService {
     await initialize();
 
     final String message = completedTasks == totalTasks
-        ? 'Awesome! You completed all $totalTasks tasks today! 🌟'
-        : 'You completed $completedTasks out of $totalTasks tasks today. Keep it up! 💪';
+        ? await NotificationLocalizations.dailySummaryAllCompleted(totalTasks)
+        : await NotificationLocalizations.dailySummaryPartial(
+            completedTasks,
+            totalTasks,
+          );
 
     final shouldPlaySound = await _shouldPlaySound();
     final shouldVibrate = await _shouldVibrate();
@@ -252,7 +263,7 @@ class NotificationService {
 
     await _notifications.show(
       999, // Fixed ID for daily summary
-      'Daily Summary',
+      await NotificationLocalizations.dailySummaryTitle,
       message,
       platformDetails,
       payload: 'daily_summary',
@@ -292,8 +303,8 @@ class NotificationService {
 
     await _notifications.zonedSchedule(
       task.id?.hashCode ?? 0,
-      'Task Reminder',
-      '${task.title} is due soon!',
+      await NotificationLocalizations.taskReminderTitle,
+      await NotificationLocalizations.taskReminderBody(task.title),
       tz.TZDateTime.from(reminderTime, tz.local),
       platformDetails,
       payload: 'scheduled_reminder_${task.id ?? ''}',

@@ -1541,4 +1541,36 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get accountSavedAndSyncedWithFirebase =>
       'Tài khoản đã được lưu và đồng bộ với Firebase';
+
+  @override
+  String get taskReminderTitle => 'Nhắc nhở nhiệm vụ';
+
+  @override
+  String taskReminderBody(String title) {
+    return '$title sắp đến hạn!';
+  }
+
+  @override
+  String get tasksDueTodayTitle => 'Nhiệm vụ đến hạn hôm nay';
+
+  @override
+  String get taskCompletedTitle => 'Hoàn thành nhiệm vụ! 🎉';
+
+  @override
+  String taskCompletedBody(String title) {
+    return 'Tuyệt vời! Bạn đã hoàn thành \"$title\"';
+  }
+
+  @override
+  String get dailySummaryTitle => 'Tóm tắt hàng ngày';
+
+  @override
+  String dailySummaryAllCompleted(int totalTasks) {
+    return 'Tuyệt vời! Bạn đã hoàn thành tất cả $totalTasks nhiệm vụ hôm nay! 🌟';
+  }
+
+  @override
+  String dailySummaryPartial(int completedTasks, int totalTasks) {
+    return 'Bạn đã hoàn thành $completedTasks trong số $totalTasks nhiệm vụ hôm nay. Tiếp tục nhé! 💪';
+  }
 }
